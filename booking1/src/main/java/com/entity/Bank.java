@@ -3,13 +3,16 @@ package com.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Bank {
     private Integer id;
 
     private String customerName;
 
     private BigDecimal currentMoney;
-
+    
+    @DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
     private Date produceTime;
 
     private String cardID;

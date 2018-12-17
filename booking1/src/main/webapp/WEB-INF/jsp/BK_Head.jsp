@@ -53,13 +53,22 @@
     	 //注册特效
     	 $(".Head_total_rigth_register").mouseenter(function(){
     		 $(this).css("color","#00688B");
+    		
     	 })
     	 $(".Head_total_rigth_register").mouseleave(function(){
     		 $(this).css("color","#000000");
     	 })
+    	 //跳转注册
+    	 $(".Head_total_rigth_register").click(function(){
+    		 window.location.href = "reg?Iface=reg";
+    	 })
     	 //登录特效
     	 $(".Head_total_rigth_login").mouseenter(function(){
     		 $(this).css("color","#00688B");
+    	 })
+    	 //跳转登陆
+    	 $(".Head_total_rigth_login").click(function(){
+    		 window.location.href = "reg?Iface=login";
     	 })
     	 $(".Head_total_rigth_login").mouseleave(function(){
     		 $(this).css("color","#000000");
@@ -71,6 +80,7 @@
     	 $(".Head_total_rigth_lease").mouseleave(function(){
     		 $(this).css("background-color","#000080");
     	 })
+    	 
      })
     </script> 
 <style type="text/css">
@@ -182,6 +192,9 @@
       width: 130px;
       height: 130px;
     }
+    a{
+    	text-decoration:none
+    }
 </style>
 </head>
 <body>
@@ -192,7 +205,7 @@
           <span class="Head_total_rigth">
             <span class="Head_total_rigth_lease">上线我的住宿</span>
             <span class="Head_total_rigth_register">注册</span>
-            <span class="Head_total_rigth_login">登录</span> 
+            <span class="Head_total_rigth_login">登录</span>
           </span> 
             <div id="Head_total_img2_div"><p id="Head_total_img2_div_follow">关注BooKing.com官方微信公众号</p><img src="img/二维码.PNG"><p id="Head_total_img2_div_follow2">全省特价酒店应有尽有</p></div>
        </div>
