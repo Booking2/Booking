@@ -1,0 +1,149 @@
+body{
+	background-color: #f7f7f7;
+}
+.account{
+	height: 65px;
+	background-color: #001b42;
+}
+.join-logo{
+	width:144px;
+	height:44.66px;
+	margin-top: 5px;
+	float: left;
+}
+.join-logo img{
+	height:30.66px;
+	width: 155px;
+    margin: 14px 0 9px 10px;
+}
+.account-menu_updated{
+	margin-right: 20px;
+	margin: 0 8px;
+	display: inline;
+    float: right;
+    padding: 0;
+    text-align: center;
+    margin-top: 17px;
+}
+.account-menu_updated li:first-child {
+    margin-right: 4px;
+}
+.account-menu_updated li {
+    list-style: none;
+    display: inline-block;
+}
+.account-menu_updated li a {
+    color: #fff;
+    text-decoration: none;
+}
+.account-menu_updated .glyphicon {
+    padding: 12px 0 4px; 
+}
+.account-menu_updated .glyphicon {
+    display: block;
+    padding-bottom: 4px;
+}
+.off{
+	display: inline-block;
+	width: 100%;
+	height: 120%;
+	background-image: url("../img/fwxx.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	margin-bottom: 3px;
+}
+.on{
+	border-style:none;
+	display: inline-block;
+	width: 100%;
+	height:120%;
+	background-image: url("../img/gj.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	margin-bottom: 3px;
+}
+.glyphicon{
+	height: 25px;
+}
+.nav-steps li{
+	display: table-cell;
+    white-space: normal;
+    text-align: center;
+    border-bottom: 4px solid #707070;
+    height: 50px;
+    width: 33.33%;
+}
+.main-nav{
+    margin-bottom: 15px;
+    white-space: nowrap;
+    display: table;
+    table-layout: fixed; 
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 3px 0;
+}
+.main-nav>li>a{
+	color: #383838;
+    padding: 16px;
+    border-bottom: 0;
+    font-size: 13px;
+    border-right: none;
+    height: 100%;
+}
+.alignment{
+    padding-bottom: 10px;
+    overflow: auto;
+}
+.alignment h1{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.alignment span{
+	padding-bottom: 10px;
+    overflow: auto;
+}
+fieldset {
+    padding-top: 16px;
+    margin-top: 8px;
+    margin-left:0px;
+    border: none;
+    border-bottom: 1px solid #ededed;
+    background-color: #fff;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+.snailmail_smaller_block img {
+    max-width: 70px;
+    padding: 0;
+}
+.adjust-address-image-container {
+    margin: 0 auto;
+    margin-top: 26px;
+    padding: 15px 15px 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #989898;
+    font-size: 12px;
+    width: 95%;
+    text-align: center;
+}
+.snailmail_smaller_block {
+    text-align: initial;
+}
+.adjust-address-input-structure {
+    padding: 0;
+    padding-right: 4px;
+}
+.compact-about-form{
+	padding-left: 0px;
+}
+#address_field_legend{
+	margin-top:5px;
+}
+.address-information{
+	margin-bottom: 10px;
+}

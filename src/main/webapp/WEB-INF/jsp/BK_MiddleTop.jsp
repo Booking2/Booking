@@ -38,8 +38,6 @@
  	  padding-bottom: 15px;
  }
  .promotion-postcard__large{
- 	  border-style:solid;
- 	  border-color: black;
  	  padding-right: 8px;
  	  padding-left: 0px;
  	  box-sizing: border-box;
@@ -48,8 +46,6 @@
       height: 270px;
  }
  .promotion-postcard__small{
- 	  border-style:solid;
- 	  border-color: black;
  	  float: left;
       width: 33.333333%;
       height: 272px;

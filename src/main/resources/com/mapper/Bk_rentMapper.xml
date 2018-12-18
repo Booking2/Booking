@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.Bk_rentMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Bk_rent">
+    <id column="Reid" jdbcType="INTEGER" property="reid" />
+    <result column="Recontact" jdbcType="VARCHAR" property="recontact" />
+    <result column="Repassword" jdbcType="VARCHAR" property="repassword" />
+    <result column="Reemail" jdbcType="VARCHAR" property="reemail" />
+    <result column="Rerentname" jdbcType="VARCHAR" property="rerentname" />
+    <result column="Rephone" jdbcType="INTEGER" property="rephone" />
+    <result column="Readdress" jdbcType="VARCHAR" property="readdress" />
+    <result column="Recode" jdbcType="INTEGER" property="recode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Reid, Recontact, Repassword, Reemail, Rerentname, Rephone, Readdress, Recode
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from Bk_rent
+    where Reid = #{reid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from Bk_rent
+    where Reid = #{reid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Bk_rent">
+    insert into Bk_rent (Reid, Recontact, Repassword, 
+      Reemail, Rerentname, Rephone, 
+      Readdress, Recode)
+    values (#{reid,jdbcType=INTEGER}, #{recontact,jdbcType=VARCHAR}, #{repassword,jdbcType=VARCHAR}, 
+      #{reemail,jdbcType=VARCHAR}, #{rerentname,jdbcType=VARCHAR}, #{rephone,jdbcType=INTEGER}, 
+      #{readdress,jdbcType=VARCHAR}, #{recode,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Bk_rent">
+    insert into Bk_rent
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="reid != null">
+        Reid,
+      </if>
+      <if test="recontact != null">
+        Recontact,
+      </if>
+      <if test="repassword != null">
+        Repassword,
+      </if>
+      <if test="reemail != null">
+        Reemail,
+      </if>
+      <if test="rerentname != null">
+        Rerentname,
+      </if>
+      <if test="rephone != null">
+        Rephone,
+      </if>
+      <if test="readdress != null">
+        Readdress,
+      </if>
+      <if test="recode != null">
+        Recode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="reid != null">
+        #{reid,jdbcType=INTEGER},
+      </if>
+      <if test="recontact != null">
+        #{recontact,jdbcType=VARCHAR},
+      </if>
+      <if test="repassword != null">
+        #{repassword,jdbcType=VARCHAR},
+      </if>
+      <if test="reemail != null">
+        #{reemail,jdbcType=VARCHAR},
+      </if>
+      <if test="rerentname != null">
+        #{rerentname,jdbcType=VARCHAR},
+      </if>
+      <if test="rephone != null">
+        #{rephone,jdbcType=INTEGER},
+      </if>
+      <if test="readdress != null">
+        #{readdress,jdbcType=VARCHAR},
+      </if>
+      <if test="recode != null">
+        #{recode,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Bk_rent">
+    update Bk_rent
+    <set>
+      <if test="recontact != null">
+        Recontact = #{recontact,jdbcType=VARCHAR},
+      </if>
+      <if test="repassword != null">
+        Repassword = #{repassword,jdbcType=VARCHAR},
+      </if>
+      <if test="reemail != null">
+        Reemail = #{reemail,jdbcType=VARCHAR},
+      </if>
+      <if test="rerentname != null">
+        Rerentname = #{rerentname,jdbcType=VARCHAR},
+      </if>
+      <if test="rephone != null">
+        Rephone = #{rephone,jdbcType=INTEGER},
+      </if>
+      <if test="readdress != null">
+        Readdress = #{readdress,jdbcType=VARCHAR},
+      </if>
+      <if test="recode != null">
+        Recode = #{recode,jdbcType=INTEGER},
+      </if>
+    </set>
+    where Reid = #{reid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Bk_rent">
+    update Bk_rent
+    set Recontact = #{recontact,jdbcType=VARCHAR},
+      Repassword = #{repassword,jdbcType=VARCHAR},
+      Reemail = #{reemail,jdbcType=VARCHAR},
+      Rerentname = #{rerentname,jdbcType=VARCHAR},
+      Rephone = #{rephone,jdbcType=INTEGER},
+      Readdress = #{readdress,jdbcType=VARCHAR},
+      Recode = #{recode,jdbcType=INTEGER}
+    where Reid = #{reid,jdbcType=INTEGER}
+  </update>
+</mapper>
