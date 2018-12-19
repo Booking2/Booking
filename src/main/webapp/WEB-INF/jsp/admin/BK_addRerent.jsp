@@ -44,7 +44,7 @@
 			</div>
 			<div class="col-md-9 compact-about-form">
 					<form role="form" id="add_property_details"
-						action=""
+						action="addrent"
 						method="POST" autocomplete="disabled" class="js-main-form">
 						<fieldset class="active">
 							<div class="row">
@@ -59,19 +59,12 @@
 
 
 									<div class="input-length-counter">
-										<input type="text" id="property_name" name="property_name"
+										<input type="text" id="property_name" name="Rerentname"
 											value="" class="form-control form-control property-"
 											placeholder="" data-hj-masked=""><span
 											class="input-length-counter__label"
 											id="property_name_length_counter"></span>
 									</div>
-									<span class="help-block"></span>
-
-									<div id="property-name-length-warning"
-										class="input-length-counter-warning hidden join_property_name_padding">
-										<strong> 小贴士： </strong> 请尽量将住宿名称保持在25个字符以内，让大家更容易搜索和预订贵住宿！
-									</div>
-
 									<span class="join_property_name_text"> 客人搜索住宿时将看到该名称。 </span>
 								</div>
 							</div>
@@ -89,8 +82,19 @@
 
 									<label for="location_contact_name">联络人</label> <input
 										type="text" id="location_contact_name"
-										name="location_contact_name" value="" class="form-control"
+										name="recontact" value="" class="form-control"
 										placeholder="邮政信件的收件人" data-hj-masked=""> <span
+										class="help-block"></span>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 form-group">
+
+									<label for="location_contact_name">邮箱号</label> <input
+										type="text" id="location_contact_name"
+										name="Reemail" value="" class="form-control"
+										placeholder="邮政信件" data-hj-masked=""> <span
 										class="help-block"></span>
 
 								</div>
@@ -104,37 +108,20 @@
 								</div>
 							</div>
 							<div class="row address-row">
-								<div
-									class="col-xs-12 col-sm-6 col-md-6 form-group address-form-block">
-									<input type="hidden" id="city_ufi" name="city_ufi" value="">
-									<input type="hidden" id="city_region" name="city_region">
-									<input type="hidden" id="city_from_list" name="city_from_list"
-										value="0"> <input type="hidden" id="glat"> <input
-										type="hidden" id="glong">
-
+								<div class="col-xs-12 col-sm-6 col-md-6 form-group address-form-block">
 									<div class="row address-row">
 										<div class="col-lg-12 form-group">
 
 											<label for="address">地址栏</label> <input type="text"
-												id="address" name="address" value="" class="form-control"
+												id="address" name="readdress" value="" class="form-control"
 												placeholder="详细地址" data-hj-masked=""> <span
 												class="help-block"></span>
 
 										</div>
 									</div>
-
-									<div class="row">
-										<div class="col-lg-12 form-group">
-
-											<label for="city">城市</label> <input type="text" id="city"
-												name="city" value="" class="form-control"
-												placeholder="例如：长沙" data-hj-masked=""
-												autocomplete="false"> <span class="help-block"></span>
-										</div>
-									</div>
 									<div class="form-group col-lg-6 adjust-address-input-structure">
 										<label for="zipcode">邮政编码</label> <input type="text"
-											id="zipcode" name="zipcode" value="" class="form-control"
+											id="zipcode" name="Recode" value="" class="form-control"
 											data-hj-masked=""> <span class="help-block"></span>
 									</div>
 								</div>

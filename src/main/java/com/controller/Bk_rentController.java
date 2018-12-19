@@ -9,7 +9,10 @@ import com.service.Bk_rentService;
 
 @Controller
 public class Bk_rentController {
-
+	
+	public String ephone;
+    public String epassword;
+	
 	@Autowired
 	private Bk_rentService bk_rentService;
 	
@@ -19,10 +22,18 @@ public class Bk_rentController {
 		return "BK_backgroundindex";
 	}
 	
+	@RequestMapping("/tz")
+	public String tz(Bk_rent rent) {
+		this.ephone = rent.getRephone();
+		this.epassword = rent.getRepassword();
+		return "BK_addRerent";
+	}
+	
 	@RequestMapping("/addrent")
 	public String insertSelective(Bk_rent rent) {
-		
-		
+		rent.setRephone(ephone);
+		rent.setRepassword(epassword);
+		bk_rentService.insertSelective(rent);
 		return "BK_addRerent";
 	}
 }
