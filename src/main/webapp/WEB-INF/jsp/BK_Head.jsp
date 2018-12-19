@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>头部</title>
-<script src="js/jquery-1.8.3.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <script>
      $(function(){
     	$(".Head_total_img2 img").mouseenter(function(){
@@ -13,16 +13,10 @@
     		//获取box1
             var box1 = document.getElementById("Head_total_img2_div");
             //绑定鼠标移动事件
-            document.onmousemove = function(event){
-                
+            document.onmousemove = function asd(event){ 
                 //解决兼容问题
-                event = event || window.event;
-                
-                //获取滚动条滚动的距离
-                /*
-                 * chrome认为浏览器的滚动条是body的，可以通过body.scrollTop来获取
-                 * 火狐等浏览器认为浏览器的滚动条是html的，
-                 */
+                event = event || window.event; 
+                //获取滚动条滚动的距离 
                 var st = document.body.scrollTop || document.documentElement.scrollTop;
                 var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
                 //var st = document.documentElement.scrollTop;
@@ -32,8 +26,7 @@
                  *  用于获取鼠标在当前的可见窗口的坐标
                  * div的偏移量，是相对于整个页面的
                  * 
-                 * pageX和pageY可以获取鼠标相对于当前页面的坐标
-                 *  但是这个两个属性在IE8中不支持，所以如果需要兼容IE8，则不要使用
+                 * pageX和pageY可以获取鼠标相对于当前页面的坐标 
                  */
                 var left = event.clientX;
                 var top = event.clientY;
@@ -48,7 +41,7 @@
      });
      $(function(){
     	 $(".Head_total_img2").mouseleave(function(){  //鼠标移出
-    		 $("#Head_total_img2_div").css("visibility","hidden");
+    		 $("#Head_total_img2_div").css("visibility","hidden"); 
           });
     	 //注册特效
     	 $(".Head_total_rigth_register").mouseenter(function(){
@@ -64,6 +57,15 @@
     	 $(".Head_total_rigth_login").mouseleave(function(){
     		 $(this).css("color","#000000");
     	 })
+    	 //注册
+    	 $(".Head_total_rigth_register").click(function(){
+    		 window.location.href ="/bk_user/reg?Iface=reg";
+    	 })
+    	 //登录
+    	 $(".Head_total_rigth_login").click(function(){
+    		 window.location.href ="/bk_user/reg?Iface=login";
+    	 })
+    	 
     	 //上线我的住宿特效
     	 $(".Head_total_rigth_lease").mouseenter(function(){
     		 $(this).css("background-color","#00688B");
@@ -85,14 +87,14 @@
    }
    .Head_total_img1 img{
       height:35px;
-      padding-left: 142px;
+      padding-left: 268px;
       padding-top: 10px;
    }
    .Head_total_stay{
-      margin-left: 142px;
+      margin-left: 268px;
       margin-top: 25px;
       color: #ffffff; 
-      cursor: pointer;
+      cursor: default;
    }
    .Head_total_stay_span{
       border: 1px solid;
@@ -112,13 +114,13 @@
       position: absolute;
       width: 30px; 
       cursor: pointer;    /* 手指状态   */
-      margin-left:735px; 
-      padding-top: 17px; 
+      margin-left:475px; 
+      padding-top: 15px; 
    }  
    .Head_total_rigth{
       float: right; 
       padding-top: 18px;
-      padding-right:142px; 
+      padding-right:268px; 
    }    
    .Head_total_rigth_register{
       border: 1px solid;  
@@ -185,14 +187,14 @@
 <body>
    <div class="Head_total"> 
        <div class="Head_total_img"> 
-          <span class="Head_total_img1"><img src="img/857e24d682e37e1643fb09b3d17c4af26c4caec0.png"></span>
-          <span class="Head_total_img2"><img src="img/微信.png"></span>
+          <span class="Head_total_img1"><img src="${pageContext.request.contextPath}/img/857e24d682e37e1643fb09b3d17c4af26c4caec0.png"></span>
+          <span class="Head_total_img2"><img src="${pageContext.request.contextPath}/img/微信.png"></span>
           <span class="Head_total_rigth">
             <span class="Head_total_rigth_lease">上线我的住宿</span>
-            <span class="Head_total_rigth_register">注册</span>
-            <span class="Head_total_rigth_login">登录</span> 
+            <span class="Head_total_rigth_register" title='成为缤客用户，享受专属'>注册</span>
+            <span class="Head_total_rigth_login" title='登录后搜索结果更贴心'>登录</span> 
           </span> 
-            <div id="Head_total_img2_div"><p id="Head_total_img2_div_follow">关注BooKing.com官方微信号</p><img src="img/二维码.PNG"><p id="Head_total_img2_div_follow2">全省特价酒店应有尽有</p></div>
+            <div id="Head_total_img2_div"><p id="Head_total_img2_div_follow">关注BooKing.com官方微信号</p><img src="${pageContext.request.contextPath}/img/二维码.PNG"><p id="Head_total_img2_div_follow2">全省特价酒店应有尽有</p></div>
        </div>
        <div class="Head_total_stay"><span class="Head_total_stay_span">住宿</span></div>
     </div>

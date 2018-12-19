@@ -1,0 +1,134 @@
+body.ja *, body.ko *, body.zh *, body.ja em, body.zh em, body.ko em, body.ja i, body.zh i, body.ko i {
+    font-style: normal !important;
+}
+.sb-searchbox-universal {
+    color: #383838;
+}
+#left.leftsmall {
+    font-size: 88%;
+}
+body {
+    color: #383838;
+    font-size: small;
+    line-height: 1.2;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+.sb-searchbox-universal .sb-searchbox--painted {
+    padding: 16px;
+    position: relative;
+}
+.sb-searchbox-universal .sb-searchbox--painted {
+    border: 0;
+}
+.sb-searchbox--painted.-small {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.sb-searchbox.-small {
+    font-size: 13px;
+}
+.sb-searchbox--painted.-cjk {
+    border-width: 3px;
+    border-color: #febb02;
+    background: #ffd2a2;
+}
+
+.sb-searchbox--painted {
+    padding: 12px;
+    border-radius: 3px;
+    border: 1px solid;
+    background: #febb02;
+    background: -webkit-gradient(linear,left top,left bottom,from(#febb02),to(#febb02));
+    background: -webkit-linear-gradient(top,#febb02 0,#febb02 100%);
+    background: linear-gradient(to bottom,#febb02 0,#febb02 100%);
+    border-color: #e2aa11;
+    font-size: 13px;
+}
+form {
+    margin: 0;
+    padding: 0;
+}
+.sb-searchbox-universal {
+    color: #383838;
+}
+
+.sb-searchbox__spacing {
+    height: 10px;
+}
+ 
+.sb-searchbox-universal .sb-searchbox.-small.-cjk .sb-searchbox__row.-title {
+
+    margin: -12px -12px 12px -12px;
+    padding: 12px 12px;
+}
+.sb-searchbox--painted.-small.-cjk .sb-searchbox__row.-title {
+    margin: -12px -6px 12px -6px;
+    padding: 12px 6px;
+}
+.sb-searchbox--painted.-cjk .sb-searchbox__row.-title {
+    background-color: #febb02;
+    margin: -12px -12px 12px -12px;
+    padding: 12px;
+}
+.sb-searchbox-universal .sb-searchbox__row {
+    padding-bottom: 7px;
+}
+
+.sb-searchbox__row {
+    padding-bottom: 12px;
+}
+.sb-searchbox.-small {
+    font-size: 13px;
+}
+.sb-searchbox--painted {
+    font-size: 13px;
+}
+.sb-searchbox-universal .sb-searchbox.-small.-cjk .sb-searchbox__row.-title {
+    margin: -12px -12px 12px -12px;
+    padding: 12px 12px;
+}
+.sb-searchbox--painted.-small.-cjk .sb-searchbox__row.-title {
+    margin: -12px -6px 12px -6px;
+    padding: 12px 6px;
+}
+.sb-searchbox--painted.-cjk .sb-searchbox__row.-title {
+    background-color: #febb02;
+    margin: -12px -12px 12px -12px;
+    padding: 12px;
+}
+.sb-searchbox-universal .sb-searchbox__row {
+    padding-bottom: 7px;
+} 
+.sb-searchbox__row {
+    padding-bottom: 12px;
+}
+.u-clearfix::before, .u-clearfix::after {
+    content: "";
+    display: table;
+}
+.bui-u-clearfix::before, .bui-u-clearfix::after, .u-clearfix::before, .u-clearfix::after {
+    content: " ";
+    display: table;
+    line-height: 0;
+}
+#left h2 {
+    clear: both;
+}
+.sb-searchbox-universal .sb-searchbox.-small.-cjk .sb-searchbox__row.-title .sb-searchbox__title {
+    font-size: 20px;
+}
+.sb-searchbox-universal .sb-searchbox__title {
+    font-size: 23px;
+} 
+.sb-searchbox__title {
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    font-weight: normal;
+}
+h2 {
+    margin: 0 0 .5em .5em;
+    padding-top: 1.5em;
+    font-size: 120%;
+    font-weight: bold;
+}
