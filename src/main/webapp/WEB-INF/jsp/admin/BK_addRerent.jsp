@@ -90,7 +90,6 @@
 							</div>
 							<div class="row">
 								<div class="col-md-6 form-group">
-
 									<label for="location_contact_name">邮箱号</label> <input
 										type="text" id="location_contact_name"
 										name="Reemail" value="" class="form-control"
