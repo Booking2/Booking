@@ -31,10 +31,19 @@
 	<div>
 		<div class="col-sm-1"></div>
 		<div class="nav-steps col-sm-10">
-			<ul class="nav main-nav">
-				<li><a>基本信息</a></li>
-				<li><a>房间照片</a></li>
-				<li><a>基本信息</a></li>
+			<ul class="nav main-nav"  role="tablist">
+				<li class="active">
+					<a data-toggle="pill" href="#home">基本信息</a>
+				</li>
+				<li>
+					<a class="" data-toggle="pill" href="#menu1">酒店信息</a>
+				</li>
+				<li>
+					<a class="" data-toggle="pill" href="#menu2">房间照片</a>
+				</li>
+				<li>
+					<a class="" data-toggle="pill" href="#menu3">收款</a>
+				</li>
 			</ul>
 			<div>
 				<div class="alignment">
