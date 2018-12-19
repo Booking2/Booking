@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.Bk_cityMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Bk_city">
+    <id column="Ciid" jdbcType="INTEGER" property="ciid" />
+    <result column="Pid" jdbcType="INTEGER" property="pid" />
+    <result column="Ciname" jdbcType="VARCHAR" property="ciname" />
+    <result column="Ciictures" jdbcType="VARCHAR" property="ciictures" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Ciid, Pid, Ciname, Ciictures
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bk_city
+    where Ciid = #{ciid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bk_city
+    where Ciid = #{ciid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Bk_city">
+    insert into bk_city (Ciid, Pid, Ciname, 
+      Ciictures)
+    values (#{ciid,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{ciname,jdbcType=VARCHAR}, 
+      #{ciictures,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Bk_city">
+    insert into bk_city
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ciid != null">
+        Ciid,
+      </if>
+      <if test="pid != null">
+        Pid,
+      </if>
+      <if test="ciname != null">
+        Ciname,
+      </if>
+      <if test="ciictures != null">
+        Ciictures,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ciid != null">
+        #{ciid,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="ciname != null">
+        #{ciname,jdbcType=VARCHAR},
+      </if>
+      <if test="ciictures != null">
+        #{ciictures,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Bk_city">
+    update bk_city
+    <set>
+      <if test="pid != null">
+        Pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="ciname != null">
+        Ciname = #{ciname,jdbcType=VARCHAR},
+      </if>
+      <if test="ciictures != null">
+        Ciictures = #{ciictures,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Ciid = #{ciid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Bk_city">
+    update bk_city
+    set Pid = #{pid,jdbcType=INTEGER},
+      Ciname = #{ciname,jdbcType=VARCHAR},
+      Ciictures = #{ciictures,jdbcType=VARCHAR}
+    where Ciid = #{ciid,jdbcType=INTEGER}
+  </update>
+</mapper>

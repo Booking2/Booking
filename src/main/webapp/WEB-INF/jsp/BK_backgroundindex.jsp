@@ -5,10 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>在Booking.com上注册您的公寓，酒店</title>
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/vue.js"></script>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/vue.js"></script>
 <style type="text/css">
 .join-section--header-blue {
 	background: #001b42;
@@ -215,7 +215,7 @@ table{
 				<div class="col-sm-1"></div>
 				<div class="col-sm-10">
 					<div class="join-section--header-blue">
-						<img src="img/857e24d682e37e1643fb09b3d17c4af26c4caec0.png">
+						<img src="../img/857e24d682e37e1643fb09b3d17c4af26c4caec0.png">
 					</div>
 					<div class="join-content-layout">
 						<div class="join-h1-subtitle join-h1-new-from">
@@ -247,12 +247,12 @@ table{
 			</div>
 			<div class="join-section-border">
 			<div>
-				<img alt="" src="../../../img/background-1.PNG">
+				<img alt="" src="../img/background-1.PNG">
 			</div>
 			</div>
 			<div class="join-section-border join-border">
 				<div>
-					<img alt="" src="../../../img/background-2.PNG">
+					<img alt="" src="../img/background-2.PNG">
 				</div>
 			</div>
 			<div class="join-section">

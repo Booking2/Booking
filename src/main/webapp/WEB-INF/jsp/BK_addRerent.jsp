@@ -5,10 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="css/addRerent.css" type="text/css">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="../css/addRerent.css" type="text/css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -17,7 +17,7 @@
 		<div class="col-sm-10">
 			<div class="join-logo">
 				<img alt="logo"
-					src="img/857e24d682e37e1643fb09b3d17c4af26c4caec0.png">
+					src="../img/857e24d682e37e1643fb09b3d17c4af26c4caec0.png">
 			</div>
 			<ul class="account-menu_updated ">
 				<li><a href=""> <i class="glyphicon off"></i> 我的住宿
@@ -33,7 +33,7 @@
 		<div class="nav-steps col-sm-10">
 			<ul class="nav main-nav">
 				<li><a>基本信息</a></li>
-				<li><a>基本信息</a></li>
+				<li><a>房间照片</a></li>
 				<li><a>基本信息</a></li>
 			</ul>
 			<div>

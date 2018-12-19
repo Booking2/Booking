@@ -1,0 +1,161 @@
+.in-and-around.index {
+    margin: 20px 0 0;
+    float: left;
+    width: 100%;
+}
+body.ja *, body.ko *, body.zh *, body.ja em, body.zh em, body.ko em, body.ja i, body.zh i, body.ko i {
+    font-style: normal !important;
+}
+.in-and-around, .suggested-hotel, .city-reviews, .popular-hotels {
+    margin: 40px 0 0;
+}
+.clearfix {
+    *zoom: 1;
+}
+body {
+    color: #383838;
+    font-size: small;
+    line-height: 1.2;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+.clearfix::before, .clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.clearfix::before, .clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.clearfix::before, .clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.clearfix::before, .clearfix::after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.ia_header, .sh_header, .ph_header {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #383838;
+    padding: 0;
+    margin: 0;
+}
+h3 {
+    margin: 0;
+    font-size: 118%;
+    font-weight: bold;
+}
+.a11y_blue_grey.in-and-around .ia_subheader {
+    color: #757575;
+}
+.ia_subheader {
+    font-size: 13px;
+    line-height: 20px;
+    color: #a5a5a5;
+    margin: 3px 0 0;
+    padding: 0;
+}
+.ia_tab {
+    padding: 12px 0 0; 
+    border-bottom: 1px solid #07c;
+    overflow: hidden;
+    margin: 0;
+    list-style: none;
+}
+.ia_tab_btn.active {
+    cursor: default;
+    background-color: #07c;
+    color: #fff;
+}
+.ia_body {
+    padding: 3px 0 17px 0px;
+    margin-right: -150px;
+    list-style: none;
+}
+.ia_section.active {
+    display: block;
+}
+body.ja *, body.ko *, body.zh *, body.ja em, body.zh em, body.ko em, body.ja i, body.zh i, body.ko i {
+    font-style: normal !important;
+}
+.ia_section {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ia_section-container {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.fl {
+    float: left;
+}
+.ia_section_item, .sh_hotels_item {
+    width: 18.1982%;
+    padding: 0 2.25225% 0 0;
+    margin: 10px 0 0;
+    list-style: none;
+}
+.ia_link.ia_link--reviews {
+    display: inline;
+    white-space: normal;
+}
+body.ja *, body.ko *, body.zh *, body.ja em, body.zh em, body.ko em, body.ja i, body.zh i, body.ko i {
+    font-style: normal !important;
+}
+a:link {
+    color: #07c;
+    font-weight: bold;
+}
+
+
+
+body.ja *, body.ko *, body.zh *, body.ja em, body.zh em, body.ko em, body.ja i, body.zh i, body.ko i {
+    font-style: normal !important;
+}
+
+.ia_link {
+    font-size: 14px;
+    display: block;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: normal !important;
+    text-decoration: none !important;
+}
+.ia_section_item, .sh_hotels_item {
+    list-style: none;
+}
+body.ja *, body.ko *, body.zh *, body.ja em, body.zh em, body.ko em, body.ja i, body.zh i, body.ko i {
+    font-style: normal !important;
+}
+.ia_city-name {
+    display: block;
+}
+.a11y_blue_grey.in-and-around .ia_review-title {
+    color: #757575;
+}
+.ia_tab_btn.active {
+    cursor: default;
+    background-color: #07c;
+    color: #fff;
+}
+.ia_tab_btn {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 30px;
+    color: #737373;
+    font-size: 13px;
+    padding: 0 15px;
+    list-style: none;
+    margin: 0;
+}

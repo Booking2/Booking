@@ -1,0 +1,51 @@
+
+/* ========================================================================= *\
+    vmcarousel plugin
+\* ========================================================================= */\
+ 
+.vmcarousel-centered-infitine span{
+	 padding-left: 30px;
+}
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url(../fonts/glyphicons-halflings-regular.eot);
+	src: url(../fonts/glyphicons-halflings-regular.eot?#iefix)
+		format('embedded-opentype'),
+		url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'),
+		url(../fonts/glyphicons-halflings-regular.woff) format('woff'),
+		url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'),
+		url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular)
+		format('svg')
+}
+.vmc-container{position: relative; cursor: pointer;}
+.vmc-viewport{overflow: hidden;}
+
+.vmcarousel{list-style-type: none; padding: 0; margin: 0; width: 1000%;}
+.vmcarousel:after{content: ''; display: table; clear: both;}
+.vmcarousel > li{float: left;}
+.vmcarousel > li img{ display: block; max-width: 100%;}
+
+.vmc-container.hide-controls .vmc-arrow-left, .vmc-container.hide-controls .vmc-arrow-right{display: none;}
+
+.vmc-arrow-left, .vmc-arrow-right{
+    position: absolute;  background-color: #c0c0c0; top: 38%; left: 28px; width: 50px; height: 50px; margin-top: -25px; overflow: hidden;
+    opacity: 0.7; border-radius: 50%; transition: opacity 0.3s ease;
+    text-align: center; 
+}
+.vmc-arrow-right{left: auto; right:45px; background-color: #c0c0c0;}
+.vmc-container:hover .vmc-arrow-left, .vmc-container:hover .vmc-arrow-right{opacity: 1;}
+
+.vmc-arrow-left:after, .vmc-arrow-right:after{
+    content: ''; display: inline-block;
+    font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: 400; line-height: 1; -webkit-font-smoothing: antialiased;
+	 font-size: 50px; line-height: 50px; color: white;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    text-shadow: 2px 2px #000;
+}
+.vmc-arrow-left:hover:after, .vmc-arrow-right:hover:after{color: white;}
+.vmc-arrow-left:after{content: "\e079"; font-size: 25px;}
+.vmc-arrow-right:after{content: "\e080"; font-size: 25px;}
+/* 
+.vmc-container img[src$=".svg"]{width: 100% !important; height: auto !important; max-height: 100%;}
+
+.notransition{-webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; -ms-transition: none !important; transition: none !important;} */

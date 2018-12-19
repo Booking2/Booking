@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.scroll2 {
+	width: 100%;
+	height: 380px;  
+	margin-top: 15px;
+}
+h2{
+	font-size: 140%; 
+}
+.v_out {
+	width: 960px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+.v_show {
+	width: 885px; 
+	position: relative; 
+	
+}
+
+.u_lanren {
+	width: 6650px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.u_lanren ul { 
+	text-align: center;
+	line-height: 50px;
+}
+
+.u_lanren ul li { 
+	height: 380px;
+	float: left;
+	overflow: hidden; 
+}
+
+.u_lanren ul li dd {
+	width: 197px;
+	height: 377px; 
+	float: left;
+	overflow: hidden;
+	position: relative;
+	list-style: none;
+}
+
+.u_lanren ul li dd img {
+	position: absolute;
+	left: 0;
+	top: 0; 
+	width: 185px;
+	height:185px;
+}
+
+ 
+.u_lanren ul li dd span.info {
+	width: 51px;
+	height: 51px;
+	display: block;
+	position: absolute; 
+	bottom: 140px; 
+}
+
+.prev, .next {
+	float: left;
+	padding-top:70px;
+	position:relative;
+	z-index:20;
+}
+ 
+
+.prev, .prev span, .next, .next span{
+	width: 30px;
+	height: 40px;
+	display: block
+}
+
+.bk-icon, .bui-icon {  
+    vertical-align: middle;
+    max-width: 256px;
+    max-height: 256px;
+    overflow: hidden; 
+}
+.bui-carousel__nav {
+    pointer-events: none; 
+}
+.bui-carousel__nav {
+    position: absolute;
+    padding: 16px;
+    top: 40%;
+    -webkit-transform: translateY(-40%);
+    -ms-transform: translateY(-40%);
+    transform: translateY(-40%);
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.bh-promotion-carousel-nav {
+    margin-top: -20px;
+    padding-bottom: 0;
+    padding-top: 0;
+    top: 120px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+   
+}
