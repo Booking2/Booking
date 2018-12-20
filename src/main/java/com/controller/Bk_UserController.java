@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.entity.Bk_user;
 import com.service.Bk_userService;
-
+/**
+ * 
+ * 用户控制层
+ * */
 @Controller
 @RequestMapping("/bk_user")
 public class Bk_UserController {

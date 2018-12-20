@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.entity.Bk_rent;
 import com.service.Bk_rentService;
-
+/*
+ * 
+ * 出租控制层
+ * */
 @Controller
 @RequestMapping("/bk_rent")
 public class Bk_rentController {

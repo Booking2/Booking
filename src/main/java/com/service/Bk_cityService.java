@@ -11,4 +11,6 @@ public interface Bk_cityService {
 	List<Bk_city> getlistcity1();
 	
 	List<Bk_city> getlistcity2();
+	
+	List<Bk_city> getlistcitybycityid(Integer ciid);
 }

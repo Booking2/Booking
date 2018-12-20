@@ -2,7 +2,7 @@
 <html >
 <head>
 <meta charset="UTF-8">
-<title>登录注册</title>
+<title>Booking.com缤客：注册缤客账号享优惠</title>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 

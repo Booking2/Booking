@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.Bk_hotelMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Bk_hotel">
+    <id column="Hoid" jdbcType="INTEGER" property="hoid" />
+    <result column="Hid" jdbcType="INTEGER" property="hid" />
+    <result column="Honame" jdbcType="VARCHAR" property="honame" />
+    <result column="Hodescribe" jdbcType="VARCHAR" property="hodescribe" />
+    <result column="Hosentiment" jdbcType="INTEGER" property="hosentiment" />
+    <result column="Hoaddress" jdbcType="VARCHAR" property="hoaddress" />
+    <result column="Hostate" jdbcType="CHAR" property="hostate" />
+    <result column="Hostaydate" jdbcType="TIMESTAMP" property="hostaydate" />
+    <result column="Hocheckdate" jdbcType="TIMESTAMP" property="hocheckdate" />
+    <result column="Reid" jdbcType="INTEGER" property="reid" />
+    <result column="Arid" jdbcType="INTEGER" property="arid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Hoid, Hid, Honame, Hodescribe, Hosentiment, Hoaddress, Hostate, Hostaydate, Hocheckdate, 
+    Reid, Arid
+  </sql>
+  
+  <!--  -->
+  <select id="gethotelByArid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      SELECT ho.*
+	  FROM bk_hotel AS ho INNER JOIN bk_area AS a ON ho.Arid = a.Arid
+	  WHERE a.Arid = #{arid};
+  </select>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bk_hotel
+    where Hoid = #{hoid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bk_hotel
+    where Hoid = #{hoid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Bk_hotel">
+    insert into bk_hotel (Hoid, Hid, Honame, 
+      Hodescribe, Hosentiment, Hoaddress, 
+      Hostate, Hostaydate, Hocheckdate, 
+      Reid, Arid)
+    values (#{hoid,jdbcType=INTEGER}, #{hid,jdbcType=INTEGER}, #{honame,jdbcType=VARCHAR}, 
+      #{hodescribe,jdbcType=VARCHAR}, #{hosentiment,jdbcType=INTEGER}, #{hoaddress,jdbcType=VARCHAR}, 
+      #{hostate,jdbcType=CHAR}, #{hostaydate,jdbcType=TIMESTAMP}, #{hocheckdate,jdbcType=TIMESTAMP}, 
+      #{reid,jdbcType=INTEGER}, #{arid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Bk_hotel">
+    insert into bk_hotel
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="hoid != null">
+        Hoid,
+      </if>
+      <if test="hid != null">
+        Hid,
+      </if>
+      <if test="honame != null">
+        Honame,
+      </if>
+      <if test="hodescribe != null">
+        Hodescribe,
+      </if>
+      <if test="hosentiment != null">
+        Hosentiment,
+      </if>
+      <if test="hoaddress != null">
+        Hoaddress,
+      </if>
+      <if test="hostate != null">
+        Hostate,
+      </if>
+      <if test="hostaydate != null">
+        Hostaydate,
+      </if>
+      <if test="hocheckdate != null">
+        Hocheckdate,
+      </if>
+      <if test="reid != null">
+        Reid,
+      </if>
+      <if test="arid != null">
+        Arid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="hoid != null">
+        #{hoid,jdbcType=INTEGER},
+      </if>
+      <if test="hid != null">
+        #{hid,jdbcType=INTEGER},
+      </if>
+      <if test="honame != null">
+        #{honame,jdbcType=VARCHAR},
+      </if>
+      <if test="hodescribe != null">
+        #{hodescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="hosentiment != null">
+        #{hosentiment,jdbcType=INTEGER},
+      </if>
+      <if test="hoaddress != null">
+        #{hoaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="hostate != null">
+        #{hostate,jdbcType=CHAR},
+      </if>
+      <if test="hostaydate != null">
+        #{hostaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hocheckdate != null">
+        #{hocheckdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reid != null">
+        #{reid,jdbcType=INTEGER},
+      </if>
+      <if test="arid != null">
+        #{arid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Bk_hotel">
+    update bk_hotel
+    <set>
+      <if test="hid != null">
+        Hid = #{hid,jdbcType=INTEGER},
+      </if>
+      <if test="honame != null">
+        Honame = #{honame,jdbcType=VARCHAR},
+      </if>
+      <if test="hodescribe != null">
+        Hodescribe = #{hodescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="hosentiment != null">
+        Hosentiment = #{hosentiment,jdbcType=INTEGER},
+      </if>
+      <if test="hoaddress != null">
+        Hoaddress = #{hoaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="hostate != null">
+        Hostate = #{hostate,jdbcType=CHAR},
+      </if>
+      <if test="hostaydate != null">
+        Hostaydate = #{hostaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hocheckdate != null">
+        Hocheckdate = #{hocheckdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reid != null">
+        Reid = #{reid,jdbcType=INTEGER},
+      </if>
+      <if test="arid != null">
+        Arid = #{arid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where Hoid = #{hoid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Bk_hotel">
+    update bk_hotel
+    set Hid = #{hid,jdbcType=INTEGER},
+      Honame = #{honame,jdbcType=VARCHAR},
+      Hodescribe = #{hodescribe,jdbcType=VARCHAR},
+      Hosentiment = #{hosentiment,jdbcType=INTEGER},
+      Hoaddress = #{hoaddress,jdbcType=VARCHAR},
+      Hostate = #{hostate,jdbcType=CHAR},
+      Hostaydate = #{hostaydate,jdbcType=TIMESTAMP},
+      Hocheckdate = #{hocheckdate,jdbcType=TIMESTAMP},
+      Reid = #{reid,jdbcType=INTEGER},
+      Arid = #{arid,jdbcType=INTEGER}
+    where Hoid = #{hoid,jdbcType=INTEGER}
+  </update>
+</mapper>

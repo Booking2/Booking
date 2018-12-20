@@ -1,3 +1,4 @@
+<title>房屋类型轮播</title>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -11,7 +12,7 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/housing.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>房屋类型轮播</title>
+
 <h1 class="bh-carousel--header ">不仅有酒店...还有更多度假屋和公寓等你体验这份舒适</h1>
 <div class="scroll2">
 	<div class="prev">
@@ -27,49 +28,10 @@
 	<div class="v_show">
 		<div class="u_lanren">
 			<ul>
-				<li index="0">
-					<dd>
-						<a href="#" class="link"><img
-							src="${pageContext.request.contextPath}/img/cs.jpg" /></a><span
-							class="info">mingzi</span>
-					</dd>
-					<dd>
-						<a href="#" class="link"><img
-							src="${pageContext.request.contextPath}/img/cd.jpg" /></a> <span
-							class="info"></span>
-					</dd>
-					<dd>
-						<a href="#" class="link"><img
-							src="${pageContext.request.contextPath}/img/cz.jpg" /></a> <span
-							class="info"></span>
-					</dd>
-					<dd>
-						<a href="#" class="link"><img
-							src="${pageContext.request.contextPath}/img/hh.jpg" /></a> <span
-							class="info"></span>
-					</dd>
+				<li index="0" class="index1">
+				 
 				</li>
-				<li index="0">
-					<dd>
-						<a href="#" class="link"><img
-							src="${pageContext.request.contextPath}/img/hy.jpg" /></a> <span
-							class="info"></span>
-					</dd>
-					<dd>
-						<a href="#" class="link"><img
-							src="${pageContext.request.contextPath}/img/sy.jpg" /></a> <span
-							class="info"></span>
-					</dd>
-					<dd>
-						<a href="#" class="link"><img
-							src="${pageContext.request.contextPath}/img/xt.jpg" /></a> <span
-							class="info"></span>
-					</dd>
-					<dd>
-						<a href="#" class="link"><img
-							src="${pageContext.request.contextPath}/img/yiy.jpg" /></a> <span
-							class="info"></span>
-					</dd>
+				<li index="0" class="index2"> 
 				</li>
 			</ul>
 		</div>

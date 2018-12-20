@@ -27,6 +27,7 @@
  .promotion-postcards_row{
  	  width: 100%;
  	  height: 272px; 
+ 	  z-index: 1;
  }
  .promotion-postcard__large{ 
  	  padding-right: 4px;
@@ -38,6 +39,8 @@
       margin-right:6px;
       padding-right: 15px;
       cursor: pointer; 
+      display: block;
+      z-index:1;
  }
  .promotion-postcard__small{ 
  	  float: left;
@@ -87,8 +90,7 @@
     padding: 10px;   
     padding-left:60px;
     cursor: pointer;
-    color:#000;
-    
+    color:#000;  
  }
  .Middle_top_ss{
     margin-right:270px;
@@ -105,6 +107,7 @@
     display: table;
     background-color:#3A5FCD;
     cursor: pointer;
+    
  }
  .promotion-postcards-list{
    margin-top:40px;
@@ -122,11 +125,14 @@
    padding-left: 10px;
  }
  .promotion-postcard__large span{ 
+ 
    color:#fff;
    font-size:25px;
    float: right; 
    margin-top: -50px;
-   cursor: pointer;
+   cursor: pointer; 
+   overflow: hidden;
+   z-index:999;
  }
  
  .promotion-postcard__large_price{
@@ -169,6 +175,7 @@
    margin-top: -50px;
    margin-right:15px;
    cursor: pointer;
+   
  }
  
  .promotion-postcard__small_price{
