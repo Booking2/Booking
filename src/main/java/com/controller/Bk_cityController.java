@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.entity.Bk_city;
 import com.entity.Bk_hotel;
+import com.entity.Bk_user;
 import com.service.Bk_cityService;
 import com.service.Bk_hotelSerivce;
+import com.service.Bk_userService;
  
 /**
  *   市区控制层
@@ -32,6 +35,9 @@ public class Bk_cityController {
 	  //全局对象
 	  List<Bk_city> listcity = null;
 	  
+	 //用户业务逻辑层
+	 @Autowired
+	 private Bk_userService bk_userService;
 	 //市区业务逻辑层
 	 @Autowired
      private Bk_cityService bk_cityService;
@@ -48,9 +54,22 @@ public class Bk_cityController {
 	 //打开首页
      //首页 市 两条数据
 	 @RequestMapping("/getlistbk_city")
-	 public String getlistbk_city(Model model) {
+	 public String getlistbk_city(Model model,Integer uid,HttpSession session) {
 		 List<Bk_city> getlistcity = bk_cityService.getlistcity();
-		 model.addAttribute("getlistcity", getlistcity);
+		 model.addAttribute("getlistcity", getlistcity); 
+		 //根据用户id显示用户信息
+		 List<Bk_user> selectByPrimaryKey = bk_userService.selectByPrimaryKey(uid);
+		//根据id用户详细信息
+		 model.addAttribute("selectByPrimaryKey", selectByPrimaryKey);  
+		//清除session
+		 /*session.removeAttribute("sessionuid");*/
+		//用户图片
+		 for(int i=0; i<selectByPrimaryKey.size(); i++) {
+			 Bk_user bk_user = selectByPrimaryKey.get(i);
+			 System.out.println(bk_user.getUphoto());
+			 session.setAttribute("sessionphoto",bk_user.getUphoto());  
+		 }
+		
 		 return "BK_MiddleTop";
 	 }
 	 

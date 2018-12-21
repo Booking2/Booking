@@ -7,6 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>在Booking.com上注册您的公寓，酒店</title>
+<link rel="icon" href="${pageContext.request.contextPath}/img/捕获.PNG"
+	type="image/x-icon">
 <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>

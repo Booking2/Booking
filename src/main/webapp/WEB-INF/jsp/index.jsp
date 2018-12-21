@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Booking.com缤客：注册缤客账号享优惠</title>
+<link rel="icon" href="${pageContext.request.contextPath}/img/捕获.PNG"
+	type="image/x-icon">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 

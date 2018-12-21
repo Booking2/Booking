@@ -387,7 +387,7 @@ a:link {
     box-shadow: 0 0 3px #aaa;
 }
 .hotel_desc{
-	font-size: 15px;
+	font-size: 100%;
 }
 .sr_item_default:hover .loc_sr_review.better_contrast_review .good_review_text, .sr_item--highlighted .loc_sr_review.better_contrast_review .good_review_text {
     background-color: #cce1ff;

@@ -76,7 +76,14 @@
     	 
     	 $(".Head_total_rigth_lease").click(function(){
     		 window.location.href="/bk_rent/getlist"
-    	 })
+    	 }) 
+    	var uids = $("#hidden").val(); 
+    	 if(uids != ""){
+    		 $(".Head_total_rigth_register").hide();
+    		 $(".Head_total_rigth_login").hide();
+    	 }else{
+    		 $(".Head_total_rigth_img").hide();
+    	 }
      })
     </script> 
 <style type="text/css">
@@ -180,11 +187,20 @@
       padding:10px; 
       font-size: 11px;
    } 
-    #Head_total_img2_div img{
+  #Head_total_img2_div img{
       text-align: center;
       margin:10px;
       width: 130px;
       height: 130px;
+    }
+  .Head_total_rigth_img{
+     margin-right:5px;
+     margin-left:25px;
+     color: #fff;
+    }
+   .Head_total_rigth_img:hover{ 
+      color: #808080;
+      cursor: pointer;
     }
 </style>
 </head>
@@ -195,6 +211,8 @@
           <span class="Head_total_img2"><img src="${pageContext.request.contextPath}/img/微信.png"></span>
           <span class="Head_total_rigth">
             <span class="Head_total_rigth_lease">上线我的住宿</span>
+            <input type="hidden" id="hidden" value="${sessionuid}"/>
+            <span class="Head_total_rigth_img"><img width="30px;" height="30px;" src="${pageContext.request.contextPath}/img/${sessionphoto}"><a href="/bk_user/Mycentre">您的账户</a></span>
             <span class="Head_total_rigth_register" title='成为缤客用户，享受专属'>注册</span>
             <span class="Head_total_rigth_login" title='登录后搜索结果更贴心'>登录</span> 
           </span> 

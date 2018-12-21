@@ -67,8 +67,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/bootstrap.min.css"
 	type="text/css">
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </head>

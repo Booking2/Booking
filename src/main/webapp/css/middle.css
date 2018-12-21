@@ -150,8 +150,7 @@
    font-size: 10px;
    padding-top: 5px;
  }
- .promotion-postcard__large_price p{
-   float: right;
+ .promotion-postcard__large_price p{ 
    padding-right: 5px;
  }
  

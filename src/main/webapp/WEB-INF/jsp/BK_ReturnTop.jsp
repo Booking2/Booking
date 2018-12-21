@@ -23,7 +23,7 @@ $(function(){
           $("#scroll").mouseleave(function(){  //鼠标移出
         	  $("#scroll").text("⇧");
           });
-     }
+     } 
 })
 </script>
 <style type="text/css">

@@ -2,6 +2,7 @@ package com.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,32 +44,51 @@ public class Bk_UserController {
 			}
 			return "index";
 		}
-		@RequestMapping("regon")//注册
-		public String regon(Bk_user record,HttpServletResponse response,HttpServletRequest request, Model model) {
+		//注册
+		@RequestMapping("regon")
+		public String regon(Bk_user record,HttpServletResponse response,HttpServletRequest request, Model model,HttpSession session) {
 			System.out.println(record.getUname()+record.getUpassword()+record.getUphone());
-			int i = bk_userService.insertSelective(record);
-			if(i > 0) {
-				return "redirect:/bk_city/getlistbk_city";
+			record.setUphoto("or.png");  //设置默认图片
+			int i = bk_userService.insertSelective(record); 
+			if(i > 0) {   
+				model.addAttribute("records", record.getUid());
+				System.out.println(record.getUid());
+				/*
+				 * 数据保存session中，避免刷新页面数据被清除
+				 * 
+				 * */
+				session.setAttribute("sessionuid", record.getUid());
+				return "redirect:/bk_city/getlistbk_city?uid="+record.getUid();
 			}
 			return "index";
 		}
-		@RequestMapping("login")//登陆
+		//登陆
+		@RequestMapping("login")
 		public String login(String uphone,String upassword,
-				HttpServletResponse response,HttpServletRequest request,Model model
+				HttpServletResponse response,HttpServletRequest request,Model model,HttpSession session
 				) {
 			System.out.println(uphone+upassword);
 			Bk_user user = bk_userService.login(uphone, upassword);
 			if(user != null) {
-				return "redirect:/bk_city/getlistbk_city";
+				session.setAttribute("sessionuid", user.getUid());
+				return "redirect:/bk_city/getlistbk_city?uid="+user.getUid();
 			}
 			ifaces = "login";
 			return "redirect:reg";
 		}
 		
+		//判断手机号码是否已存在
 		@ResponseBody
-		@RequestMapping("uphone")//判断手机号码是否已存在
+		@RequestMapping("uphone")
 		public int upload (String uphone) {
 			int  user = bk_userService.regiphone(uphone);
 			return user;
+		}
+		
+		//个人中心  入口处
+		@RequestMapping("/Mycentre")
+		public String Mycentre() {
+			
+			return "Mycentre";
 		}
 }
