@@ -10,12 +10,18 @@ import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.entity.Bk_area;
 import com.entity.Bk_city;
+import com.entity.Bk_hotel;
+import com.entity.Hotel_type;
+import com.service.Bk_areaService;
 import com.service.Bk_cityService;
+import com.service.Hotel_typeService;
  
 
 @Controller
@@ -26,6 +32,12 @@ public class Bk_cityController {
 	
 	 @Autowired
      private Bk_cityService bk_cityService;
+	 
+	 @Autowired
+	 private Bk_areaService bk_areaService;
+	 
+	 @Autowired
+	 private Hotel_typeService hotel_typeService;
 	 
      //首页 市 两条数据
 	 @RequestMapping("/getlistbk_city")
@@ -58,6 +70,29 @@ public class Bk_cityController {
 		 return "BK_Rooms";
 	 } 
 	 
+	 //查询所有城市
+	 @RequestMapping("/getCityAll")
+	 @ResponseBody
+	 public List<Bk_city> getCityAll(HttpServletRequest request,HttpServletResponse response) {
+		 List<Bk_city> cityAll = bk_cityService.getCityAll();
+		 return cityAll;
+	 }
+	 
+	//查询城市下的区Bk_AreaAll表
+	@RequestMapping("/getAreaAll")
+	@ResponseBody
+	public List<Bk_area> getAreaAll(HttpServletRequest request,HttpServletResponse response,Integer Ciid) {
+		List<Bk_area> areaAll = bk_areaService.getAreaAll(Ciid);
+		return areaAll;
+	}
+	
+	//查询酒店类型Hotel_type表
+	@RequestMapping("/getHoteltypeAll")
+	@ResponseBody
+	public List<Hotel_type> getHoteltypeAll(HttpServletRequest request,HttpServletResponse response){
+		List<Hotel_type> hotelTypeAll = hotel_typeService.getHotelTypeAll();
+		return hotelTypeAll;
+	}
 	 
 	 
 }

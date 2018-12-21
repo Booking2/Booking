@@ -36,6 +36,13 @@ public class Bk_cityServiceImpl implements Bk_cityService {
 		return bk_cityMapper.getlistcity2();
 	}
 
+	//查询所有城市
+	@Override
+	public List<Bk_city> getCityAll() {
+		// TODO Auto-generated method stub
+		return bk_cityMapper.getCityAll();
+	}
+
 	 
 	 
 

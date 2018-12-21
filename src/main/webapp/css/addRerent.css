@@ -1,10 +1,6 @@
 body{
 	background-color: #f7f7f7;
 }
-.account{
-	height: 65px;
-	background-color: #001b42;
-}
 .join-logo{
 	width:144px;
 	height:44.66px;
@@ -67,14 +63,6 @@ body{
 .glyphicon{
 	height: 25px;
 }
-.nav-steps li{
-	display: table-cell;
-    white-space: normal;
-    text-align: center;
-    border-bottom: 4px solid #707070;
-    height: 50px;
-    width: 33.33%;
-}
 .main-nav{
     margin-bottom: 15px;
     white-space: nowrap;
@@ -83,14 +71,6 @@ body{
     width: 100%;
     border-collapse: separate;
     border-spacing: 3px 0;
-}
-.main-nav>li>a{
-	color: #383838;
-    padding: 16px;
-    border-bottom: 0;
-    font-size: 13px;
-    border-right: none;
-    height: 100%;
 }
 .alignment{
     padding-bottom: 10px;
@@ -146,8 +126,4 @@ fieldset {
 }
 .address-information{
 	margin-bottom: 10px;
-}
-.active{
-	color: #fff;
-    background-color: #007bff;
 }

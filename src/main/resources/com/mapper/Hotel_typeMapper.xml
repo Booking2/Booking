@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.Hotel_typeMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Hotel_type">
+    <id column="Hid" jdbcType="INTEGER" property="hid" />
+    <result column="Htypename" jdbcType="VARCHAR" property="htypename" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Hid, Htypename
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hotel_type
+    where Hid = #{hid,jdbcType=INTEGER}
+  </select>
+  <select id="getHotelTypeAll" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from hotel_type
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hotel_type
+    where Hid = #{hid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Hotel_type">
+    insert into hotel_type (Hid, Htypename)
+    values (#{hid,jdbcType=INTEGER}, #{htypename,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Hotel_type">
+    insert into hotel_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="hid != null">
+        Hid,
+      </if>
+      <if test="htypename != null">
+        Htypename,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="hid != null">
+        #{hid,jdbcType=INTEGER},
+      </if>
+      <if test="htypename != null">
+        #{htypename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Hotel_type">
+    update hotel_type
+    <set>
+      <if test="htypename != null">
+        Htypename = #{htypename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Hid = #{hid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Hotel_type">
+    update hotel_type
+    set Htypename = #{htypename,jdbcType=VARCHAR}
+    where Hid = #{hid,jdbcType=INTEGER}
+  </update>
+</mapper>
