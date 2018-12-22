@@ -1,3 +1,4 @@
+<!-- 出租我的住宿信息 页面  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -6,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../css/bootstrap.min (2).css" type="text/css">
+<title>我的住宿：基本信息</title>
+<link rel="icon" href="${pageContext.request.contextPath}/img/捕获.PNG"
+	type="image/x-icon">
 <link rel="stylesheet" href="../css/addRerent.css" type="text/css">
 
 <script src="../js/jquery-3.3.1.js"></script>

@@ -8,8 +8,19 @@ public class Bk_city {
     private String ciname;
 
     private String ciictures;
+    
+    private Integer arid;     //新增辅助字段，数据库该表没有该字段
+    
+    
+    public Integer getArid() {
+		return arid;
+	}
 
-    public Integer getCiid() {
+	public void setArid(Integer arid) {
+		this.arid = arid;
+	}
+
+	public Integer getCiid() {
         return ciid;
     }
 

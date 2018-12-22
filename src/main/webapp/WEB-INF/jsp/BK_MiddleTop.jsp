@@ -5,10 +5,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>中上部</title>
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <style type="text/css">
  *{
       margin: 0;
@@ -71,8 +67,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/bootstrap.min.css"
 	type="text/css">
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </head>
@@ -98,20 +93,20 @@
 			<div class="promotion-postcards_row" id="city1">
 				<c:forEach items="${getlistcity}" var="city" varStatus="status">
 					<!--attr-id="promotion-postcard__large_1"  -->
-					<div id="${status.index}" class="promotion-postcard__large"
+					<div  id="${status.index}" class="promotion-postcard__large"
 						style="background-image: url('${pageContext.request.contextPath}/img/${city.ciictures}')">
-						<div>
-							<h3 id="promotion-postcard__large_1_">${city.ciname}</h3>
-							<h5 id="promotion-postcard__large_1_1">1,000家住宿</h5>
-							<span rel="300" title="不感兴趣" class="promotion-postcard_bg">╳</span>
-						</div>
-						<div class="promotion-postcard__large_price">
-							<div id="promotion-postcard__large_1_1_">均价</div>
-							<br />
-							<p id="promotion-postcard__large_1_1_1">245元</p>
-						</div>
-					</div>
-				</c:forEach>
+					         <div> 
+					            <input class="cid" type="hidden" value="${city.ciid}"/>
+								<h3 id="promotion-postcard__large_1_">${city.ciname}</h3>
+								<h5 id="promotion-postcard__large_1_1">1,000家住宿</h5> 
+								<span rel="300" title="不感兴趣" class="promotion-postcard_bg" >╳</span>							
+							 </div>
+							<div class="promotion-postcard__large_price">
+								<div id="promotion-postcard__large_1_1_">均价</div>
+								<p id="promotion-postcard__large_1_1_1">245元</p>
+							</div>
+					  </div>  
+				</c:forEach> 
 			</div>
 			<!-- /=======================后面三个框=============/ -->
 			<div class="promotion-postcards_row" id="city"></div>
@@ -133,8 +128,9 @@
 		<div style="bottom: 0px; width: 100%; margin-top: 1850px;">
 			<%@ include file="BK_Tail.jsp"%>
 		</div>
+		
 		<div class="col-sm-2"></div>
-
+         
 	</div>
 </body>
 <script type="text/javascript"

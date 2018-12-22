@@ -35,6 +35,15 @@ public class Bk_cityServiceImpl implements Bk_cityService {
 		// TODO Auto-generated method stub
 		return bk_cityMapper.getlistcity2();
 	}
+    
+	//首页单击市区显示酒店功能
+	@Override
+	public List<Bk_city> getlistcitybycityid(Integer ciid) {
+		// TODO Auto-generated method stub
+		return bk_cityMapper.getlistcitybycityid(ciid);
+	}
+
+	 
 
 	//查询所有城市
 	@Override

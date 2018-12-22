@@ -63,6 +63,7 @@ $(function(){
 	var session_value3 = $("#hidden3").val();
 	if(session_value3 == 3){
 		document.getElementById("aid2").click();//标签点击事件
+		document.getElementById("jd").classList.add("acti");//改变导航栏样式	 
 		document.getElementById("fjzp").classList.add("acti");//改变导航栏样式
 		var session_value = $("#hidden3").val("");
 	}else if(session_value2 == 2){

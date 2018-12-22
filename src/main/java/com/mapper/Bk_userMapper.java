@@ -1,5 +1,7 @@
 package com.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -13,7 +15,7 @@ public interface Bk_userMapper {
 
     int insertSelective(Bk_user record);
 
-    Bk_user selectByPrimaryKey(Integer uid);
+    List<Bk_user> selectByPrimaryKey(Integer uid);
 
     int updateByPrimaryKeySelective(Bk_user record);
 

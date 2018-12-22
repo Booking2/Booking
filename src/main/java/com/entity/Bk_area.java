@@ -1,7 +1,5 @@
 package com.entity;
 
-import org.apache.ibatis.annotations.Mapper;
-
 public class Bk_area {
     private Integer arid;
 

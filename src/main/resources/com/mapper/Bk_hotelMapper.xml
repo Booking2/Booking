@@ -111,44 +111,14 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Bk_hotel">
-    update Bk_hotel
-    <set>
-      <if test="hid != null">
-        Hid = #{hid,jdbcType=INTEGER},
-      </if>
-      <if test="honame != null">
-        Honame = #{honame,jdbcType=VARCHAR},
-      </if>
-      <if test="hodescribe != null">
-        Hodescribe = #{hodescribe,jdbcType=VARCHAR},
-      </if>
-      <if test="hosentiment != null">
-        Hosentiment = #{hosentiment,jdbcType=INTEGER},
-      </if>
-      <if test="hoaddress != null">
-        Hoaddress = #{hoaddress,jdbcType=VARCHAR},
-      </if>
-      <if test="hostate != null">
-        Hostate = #{hostate,jdbcType=CHAR},
-      </if>
-      <if test="hostaydate != null">
-        Hostaydate = #{hostaydate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="hocheckdate != null">
-        Hocheckdate = #{hocheckdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="reid != null">
-        Reid = #{reid,jdbcType=INTEGER},
-      </if>
-      <if test="arid != null">
-        Arid = #{arid,jdbcType=INTEGER},
-      </if>
-    </set>
-    where Hoid = #{hoid,jdbcType=INTEGER}
-  </update>
+  <!--  -->
+  <select id="gethotelByArid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      SELECT ho.hoid,ho.Hid,ho.Hoaddress,ho.Honame,ho.Hodescribe,ho.Hosentiment,ho.Reid,ho.Arid
+	  FROM bk_hotel AS ho INNER JOIN bk_area AS a ON ho.Arid = a.Arid
+	  WHERE a.Arid = #{arid};
+  </select> 
   <update id="updateByPrimaryKey" parameterType="com.entity.Bk_hotel">
-    update Bk_hotel
+    update bk_hotel
     set Hid = #{hid,jdbcType=INTEGER},
       Honame = #{honame,jdbcType=VARCHAR},
       Hodescribe = #{hodescribe,jdbcType=VARCHAR},

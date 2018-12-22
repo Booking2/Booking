@@ -6,9 +6,10 @@
     <result column="Pid" jdbcType="INTEGER" property="pid" />
     <result column="Ciname" jdbcType="VARCHAR" property="ciname" />
     <result column="Ciictures" jdbcType="VARCHAR" property="ciictures" />
+    <result column="Arid" jdbcType="INTEGER" property="arid" />
   </resultMap>
   <sql id="Base_Column_List">
-    Ciid, Pid, Ciname, Ciictures
+    Ciid, Pid, Ciname, Ciictures,Arid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -16,6 +17,13 @@
     from bk_city
     where Ciid = #{ciid,jdbcType=INTEGER}
   </select>
+  
+  <!--//首页单击市区显示酒店功能  -->
+  <select id="getlistcitybycityid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT a.Arid as Arid ,c.Ciname FROM  bk_area AS a  RIGHT JOIN bk_city AS c ON c.Ciid =  a.Ciid 
+    WHERE c.Ciid = #{ciid}
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from bk_city
     where Ciid = #{ciid,jdbcType=INTEGER}

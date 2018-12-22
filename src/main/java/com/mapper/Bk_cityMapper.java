@@ -3,6 +3,7 @@ package com.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.entity.Bk_city;
@@ -37,4 +38,7 @@ public interface Bk_cityMapper {
     //不感兴趣
     @Select("select Ciid, Pid, Ciname, Ciictures from bk_city ORDER BY RAND() LIMIT 1")
     List<Bk_city> getlistcity2();
+    
+    //首页单击市区显示酒店功能
+    List<Bk_city> getlistcitybycityid(@Param("ciid") Integer ciid );
 }

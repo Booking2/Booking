@@ -20,19 +20,20 @@
     <include refid="Base_Column_List" />
     from Bk_area
     where Ciid = #{Ciid,jdbcType=INTEGER}
-  </select>
+  </select> 
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from Bk_area
+    delete from bk_area
     where Arid = #{arid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.entity.Bk_area">
-    insert into Bk_area (Arid, Ciid, Arname
+    insert into bk_area (Arid, Ciid, Arname
       )
     values (#{arid,jdbcType=INTEGER}, #{ciid,jdbcType=INTEGER}, #{arname,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.entity.Bk_area">
-    insert into Bk_area
+    insert into bk_area
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="arid != null">
         Arid,
@@ -57,7 +58,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.entity.Bk_area">
-    update Bk_area
+    update bk_area
     <set>
       <if test="ciid != null">
         Ciid = #{ciid,jdbcType=INTEGER},
@@ -69,7 +70,7 @@
     where Arid = #{arid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.entity.Bk_area">
-    update Bk_area
+    update bk_area
     set Ciid = #{ciid,jdbcType=INTEGER},
       Arname = #{arname,jdbcType=VARCHAR}
     where Arid = #{arid,jdbcType=INTEGER}

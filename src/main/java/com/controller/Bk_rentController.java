@@ -11,7 +11,10 @@ import com.entity.Bk_rent;
 import com.mysql.cj.Session;
 import com.mysql.cj.protocol.ServerSession;
 import com.service.Bk_rentService;
-
+/*
+ * 
+ * 出租控制层
+ * */
 @Controller
 @RequestMapping("/bk_rent")
 public class Bk_rentController {

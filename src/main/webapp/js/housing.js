@@ -14,52 +14,55 @@ $(function() {
 	$("#button_rigth").mouseleave(function() {
 		$("#button_rigth").css("background-color", "white");
 	});
+	
 });
 /* =============================ajax刷新房间类型===================== */
+/*查询前四条数据*/
 $(function() {
-	var $bui_carousel = $(".bui-carousel__inner");
-	$
-			.ajax({
+	var $index1 = $(".index1");
+	   $.ajax({
 				type : "POST",
-				url : "/bk_city/getlistbk_city1",
+				url : "/rooms_type/getlistroomstype",
 				data : {},
 				success : function(data) {
 					console.log(data);
 					var cityhtml = "";
-					for (i = 0; i < data.length; i++) {
-						cityhtml += "<li index='"+i+"'>";
+					for (i = 0; i < data.length; i++) { 
 						cityhtml += "<dd>"
-						cityhtml += "<img onerror='onerror=null' src=/img/"+ data[i].ciictures + " width='210' height='377' />";
-						cityhtml += "<a href='#' class='link'></a>";
-						cityhtml += "<h1 class='bui-card__title bh-carousel--new__title'>";
-						cityhtml += "<span>" + data[i].ciname + "</span>"; 
-						cityhtml += "</dd>"
-						cityhtml += "<dd>"
-						cityhtml += "<img onerror='onerror=null' src=/img/"+ data[i].ciictures + " width='210' height='377' />";
-						cityhtml += "<a href='#' class='link'></a>";
-						cityhtml += "<h1 class='bui-card__title bh-carousel--new__title'>";
-						cityhtml += "<span>" + data[i].ciname + "</span>";;
-						cityhtml += "</dd>"
-						cityhtml += "<dd>"
-					    cityhtml += "<img onerror='onerror=null' src=/img/"+ data[i].ciictures + " width='210' height='377' />";
-						cityhtml += "<a href='#' class='link'></a>";
-						cityhtml += "<h1 class='bui-card__title bh-carousel--new__title'>";
-						cityhtml += "<span>" + data[i].ciname + "</span>";
-						cityhtml += "</dd>"
-						cityhtml += "<dd>"
-					    cityhtml += "<img onerror='onerror=null' src=/img/"+ data[i].ciictures + " width='210' height='377' />";
-						cityhtml += "<a href='#' class='link'></a>";
-						cityhtml += "<h1 class='bui-card__title bh-carousel--new__title'>";
-						cityhtml += "<span>" + data[i].ciname + "</span>";
-						cityhtml += "</dd>"
-						cityhtml += "</li>";
+						cityhtml += "<a href='#' class='link'><img src=/img/"+ data[i].rpictures + " /></a>";
+						cityhtml += "<span class='info'>"+ data[i].rttypename +"</span>";  
+						cityhtml += "</dd>" 
 					}
-					$bui_carousel.html(cityhtml);
+					$index1.html(cityhtml);
 
 				},
 				dataType : "json",
-				error : function() {
-					alert("as");
+				error : function() { 
+				}
+			});
+})
+
+/*查询前四条数据*/
+$(function() {
+	var $index2 = $(".index2");
+	   $.ajax({
+				type : "POST",
+				url : "/rooms_type/getlistroomstype1",
+				data : {},
+				success : function(data) {
+					console.log(data);
+					var cityhtml = "";
+					for (i = 0; i < data.length; i++) { 
+						cityhtml += "<dd>"
+						cityhtml += "<a href='#' class='link'><img src=/img/"+ data[i].rpictures + " /></a>";
+						cityhtml += "<span class='info'>"+ data[i].rttypename +"</span>";  
+						cityhtml += "</dd>" 
+					}
+					$index2.html(cityhtml);
+
+				},
+				dataType : "json",
+				error : function() { 
 				}
 			});
 })

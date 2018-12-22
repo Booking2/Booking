@@ -1,5 +1,7 @@
 package com.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,12 @@ public class Bk_userServicrImpl implements Bk_userService {
 	@Override
 	public int regiphone(String uphone) {
 		return bk_userMapper.regiphone(uphone);
+	}
+
+	@Override
+	public List<Bk_user> selectByPrimaryKey(Integer uid) {
+		// TODO Auto-generated method stub
+		return bk_userMapper.selectByPrimaryKey(uid);
 	}
 
 }

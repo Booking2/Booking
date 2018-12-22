@@ -39,7 +39,7 @@
       #{uname,jdbcType=VARCHAR}, #{uregion,jdbcType=VARCHAR}, #{ubirthday,jdbcType=TIMESTAMP}, 
       #{uphoto,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.entity.Bk_user">
+  <insert id="insertSelective" parameterType="com.entity.Bk_user" useGeneratedKeys="true" keyProperty="uid">
     insert into bk_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="uid != null">

@@ -3,12 +3,11 @@ package com.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-
 import com.entity.Bk_hotel;
 
+import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface Bk_hotelMapper {
-	
     int deleteByPrimaryKey(Integer hoid);
 
     int insert(Bk_hotel record);
@@ -20,4 +19,8 @@ public interface Bk_hotelMapper {
     int updateByPrimaryKeySelective(Bk_hotel record);
 
     int updateByPrimaryKey(Bk_hotel record);
+    
+    ////首页单击市区显示酒店详情功能 
+    List<Bk_hotel> gethotelByArid(@Param("arid") Integer arid);
+    
 }

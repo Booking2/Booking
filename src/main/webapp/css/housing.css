@@ -58,14 +58,17 @@ h2{
 	width: 185px;
 	height:185px;
 }
-
+.info:hover{
+	color: blue;
+	cursor: pointer;
+}
  
-.u_lanren ul li dd span.info {
-	width: 51px;
+.u_lanren ul li dd span.info { 
 	height: 51px;
 	display: block;
 	position: absolute; 
 	bottom: 140px; 
+	font-weight: bold;
 }
 
 .prev, .next {
