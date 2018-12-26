@@ -236,3 +236,18 @@
    margin-bottom: -120px;
    margin-top: -20px; 
 }
+#bot_box{ 
+	 background-color: #fff; 
+	 width:528px; 
+     border: 1px solid #FF8C00;
+     border-top-color: rgb(76, 158, 217);
+     border-top-style: solid; 
+     border-top: none;
+	 display: none;  
+	 margin-left:270px; 
+	 display: none; 
+	 padding: 1px;  
+}
+#bot_box li{
+	padding: 1px; 
+}

@@ -20,7 +20,15 @@ public interface Bk_hotelMapper {
 
     int updateByPrimaryKey(Bk_hotel record);
     
-    ////首页单击市区显示酒店详情功能 
-    List<Bk_hotel> gethotelByArid(@Param("arid") Integer arid);
+    //分页 酒店总数量
+    int counthotleid(@Param("ciid") Integer ciid);
     
+    ////首页单击市区显示酒店详情功能 
+    List<Bk_hotel> gethotelByArid(@Param("arid") Integer arid,@Param("stratIndex") Integer stratIndex,@Param("pageSize") Integer pageSize);
+    
+    //酒店id查找酒店图片，评分
+    List<Bk_hotel> getpipictureAndsscoreById(@Param("hoid")  Integer hoid);
+    
+    //搜索联想功能
+    List<Bk_hotel> gethonameByhoname(@Param("honame") String honame);
 }

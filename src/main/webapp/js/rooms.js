@@ -87,8 +87,7 @@ $(function (){
 			 }
 			 $bui_carousel.html(cityhtml);
 			
-		 },dataType: "json",error:function(){
-			 alert("as");
+		 },dataType: "json",error:function(){ 
 		 }
 	 });
 })

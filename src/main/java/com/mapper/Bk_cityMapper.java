@@ -31,8 +31,8 @@ public interface Bk_cityMapper {
     List<Bk_city> getlistcity1();
     
     //不感兴趣
-    @Select("select Ciid, Pid, Ciname, Ciictures from bk_city ORDER BY RAND() LIMIT 1")
-    List<Bk_city> getlistcity2();
+    @Select("select Ciid, Pid, Ciname, Ciictures from bk_city WHERE ciid = #{ciid}")
+    List<Bk_city> getlistcity2(@Param("ciid") Integer ciid );
     
     //首页单击市区显示酒店功能
     List<Bk_city> getlistcitybycityid(@Param("ciid") Integer ciid );
