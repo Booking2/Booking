@@ -198,10 +198,14 @@
      margin-left:25px;
      color: #fff;
     }
-   .Head_total_rigth_img:hover{ 
-      color: #808080;
-      cursor: pointer;
+    .Head_total_rigth_img img{ 
+      margin-top: -5px;
     }
+   .Head_total_rigth_img:hover{ 
+      color: #FF8C00;
+      cursor: pointer;
+       text-decoration:none;
+    } 
 </style>
 </head>
 <body>
@@ -212,7 +216,7 @@
           <span class="Head_total_rigth">
             <span class="Head_total_rigth_lease">上线我的住宿</span>
             <input type="hidden" id="hidden" value="${sessionuid}"/>
-            <span class="Head_total_rigth_img"><img width="30px;" height="30px;" src="${pageContext.request.contextPath}/img/${sessionphoto}"><a href="/bk_user/Mycentre">您的账户</a></span>
+            <a href="/bk_user/Mycentre" style="color: #fff" onfocus="this.blur();"><span class="Head_total_rigth_img"><img width="35px;" height="35px;" src="${pageContext.request.contextPath}/img/${sessionphoto}">&nbsp;您的账户</span></a>
             <span class="Head_total_rigth_register" title='成为缤客用户，享受专属'>注册</span>
             <span class="Head_total_rigth_login" title='登录后搜索结果更贴心'>登录</span> 
           </span> 

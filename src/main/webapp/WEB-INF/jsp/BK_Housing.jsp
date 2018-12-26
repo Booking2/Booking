@@ -13,7 +13,7 @@
 	src="${pageContext.request.contextPath}/js/housing.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<h1 class="bh-carousel--header ">不仅有酒店...还有更多度假屋和公寓等你体验这份舒适</h1>
+<h1 class="bh-carousel--header ">更多独特住宿，让假期充满格调</h1>
 <div class="scroll2">
 	<div class="prev">
 		<button type="button" id="button_left"
@@ -28,8 +28,7 @@
 	<div class="v_show">
 		<div class="u_lanren">
 			<ul>
-				<li index="0" class="index1">
-				 
+				<li index="0" class="index1"> 
 				</li>
 				<li index="0" class="index2"> 
 				</li>

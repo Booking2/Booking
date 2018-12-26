@@ -2,6 +2,7 @@ package com.service.impl;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,9 +32,9 @@ public class Bk_cityServiceImpl implements Bk_cityService {
      
 	//随机产生一条
 	@Override
-	public List<Bk_city> getlistcity2() {
+	public List<Bk_city> getlistcity2(Integer ciid ) {
 		// TODO Auto-generated method stub
-		return bk_cityMapper.getlistcity2();
+		return bk_cityMapper.getlistcity2(ciid);
 	}
     
 	//首页单击市区显示酒店功能
@@ -41,11 +42,6 @@ public class Bk_cityServiceImpl implements Bk_cityService {
 	public List<Bk_city> getlistcitybycityid(Integer ciid) {
 		// TODO Auto-generated method stub
 		return bk_cityMapper.getlistcitybycityid(ciid);
-	}
-
-	 
-
-	 
-	 
+	} 
 
 }

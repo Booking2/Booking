@@ -7,5 +7,12 @@ import org.apache.ibatis.annotations.Param;
 import com.entity.Bk_hotel;
 
 public interface Bk_hotelSerivce {
-	 List<Bk_hotel> gethotelByArid(@Param("arid") Integer arid);
+	 List<Bk_hotel> gethotelByArid(@Param("arid") Integer arid,Integer stratIndex,Integer pageSize);
+	 
+	 int counthotleid(Integer ciid);
+	 
+	//酒店id查找酒店图片，评分
+	 List<Bk_hotel> getpipictureAndsscoreById(Integer hoid);
+	 
+	 List<Bk_hotel> gethonameByhoname(String honame);
 }

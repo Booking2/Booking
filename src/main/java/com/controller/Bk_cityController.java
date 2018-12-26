@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,7 @@ import com.entity.Bk_user;
 import com.service.Bk_cityService;
 import com.service.Bk_hotelSerivce;
 import com.service.Bk_userService;
+import com.tools.PageTool;
  
 /**
  *   市区控制层
@@ -32,9 +34,11 @@ public class Bk_cityController {
 	
 	  protected static Logger LOG = Logger.getLogger(Bk_cityController.class);
 	  
-	  //全局对象
+	  //全局对象 - 变量
 	  List<Bk_city> listcity = null;
-	  
+	  Integer ciid ;
+	  Integer currentPageNos;
+	  PageTool pagetool =  new PageTool(); 
 	 //用户业务逻辑层
 	 @Autowired
 	 private Bk_userService bk_userService;
@@ -85,8 +89,8 @@ public class Bk_cityController {
 	 //不感兴趣
 	 @RequestMapping( value ="/getlistbk_city2",method=RequestMethod.POST)
 	 @ResponseBody
-	 public List<Bk_city> getlistbk_city2(HttpServletRequest request,HttpServletResponse response)throws IOException {
-		 List<Bk_city> getlistcity2 = bk_cityService.getlistcity2();  
+	 public List<Bk_city> getlistbk_city2(HttpServletRequest request,HttpServletResponse response,Integer ciid)throws IOException {
+		 List<Bk_city> getlistcity2 = bk_cityService.getlistcity2(ciid);  
 	     return  getlistcity2;
 	 }
 	 
@@ -96,29 +100,64 @@ public class Bk_cityController {
 		 return "BK_Rooms";
 	 } 
 	 
-	 //首页单击市区显示酒店功能
+	 //首页单击市区显示酒店功能 市区
 	 @RequestMapping("/citybycityid")
-	 public String citybycityid(Model model,Integer ciid){
+	 public String citybycityid(HttpServletRequest request,Model model,Integer ciid,Integer currentPageNo){
 		 listcity = bk_cityService.getlistcitybycityid(ciid); 
-		 model.addAttribute("listcity", listcity);
-		 return "BK_SumHolet";
+		 
+		 HttpSession session = request.getSession();       //先创建session
+		 request.getSession().removeAttribute("pageTool"); //清空session
+		 if(this.ciid == ciid) { //市id（全局）  “/gethotelByArid” 接受获取                     
+			 this.ciid = ciid;
+		}else {
+			 session.removeAttribute("pageTool"); //清空session
+			 this.ciid = ciid;
+		 } 
+		 if(null == currentPageNo) { //如果currentPageNo(当前页面-用户输入)为空
+			 currentPageNo = 1; //设置默认值 1
+			  this.currentPageNos = currentPageNo;  //再将currentPageNo赋值给全局currentPageNos
+		  } else {
+			  this.currentPageNos = currentPageNo;//如果currentPageNo不为空，将 传过来的值赋值给全局currentPageNos
+		  }
+		  Integer counthotleid2 = bk_hotelSerivce.counthotleid(this.ciid);  //分页酒店总数
+		 
+		  if(counthotleid2 != null && counthotleid2 != 0) {
+			  pagetool.setTotalCount(counthotleid2);    //pagetool分页辅助类
+		  }else { 
+			  pagetool.setTotalCount(counthotleid2); 
+		  }
+		  //System.out.println("asas"+ currentPageNos  );
+		  pagetool.setCurrentPageNo(currentPageNos); //pagetool分页辅助类 
+		  session.setAttribute("pageTool", pagetool);  //给session赋值，page.jsp
+		  model.addAttribute("listcity", listcity);   //创建model
+		  return "BK_SumHolet";
 	 }
 	 
-	 ////首页单击市区显示酒店详情功能 
+	 ////首页单击市区显示酒店详情功能  酒店
 	 @RequestMapping("/gethotelByArid")
 	 @ResponseBody
-	 public List<Bk_hotel> gethotelByArid(Model model2,HttpServletRequest request,HttpServletResponse response){
-		 List<Bk_hotel> gethotelByArid =null;
-		 if(listcity!=null) {
-			 for(int i=0; i<listcity.size(); i++ ) {
-				  Bk_city bk_city = listcity.get(i);
-				  System.out.println(bk_city.getArid());
-				  gethotelByArid = bk_hotelSerivce.gethotelByArid(bk_city.getArid()); 
-				  return gethotelByArid;
-			 } 
-		 }else {
-			 System.out.println("没有数据");
-		 }
-		return gethotelByArid;
+	 public List<Bk_hotel> gethotelByArid(HttpServletRequest request,HttpServletResponse response){
+		 List<Bk_hotel> gethotelByArid = new ArrayList<Bk_hotel>(); 
+		 if(listcity!=null) {     
+				  //System.out.println(ciid + "\t" + currentPageNos + "\t" +pagetool.getPageSize());
+				  gethotelByArid = bk_hotelSerivce.gethotelByArid(ciid,pagetool.getCurrentPageNo(),pagetool.getPageSize()); 
+		}  
+		return gethotelByArid;  
+	 }
+	 
+	 ///酒店id查找酒店图片，评分
+	 @RequestMapping("/getpipictureAndsscoreById")
+	 @ResponseBody
+	 public List<Bk_hotel> getpipictureAndsscoreById(Integer hoid,HttpServletRequest request,HttpServletResponse response){
+		   List<Bk_hotel>  pipictureAndsscore  = bk_hotelSerivce.getpipictureAndsscoreById(hoid);
+		 return pipictureAndsscore;
+	 }
+	 
+	 //搜索联想功能
+	 @RequestMapping("/gethoname")
+	 @ResponseBody
+	 public List<Bk_hotel> gethoname(String honame,HttpServletRequest request,HttpServletResponse response){
+		 List<Bk_hotel> gethonameByhoname = bk_hotelSerivce.gethonameByhoname(honame);
+		 return gethonameByhoname;
 	 }
 }

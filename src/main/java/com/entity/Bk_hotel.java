@@ -24,6 +24,40 @@ public class Bk_hotel {
     private Integer reid;
 
     private Integer arid;
+    
+    private String pipicture;  //辅助字段，酒店图片
+    
+    private Integer hoids;    //辅助字段，图片表中的酒店id
+    
+    private Double sscore;     //辅助字段， 评分;
+    
+    
+     
+    public Double getSscore() {
+		return sscore;
+	}
+
+	public void setSscore(Double sscore) {
+		this.sscore = sscore;
+	}
+
+	public String getPipicture() {
+		return pipicture;
+	}
+
+	public void setPipicture(String pipicture) {
+		this.pipicture = pipicture;
+	}
+
+	public Integer getHoids() {
+		return hoids;
+	}
+
+	public void setHoids(Integer hoids) {
+		this.hoids = hoids;
+	}
+
+	
 
     public Integer getHoid() {
         return hoid;

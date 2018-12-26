@@ -27,9 +27,12 @@
 		<%@ include file="BK_Head.jsp"%>
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
+		    <input type="hidden" class="param" value="${param.currentPageNo}"/>
+		    <div style="margin-top: 5px"><a href="/bk_city/getlistbk_city">首页</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;湖南省&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;${listcity[0].ciname}</div>
 			<div class="holet_cityname">
+			    <span ><img style="width: 140px " height="70px" src="../img/${listcity[0].ciictures}"></span>
 				<h1>${listcity[0].ciname}</h1>
-				<h5>网友推荐旅行主题：购物、美食、观光</h5>
+				<h5>网友推荐旅行主题：购物、美食、观光</h5> 
 			</div> 
 			<hr />
 			<div id="right" class="rlt-right maps-overlay-sr-container"
@@ -37,7 +40,7 @@
 				<div class=" sr_header--wrapper sr_header--wrapper-no-dates ">
 					<div class="sr_header--title">
 						<div class="sr_header  sr_header--reduced">
-							<h2 class="sorth1">${listcity[0].ciname}：共713家住宿</h2>
+							<h2 class="sorth1">${listcity[0].ciname}：共${pageTool.totalCount}家住宿</h2>
 						</div>
 					</div>
 				</div>
@@ -80,8 +83,14 @@
 				</div>
 				 <div class="holetdetails">  
 			    </div>   
+			   <%@ include file="page.jsp"%>
 		 </div>
 		 <%@ include file="BK_Holet.jsp"%>
+		 <div style="margin-top: 10px;margin-bottom: 10px" ></div>
+		 <%@ include file="BK_Narrow.jsp"%>
+		</div>
+		<div style="bottom: 0px; width: 100%; margin-top: 1510px;">
+			<%@ include file="BK_Tail.jsp"%>
 		</div>
 		<div class="col-md-2"></div>
 	</div>

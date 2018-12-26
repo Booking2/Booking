@@ -86,7 +86,10 @@ h2 {
 }
 .holet_cityname{
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 10px; 
+}
+.holet_cityname img{
+	float: right; 
 }
 .holet_cityname h1{ 
 	font-weight: bold;
@@ -249,8 +252,7 @@ h2 {
 .bk-icon-wrapper {
     position: relative;
     display: inline-block;
-    margin-top:10px;
-    margin-bottom: 15px;
+    margin-top:10px; 
 }
 svg:not(:root) {
     overflow: hidden;
@@ -431,3 +433,8 @@ a:link {
 	margin-left: 10px;
 	margin-top: 5px;
 } 
+.china_stars_categories {
+    display: inline-block;
+    vertical-align: text-bottom;
+    height: 26px;
+}

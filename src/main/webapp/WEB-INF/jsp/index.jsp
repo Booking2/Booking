@@ -17,6 +17,7 @@
 	}
 	.cont_centrar{
 		background-color:#000080;
+		margin-bottom: 10px;
 	}
 </style>
 </head>
@@ -68,6 +69,7 @@
       </div>
     </div>
   </div>
+  <%@ include file="BK_Tail.jsp"%>
 </div>
 <script src="${pageContext.request.contextPath}/js/index.js"></script>
 <script type="text/javascript">

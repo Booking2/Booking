@@ -78,14 +78,17 @@
 		<div class="Middle_top">
 			<div class="Middle_top_fond1">缤纷四季优惠搜不停</div>
 			<div class="Middle_top_fond2">从舒适的乡村民宿到时髦的都市公寓</div>
-			<input type="text"
+			<input type="text"  
 				style="background:url('${pageContext.request.contextPath}/img/双人床.png')no-repeat scroll 16px center transparent;background-size:35px; background-color:#fff"
-				name="ss" id="Middle_top_destination" placeholder="目的地？" value="">
-			<input
+				name="ss" id="Middle_top_destination" autocomplete="off" placeholder="目的地？" value="">
+			 <input
 				style="background:url('${pageContext.request.contextPath}/img/日历 (2).png')no-repeat scroll 16px  center transparent;background-size:35px; background-color:#fff"
 				disabled="disabled" name="time" id="Middle_top_time"
 				placeholder="入住   -  退房" value="">
-			<div class="Middle_top_ss">搜索</div>
+			 <div class="Middle_top_ss">搜索</div>
+			 <div id="bot_box">
+					<ul id="oul" style="overflow:auto; height: 143px;"></ul>
+			 </div> 
 		</div>
 		<div class="col-md-2"></div>
 		<div class="promotion-postcards-list col-md-8">
