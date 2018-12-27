@@ -13,23 +13,64 @@
     <result column="Hocheckdate" jdbcType="TIMESTAMP" property="hocheckdate" />
     <result column="Reid" jdbcType="INTEGER" property="reid" />
     <result column="Arid" jdbcType="INTEGER" property="arid" />
+    <result column="Pipicture" jdbcType="VARCHAR" property="pipicture" />
+    <result column="Hoids" jdbcType="INTEGER" property="hoids" />
+    <result column="Sscore" jdbcType="FLOAT" property="sscore" />
   </resultMap>
   <sql id="Base_Column_List">
     Hoid, Hid, Honame, Hodescribe, Hosentiment, Hoaddress, Hostate, Hostaydate, Hocheckdate, 
     Reid, Arid
   </sql>
+  <!-- 分页总数  -->
+  <select id="counthotleid" parameterType="java.lang.Integer" resultType="int">
+      SELECT   COUNT(ho.Hoid)
+	  FROM bk_hotel AS ho INNER JOIN bk_area AS a ON ho.Arid = a.Arid  
+	  INNER JOIN bk_city AS c
+	  ON c.Ciid = a.Ciid
+	  WHERE c.Ciid = #{ciid};
+  </select>
+  
+  <!-- 分页查询酒店信息  -->
+  <select id="gethotelByArid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+     <!-- SELECT COUNT(DISTINCT p.Hoid),p.Pipicture AS Pipicture,  ho.*
+	  FROM bk_hotel AS ho INNER JOIN bk_area AS a ON ho.Arid = a.Arid 
+	  LEFT JOIN bk_pictures AS p
+	  ON p.Hoid =ho.Hoid 
+	  WHERE a.Arid =#{arid} GROUP BY  ho.Hoid LIMIT #{stratIndex},#{pageSize}; -->
+	  
+	    SELECT  ho.* FROM bk_hotel AS ho 
+		LEFT JOIN bk_area AS a 
+		ON ho.Arid = a.Arid 
+		LEFT JOIN bk_city AS c           <!-- arid = ciid -->
+		ON a.Ciid = c.Ciid WHERE c.Ciid = #{arid} LIMIT #{stratIndex},#{pageSize};
+  </select>
+  
+   <!--  查询酒店图片及评分  -->
+  <select id="getpipictureAndsscoreById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      SELECT COUNT(DISTINCT p.Hoid),p.Pipicture AS Pipicture ,AVG(s.Sscore) AS Sscore
+      FROM bk_hotel AS ho LEFT JOIN bk_pictures AS p
+      ON p.Hoid =ho.Hoid  
+      LEFT JOIN bk_score AS s
+      ON s.Hoid = ho.Hoid
+      WHERE ho.Hoid  = #{hoid};
+  </select>
+  
+   <!-- 分页查询酒店信息  -->
+   <select id="gethonameByhoname"  parameterType="java.lang.String"  resultMap="BaseResultMap">
+      SELECT Honame  FROM bk_hotel WHERE Honame LIKE concat("%",#{honame},"%");
+   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from Bk_hotel
+    from bk_hotel
     where Hoid = #{hoid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from Bk_hotel
+    delete from bk_hotel
     where Hoid = #{hoid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.entity.Bk_hotel">
-    insert into Bk_hotel (Hoid, Hid, Honame, 
+    insert into bk_hotel (Hoid, Hid, Honame, 
       Hodescribe, Hosentiment, Hoaddress, 
       Hostate, Hostaydate, Hocheckdate, 
       Reid, Arid)
@@ -39,7 +80,7 @@
       #{reid,jdbcType=INTEGER}, #{arid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.entity.Bk_hotel">
-    insert into Bk_hotel
+    insert into bk_hotel
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="hoid != null">
         Hoid,
@@ -111,12 +152,42 @@
       </if>
     </trim>
   </insert>
-  <!--  -->
-  <select id="gethotelByArid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-      SELECT ho.hoid,ho.Hid,ho.Hoaddress,ho.Honame,ho.Hodescribe,ho.Hosentiment,ho.Reid,ho.Arid
-	  FROM bk_hotel AS ho INNER JOIN bk_area AS a ON ho.Arid = a.Arid
-	  WHERE a.Arid = #{arid};
-  </select> 
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Bk_hotel">
+    update bk_hotel
+    <set>
+      <if test="hid != null">
+        Hid = #{hid,jdbcType=INTEGER},
+      </if>
+      <if test="honame != null">
+        Honame = #{honame,jdbcType=VARCHAR},
+      </if>
+      <if test="hodescribe != null">
+        Hodescribe = #{hodescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="hosentiment != null">
+        Hosentiment = #{hosentiment,jdbcType=INTEGER},
+      </if>
+      <if test="hoaddress != null">
+        Hoaddress = #{hoaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="hostate != null">
+        Hostate = #{hostate,jdbcType=CHAR},
+      </if>
+      <if test="hostaydate != null">
+        Hostaydate = #{hostaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hocheckdate != null">
+        Hocheckdate = #{hocheckdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reid != null">
+        Reid = #{reid,jdbcType=INTEGER},
+      </if>
+      <if test="arid != null">
+        Arid = #{arid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where Hoid = #{hoid,jdbcType=INTEGER}
+  </update>
   <update id="updateByPrimaryKey" parameterType="com.entity.Bk_hotel">
     update bk_hotel
     set Hid = #{hid,jdbcType=INTEGER},

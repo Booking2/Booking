@@ -32,7 +32,7 @@ public class Bk_rentController {
 		session.removeAttribute("session");
 		session.removeAttribute("session2");
 		session.invalidate(); 
-		return "BK_backgroundindex";
+		return "BK_backgroundindex";/*BK_backgroundindex*/
 	}
 	
 	//跨页面传值中转站

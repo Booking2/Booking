@@ -24,6 +24,13 @@ public class Bk_hotel {
     private Integer reid;
 
     private Integer arid;
+    
+	private String pipicture;
+    
+    private Integer hoids;
+    
+    private Double sscore;
+    
 
     public Integer getHoid() {
         return hoid;
@@ -112,4 +119,28 @@ public class Bk_hotel {
     public void setArid(Integer arid) {
         this.arid = arid;
     }
+    
+    public String getPipicture() {
+		return pipicture;
+	}
+
+	public void setPipicture(String pipicture) {
+		this.pipicture = pipicture;
+	}
+
+	public Integer getHoids() {
+		return hoids;
+	}
+
+	public void setHoids(Integer hoids) {
+		this.hoids = hoids;
+	}
+
+	public Double getSscore() {
+		return sscore;
+	}
+
+	public void setSscore(Double sscore) {
+		this.sscore = sscore;
+	}
 }

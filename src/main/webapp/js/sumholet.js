@@ -6,7 +6,6 @@ $(function(){
 		data:{},
 		 success: function (data){
 			 console.log(data);
-			 alert(data);
 			 var cityhtml = "";
 			 for(i=0;i<data.length;i++){ 
 				 cityhtml += "<div class='sr_item sr_item_new sr_item_default sr_property_block sr_item_bs sr_flex_layout sr_item_no_dates'>";         
