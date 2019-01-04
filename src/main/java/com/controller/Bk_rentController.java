@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.entity.Bk_rent;
 import com.mysql.cj.Session;
@@ -58,6 +59,26 @@ public class Bk_rentController {
 		
 		
 		return "BK_addRerent";
+	}
+	
+	//登录
+	@RequestMapping("/login")
+	public String selectLogin(Bk_rent record) {
+		int i = bk_rentService.selectLogin(record);
+		System.out.println(i);
+		if(i > 0) {
+			return "BK_Personal";
+		}else {
+			return "BK_backgroundindex";
+		}
+	}
+	
+	//判断手机号是否已被注册
+	@ResponseBody
+	@RequestMapping("/Phone")
+	public int selectPhone(String Phone) {
+		int i = bk_rentService.selectPhone(Phone);
+		return i;
 	}
 	
 }

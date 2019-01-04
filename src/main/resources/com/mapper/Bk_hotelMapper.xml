@@ -79,7 +79,8 @@
       #{hostate,jdbcType=CHAR}, #{hostaydate,jdbcType=TIMESTAMP}, #{hocheckdate,jdbcType=TIMESTAMP}, 
       #{reid,jdbcType=INTEGER}, #{arid,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.entity.Bk_hotel">
+   <!-- 插入酒店返回酒店主键 -->
+  <insert id="insertSelective" parameterType="com.entity.Bk_hotel" useGeneratedKeys="true"  keyProperty="hoid" >
     insert into bk_hotel
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="hoid != null">

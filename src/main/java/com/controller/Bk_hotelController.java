@@ -12,13 +12,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.entity.Bk_hotel;
 import com.entity.Bk_pictures;
 import com.service.Bk_hotelService;
+import com.service.Bk_picturesService;
 
 @Controller
 @RequestMapping("/bk_hotel")
@@ -27,11 +30,16 @@ public class Bk_hotelController {
 	@Autowired
 	private Bk_hotelService bk_hotelService;
 	
+	@Autowired
+	private Bk_picturesService bk_picturesService;
+	
+	public Integer hoid;
 	//添加酒店信息Bk_Hotel表
 	@RequestMapping("/addHotel")
-	public String getHotel(Bk_hotel hotel,HttpSession session) {
+	public String getHotel(Bk_hotel hotel,HttpSession session,Model model) {
 		if(hotel.getHoname() != null) {
 			bk_hotelService.insertSelective(hotel);
+			hoid = hotel.getHoid();
 			session.setAttribute("session2", "3");
 		}
 		
@@ -39,8 +47,9 @@ public class Bk_hotelController {
 	}
 	
 	//添加酒店照片
-	@RequestMapping("/imgs")
-	public String imgsd(Bk_pictures bk_pictures,@RequestParam(value ="imgs", required = false) 	MultipartFile[] imgs,Model model,
+	@RequestMapping("imgs")
+	@ResponseBody
+	public String imgsd(Bk_pictures bk_pictures,@RequestParam(value ="imgs", required = false) MultipartFile[] imgs,Model model,
 			  HttpServletResponse response,HttpServletRequest request,HttpSession session,Integer currentPageNo,RedirectAttributes urbutes) {
 		  String viewName="forward:/bk_hotel/BK_addRerent"; //转发 
 		  String fileName = null;
@@ -57,11 +66,14 @@ public class Bk_hotelController {
 					}else if(prefix.equalsIgnoreCase("jpg") || prefix.equalsIgnoreCase("png") || prefix.equalsIgnoreCase("PNG")
 							|| prefix.equalsIgnoreCase("gif")||prefix.equalsIgnoreCase("jpeg")){//上传图片格式不正确
 						fileName="head_"+System.currentTimeMillis()+RandomUtils.nextInt(1000000)+"."+prefix;
+						bk_pictures.setPipicture(fileName);
+						bk_pictures.setHoid(hoid);
 						File targetFile = new File(path, fileName);
 						
 						//保存  
 						try {
 							imgs[i].transferTo(targetFile);  
+							bk_picturesService.insertSelective(bk_pictures);
 						} catch (Exception e) {  
 							e.printStackTrace();  
 							request.setAttribute("uploadPicError", " * 上传失败！");
@@ -70,11 +82,9 @@ public class Bk_hotelController {
 					}else{
 						request.setAttribute("uploadPicError", " * 上传图片格式不正确");
 						return viewName;
-					}
-					model.addAttribute("imgs", fileName);
+					}					model.addAttribute("imgs", fileName);
 			  }
 		  }
-		  session.setAttribute("session3", "4");
 		  return "BK_addRerent";
 		}
 }

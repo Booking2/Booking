@@ -5,10 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>个人信息保存</title>
+<style type="text/css">
+.geform{
+	margin-top:3px;
+	margin-bottom:3px;
+	background-color: #f08080;
+	color: #fff;
+	border-radius: 4px;
+	padding: 4px;
+}
+</style>
 </head>
 <body>
   <form id="add_property_details" action="/bk_rent/addrent"
-	method="POST" autocomplete=off class="js-main-form">
+	method="POST" autocomplete=off class="js-main-form" onsubmit="check()">
 	<fieldset>
 		<div class="row">
 			<div class="col-md-12">
@@ -23,9 +33,9 @@
 				<div class="input-length-counter">
 					<input type="text" id="property_name" name="Rerentname" value=""
 						class="form-control form-control property">
-						<span
-						class="input-length-counter__label"
-						id="property_name_length_counter"></span>
+				</div>
+				<div class="geform" id="geform1">
+					<p></p>
 				</div>
 				<span class="join_property_name_text"> 客人搜索住宿时将看到该名称。 </span>
 			</div>
@@ -42,21 +52,25 @@
 		<div class="row">
 			<div class="col-md-6 form-group">
 	
-				<label for="location_contact_name">联络人</label> <input
-					type="text" id="location_contact_name" name="recontact"
-					value="" class="form-control" placeholder="邮政信件的收件人"
-					data-hj-masked=""> <span class="help-block"></span>
-	
+				<label for="location_contact_name">联络人</label>
+				<input type="text" id="location_contact_name" name="recontact"
+					value="" class="form-control" placeholder="邮政信件的收件人">
+				<div class="geform" id="geform2">
+					<p></p>
+				</div>
 			</div>
+			
 		</div>
 		<div class="row">
 			<div class="col-md-6 form-group">
-				<label for="location_contact_name">邮箱号</label> <input
-					type="text" id="location_contact_name" name="Reemail" value=""
-					class="form-control" placeholder="邮政信件" data-hj-masked="">
-				<span class="help-block"></span>
-	
+				<label for="location_contact_name">邮箱号</label> 
+				<input type="text" id="location_contact_email" name="Reemail" value=""
+					class="form-control" placeholder="邮政信件">
+			<div class="geform" id="geform3">
+				<p></p>
 			</div>
+			</div>
+			
 		</div>
 	</fieldset>
 	
@@ -72,24 +86,25 @@
 					<div class="col-lg-12 form-group">
 						<label for="address">城市</label> 
 						<input type="text" id="address" name="readdress" value="" class="form-control"
-							placeholder="详细地址" data-hj-masked=""> 
-							<span class="help-block"></span>
+							placeholder="城市"> 
+					<div class="geform" id="geform4">
+						<p></p>
+					</div>
 					</div>
 				</div>
 			
 				<div class="row address-row">
 					<div class="col-lg-12 form-group">
 						<label for="address">地址栏</label> 
-						<input type="text" id="address" name="readdress" value="" class="form-control"
-							placeholder="详细地址" data-hj-masked=""> 
-							<span class="help-block"></span>
+						<input type="text" id="address" name="readdress" value="" class="form-control" placeholder="详细地址"> 
 					</div>
 				</div>
 				<div class="form-group col-lg-6 adjust-address-input-structure">
-					<label for="zipcode">邮政编码</label> <input type="text"
-						id="zipcode" name="Recode" value="" class="form-control"
-						data-hj-masked=""> 
-						<span class="help-block"></span>
+					<label for="zipcode">邮政编码</label>
+					<input type="text" id="zipcode" name="Recode" value="" class="form-control"> 
+				</div>
+				<div class="geform" id="geform5">
+					<p></p>
 				</div>
 			</div>
 	
@@ -118,7 +133,7 @@
 	<div class="nav" role="tablist">
 		<!-- 判断是否提交过 -->
 	   <input type="hidden" id="hidden2" value="${session}"/>
-	    		<a id= "aid" data-toggle="pill" href="#menujd"></a>
+	       <a id= "aid" data-toggle="pill" href="#menujd"></a>
 		   <input id="emnu1" type="submit" name="proceed" value="继续"
 				class="btn btn-block btn-primary btn-lg save_and_proceed" >
 				

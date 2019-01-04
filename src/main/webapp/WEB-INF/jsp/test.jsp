@@ -10,8 +10,6 @@
 <link href="../../css/index.css" type="text/css" rel="stylesheet">
 
 </head>
-
-<form id="uploadForm" action="/bk_hotel/imgs" method="post" enctype="multipart/form-data">
 	<div class="img-box full">
 		<section class=" img-section">
 			<p class="up-p">作品图片：<span class="up-span">最多可以上传20张图片，马上上传</span></p>
@@ -39,12 +37,13 @@
 		</div>
 	</aside>
 	<div class="nav" role="tablist">
+		<input type="hidden" name="hoid" value="${hoid }"/>
 		<input type="hidden" id="hidden4" value="${session3}"/>
-	 	<a id="aid3" data-toggle="pill" href="#menu3"></a>
-		<input id="emnu3" type="submit" name="proceed" value="继续"
-			class="btn btn-block btn-primary btn-lg save_and_proceed">
+	 	<a id="aid3" data-toggle="pill" href="#menu3" class="btn btn-block btn-primary btn-lg save_and_proceed">
+			<input id="emnu3" type="submit" name="proceed" value="继续"
+				class="btn btn-block btn-primary btn-lg save_and_proceed">
+		</a>
 	</div>
-</form>
 <script src="../../js/jquery-1.8.3.min.js"></script>
 <script src="../../js/imgUp.js"></script>
 

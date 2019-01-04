@@ -5,10 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>填写酒店地址</title>
+<style type="text/css">
+.jdform{
+	margin-top:3px;
+	margin-bottom:3px;
+	background-color: #f08080;
+	color: #fff;
+	border-radius: 4px;
+	padding: 4px;
+}
+</style>
 </head>
 <body>
 <form role="form" id="add_property_details" action="/bk_hotel/addHotel"
-	method="POST" autocomplete=off class="js-main-form">
+	method="POST" class="js-main-form">
 	<fieldset>
 		<div class="row">
 			<div class="col-md-12">
@@ -47,11 +57,17 @@
 						</select>
 						<select id="areas" onchange="func()">
 							<option>==请选择==</option>
-						</select><br><br>
-						<label for="address">地址栏</label> <input type="text"
-							id="address" name="hoaddress" value="" class="form-control"
-							placeholder="详细地址" data-hj-masked=""> <span
-							class="help-block"></span>
+						</select>
+						<div class="jdform" id="jdform1">
+							<p></p>
+						</div>
+						<br><br>
+						<label for="address">地址栏</label>
+						<input type="text" id="Hoaddress" name="hoaddress" value="" class="form-control"
+							placeholder="详细地址" data-hj-masked=""> 
+						<div class="jdform" id="jdform2">
+							<p></p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -86,7 +102,11 @@
 				<label for="location_contact_name">类型选择</label>
 				<select id="hoteltype" onchange="hotelType()">
 					<option>--请选择--</option>
-				</select><br><br>
+				</select>
+				<div class="jdform" id="jdform3">
+					<p></p>
+				</div>
+				<br><br>
 				<label for="location_contact_name">详细描述</label>
 				<textarea id="location_contact_name" name="hodescribe" class="form-control"></textarea>
 			</div>
@@ -96,7 +116,7 @@
 	<div class="nav" role="tablist">
 		<input type="hidden" id="hidden3" value="${session2}"/>
 		<a id="aid2" data-toggle="pill" href="#menuzp"></a>
-		<input id="menu2" type="submit" name="proceed" value="继续"
+		<input id="emnu2" type="submit" name="proceed" value="继续"
 			class="btn btn-block btn-primary btn-lg save_and_proceed">
 		
 	</div>
