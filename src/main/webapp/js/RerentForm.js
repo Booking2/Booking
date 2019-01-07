@@ -26,6 +26,8 @@ $(function(){
 	$(".geform").hide();
 	$("#emnu1").val("请完成注册")
 	$("#emnu1").attr("disabled", "disabled");
+	$("#emnu2").val("请完成注册")
+	$("#emnu2").attr("disabled", "disabled");
 	//住宿名称验证
 	$("#property_name").blur(function(){
 		var Rerentname = document.getElementById("property_name").value;
