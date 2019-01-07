@@ -21,9 +21,9 @@ $(function(){
 								 cityhtml += "<div class='sr_item sr_item_new sr_item_default sr_property_block sr_item_bs sr_flex_layout sr_item_no_dates'>";         
 								 cityhtml += "<!-- 酒店图片 -->";
 								 cityhtml += "<div class='sr_item_photo' id='hotel_55070'>";
-							     cityhtml += "<a class='sr_item_photo_link sr_hotel_preview_track'";
+							     cityhtml += "<a class='sr_item_photo_link sr_hotel_preview_track' target='_blank' rel='noopener'";
 							     if(datas[i] != undefined){
-							    	 cityhtml += "href='#'> <img class='hotel_image' src='../img/"+datas[i].pipicture+"'";
+							    	 cityhtml += "href='/bk_pictures/getpicturesByHoid?hoid="+data[i].hoid+"'> <img class='hotel_image' src='../img/"+datas[i].pipicture+"'";
 							     }else{
 							    	 cityhtml += "href='#'> <img class='hotel_image' src='../img/酒店.png'";
 							     } 
@@ -37,7 +37,8 @@ $(function(){
 								 cityhtml += "<div class='sr_item_main_block'>";
 								 cityhtml += "<div class='china_stars_categories'>";
 								 cityhtml += "<h3 class='sr-hotel__title'>";
-								 cityhtml += "<a class='hotel_name_link url' href='#' target='_blank' rel='noopener'> <span class='sr-hotel__name'>"+data[i].honame+"</span> ";
+								 cityhtml += "<input id='hidden' type='hidden' value="+data[i].hoid+">";
+								 cityhtml += "<a class='hotel_name_link url' href='/bk_pictures/getpicturesByHoid?hoid="+data[i].hoid+"' target='_blank' rel='noopener'> <span class='sr-hotel__name'>"+data[i].honame+"</span> ";
 								 cityhtml += "</a>";
 								 cityhtml += "</h3>";
 								 cityhtml += "</div>"
@@ -107,7 +108,7 @@ $(function(){
 								 cityhtml += "<!--  点击显示该酒店下的房间  -->";
 								 cityhtml += "<div class='sr-cta-button-row sr-cta-button-bottom-spacing sr-cta-button-top-spacing'>";
 								 cityhtml += "<div data-et-click='customGoal:UBKeJOLQLDHKdfXJeZCMVSHT:1'>";
-								 cityhtml += "<a class='b-button b-button_primary sr_cta_button no_dates_click jq_tooltip'>";
+								 cityhtml += "<a class='b-button b-button_primary sr_cta_button no_dates_click jq_tooltip' href='/bk_pictures/getpicturesByHoid?hoid="+data[i].hoid+"' target='_blank' rel='noopener'>";
 								 cityhtml += "<span class='b-button__text'> 显示价格 </span>";
 								 cityhtml += "</a>";
 								 cityhtml += "</div>";
@@ -130,3 +131,5 @@ $(function(){
 		 }
 	}) 
 })
+
+ 

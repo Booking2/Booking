@@ -91,4 +91,11 @@ public class Bk_UserController {
 			
 			return "Mycentre";
 		}
+		
+		//退出账号、个人中心 
+		@RequestMapping("/close")
+		public String close() {
+			
+			return "BK_Close";
+		}
 }

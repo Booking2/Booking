@@ -12,9 +12,16 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from bk_area
+    from Bk_area
     where Arid = #{arid,jdbcType=INTEGER}
   </select>
+  <select id="getAreaAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+     select 
+    <include refid="Base_Column_List" />
+    from Bk_area
+    where Ciid = #{Ciid,jdbcType=INTEGER}
+  </select> 
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from bk_area
     where Arid = #{arid,jdbcType=INTEGER}

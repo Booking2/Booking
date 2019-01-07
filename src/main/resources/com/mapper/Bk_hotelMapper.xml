@@ -16,6 +16,9 @@
     <result column="Pipicture" jdbcType="VARCHAR" property="pipicture" />
     <result column="Hoids" jdbcType="INTEGER" property="hoids" />
     <result column="Sscore" jdbcType="FLOAT" property="sscore" />
+    <result column="Cname" jdbcType="VARCHAR" property="cname" />
+    <result column="Ciid" jdbcType="INTEGER" property="ciid" />
+    <result column="Aname" jdbcType="VARCHAR" property="aname" /> 
   </resultMap>
   <sql id="Base_Column_List">
     Hoid, Hid, Honame, Hodescribe, Hosentiment, Hoaddress, Hostate, Hostaydate, Hocheckdate, 
@@ -59,6 +62,16 @@
    <select id="gethonameByhoname"  parameterType="java.lang.String"  resultMap="BaseResultMap">
       SELECT Honame  FROM bk_hotel WHERE Honame LIKE concat("%",#{honame},"%");
    </select>
+   
+   <select id="gethotelAllByhoid" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+       SELECT ho.*,a.Arname as Aname,c.Ciid as Ciid,c.Ciname as Cname  FROM 
+		  bk_hotel AS ho INNER JOIN bk_area AS a 
+		  ON ho.Arid = a.Arid
+		  INNER JOIN bk_city AS c
+		  ON a.Ciid = c.Ciid
+		  WHERE ho.Hoid = #{hoid};
+   </select>
+   
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

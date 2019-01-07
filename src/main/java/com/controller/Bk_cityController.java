@@ -16,13 +16,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.entity.Bk_area;
 import com.entity.Bk_city;
 import com.entity.Bk_hotel;
+import com.entity.Hotel_type;
+import com.service.Bk_areaService;
 import com.entity.Bk_user;
 import com.service.Bk_cityService;
+import com.service.Hotel_typeService;
 import com.service.Bk_hotelSerivce;
+
 import com.service.Bk_userService;
 import com.tools.PageTool;
+
+import com.service.Bk_userService;
  
 /**
  *   市区控制层
@@ -46,6 +53,13 @@ public class Bk_cityController {
 	 @Autowired
      private Bk_cityService bk_cityService;
 	 
+
+	 @Autowired
+	 private Bk_areaService bk_areaService;
+	 
+	 @Autowired
+	 private Hotel_typeService hotel_typeService;
+	 
 	//酒店业务逻辑层
 	 @Autowired
 	 private Bk_hotelSerivce bk_hotelSerivce;
@@ -66,7 +80,7 @@ public class Bk_cityController {
 		//根据id用户详细信息
 		 model.addAttribute("selectByPrimaryKey", selectByPrimaryKey);  
 		//清除session
-		 /*session.removeAttribute("sessionuid");*/
+		/*session.removeAttribute("sessionuid");*/
 		//用户图片
 		 for(int i=0; i<selectByPrimaryKey.size(); i++) {
 			 Bk_user bk_user = selectByPrimaryKey.get(i);
@@ -100,12 +114,39 @@ public class Bk_cityController {
 		 return "BK_Rooms";
 	 } 
 	 
+	 //查询所有城市
+	 @RequestMapping("/getCityAll")
+	 @ResponseBody
+	 public List<Bk_city> getCityAll(HttpServletRequest request,HttpServletResponse response) {
+		 List<Bk_city> cityAll = bk_cityService.getCityAll();
+		 return cityAll;
+	 }
+	 
+
 	 //首页单击市区显示酒店功能 市区
+
+	//查询城市下的区Bk_AreaAll表
+	@RequestMapping("/getAreaAll")
+	@ResponseBody
+	public List<Bk_area> getAreaAll(HttpServletRequest request,HttpServletResponse response,Integer Ciid) {
+		List<Bk_area> areaAll = bk_areaService.getAreaAll(Ciid);
+		return areaAll;
+	}
+	
+	//查询酒店类型Hotel_type表
+	@RequestMapping("/getHoteltypeAll")
+	@ResponseBody
+	public List<Hotel_type> getHoteltypeAll(HttpServletRequest request,HttpServletResponse response){
+		List<Hotel_type> hotelTypeAll = hotel_typeService.getHotelTypeAll();
+		return hotelTypeAll;
+	}
+
+	 //首页单击市区显示酒店功能
+
 	 @RequestMapping("/citybycityid")
 	 public String citybycityid(HttpServletRequest request,Model model,Integer ciid,Integer currentPageNo){
 		 listcity = bk_cityService.getlistcitybycityid(ciid); 
-		 
-		 HttpSession session = request.getSession();       //先创建session
+         HttpSession session = request.getSession();       //先创建session
 		 request.getSession().removeAttribute("pageTool"); //清空session
 		 if(this.ciid == ciid) { //市id（全局）  “/gethotelByArid” 接受获取                     
 			 this.ciid = ciid;
@@ -132,10 +173,12 @@ public class Bk_cityController {
 		  model.addAttribute("listcity", listcity);   //创建model
 		  return "BK_SumHolet";
 	 }
+		 
 	 
 	 ////首页单击市区显示酒店详情功能  酒店
 	 @RequestMapping("/gethotelByArid")
 	 @ResponseBody
+
 	 public List<Bk_hotel> gethotelByArid(HttpServletRequest request,HttpServletResponse response){
 		 List<Bk_hotel> gethotelByArid = new ArrayList<Bk_hotel>(); 
 		 if(listcity!=null) {     
@@ -160,4 +203,5 @@ public class Bk_cityController {
 		 List<Bk_hotel> gethonameByhoname = bk_hotelSerivce.gethonameByhoname(honame);
 		 return gethonameByhoname;
 	 }
+	 
 }

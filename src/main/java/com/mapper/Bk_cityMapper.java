@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.entity.Bk_city;
+import com.entity.Bk_hotel;
 
 @Mapper
 public interface Bk_cityMapper {
@@ -21,6 +22,10 @@ public interface Bk_cityMapper {
     int updateByPrimaryKeySelective(Bk_city record);
 
     int updateByPrimaryKey(Bk_city record);
+    
+    //获得所有城市
+    @Select("select Ciid,Ciname from bk_city")
+    List<Bk_city> getCityAll();
     
     //随机产生两条数据  市表
     @Select("select Ciid, Pid, Ciname, Ciictures from bk_city ORDER BY RAND() LIMIT 2")

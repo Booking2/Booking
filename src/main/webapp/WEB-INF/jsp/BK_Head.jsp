@@ -42,6 +42,7 @@
      $(function(){
     	 $(".Head_total_img2").mouseleave(function(){  //鼠标移出
     		 $("#Head_total_img2_div").css("visibility","hidden"); 
+    		 document.onmousemove = null;
           });
     	 //注册特效
     	 $(".Head_total_rigth_register").mouseenter(function(){
@@ -127,6 +128,7 @@
       cursor: pointer;    /* 手指状态   */
       margin-left:475px; 
       padding-top: 15px; 
+     
    }  
    .Head_total_rigth{
       float: right; 
@@ -174,7 +176,7 @@
       left: 0;
       top: 0;
     } 
-   #Head_total_img2_div{ 
+  #Head_total_img2_div{ 
       position: absolute; 
       visibility: hidden;
       border: 1px solid; 
@@ -186,12 +188,14 @@
       text-align: center; 
       padding:10px; 
       font-size: 11px;
+      z-index: 999;
    } 
   #Head_total_img2_div img{
       text-align: center;
       margin:10px;
       width: 130px;
       height: 130px;
+     
     }
   .Head_total_rigth_img{
      margin-right:5px;

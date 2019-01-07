@@ -1,0 +1,166 @@
+consistent-vertical-rhythm #available_rooms {
+    margin-bottom: .5em;
+}
+form {
+    margin: 0;
+    padding: 0;
+}
+table.hprt-table {
+    border-bottom: 1px solid #5bbaff;
+    width: 100%;
+    border-collapse: collapse;
+}
+table {
+    border-spacing: 0;
+    border: 0;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: 0px;
+}
+.hprt-table-header-cell {
+    font-weight: bold;
+    color: #fff;
+    background-color: #4c76b2;
+    border-left: 1px solid #5bbaff;
+}
+.invisible_spoken {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    white-space: normal;
+    overflow: hidden;
+}
+.invisible_spoken {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    white-space: normal;
+    overflow: hidden;
+    color: #07c;
+    right: 0;
+}
+.roomArea th {
+    white-space: nowrap;
+}
+.hprt-table-header-cell {
+    padding: 6px 8px;
+}
+.hprt-table-header-cell {
+    font-weight: bold;
+    color: #fff;
+    background-color: #4c76b2;
+    border-left: 1px solid #5bbaff;
+}
+td, th {
+    padding: 0;
+    border: 0;
+    border-left-color: currentcolor;
+    border-left-style: none;
+    border-left-width: 0px;
+    text-align: left;
+    vertical-align: top;
+    font-weight: normal;
+} 
+.hprt-table-header-price {
+    background-color: #003580;
+    text-align: center;
+    position: relative;
+    white-space: normal !important;
+}
+.lang_is_cjk .hprt-table-header-policies {
+    min-width: 120px;
+}
+.lang_is_cjk .hprt-table-header-rooms-number {
+    min-width: 60px;
+    max-width: 80px;
+}
+.hprt-table-header-cell.-last {
+    border-right-width: 0;
+    min-width: 165px;
+}
+.gently_select_rooms_container {
+    position: relative;
+    float: left;
+    width: 100%;
+    opacity: 0;
+    display: none;
+}
+td.hprt-table-cell.-last.droom_seperator, td.hprt-table-cell.-first.hprt-table-cell-roomtype.droom_seperator, .droom_seperator, .hprt-table-category .hprt-table-cell.droom_seperator {
+    border-bottom: 3px solid #5bbaff !important;
+}
+.hprt-table-cell.-first {
+    border-left: 0;
+}
+.hprt-block {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.hprt-roomtype-block {
+    margin-bottom: 8px;
+    margin-left: 5px;
+} 
+.hprt-facilities-block {
+    color: #0ab21b;
+    font-size: .85em;
+}
+.hprt-table ul.hprt-facilities-others {
+    padding: 0;
+    margin: 0;
+}
+.hprt-facilities-others li {
+    display: inline-block;
+    line-height: 20px;
+}
+.hprt-facilities-others .hprt-facilities-facility {
+    display: inline-block;
+    line-height: 1em;
+}
+.hprt-table-cell.-last > .hprt-block {
+    display: block;
+    position: static;
+    min-width: 165px;
+    width: 100%;
+}
+.hprt-table-cell.-last .hp_rt_input {
+    width: 100%;
+    min-width: 110px;
+}
+.hprt-price-price-standard {
+    font-weight: bold;
+    color: #0ab21b;
+}
+.hprt-table-cell {
+    border: 1px solid #5bbaff;
+    border-right-color: rgb(91, 186, 255);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(91, 186, 255);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-right: 0;
+    padding: 6px;
+}
+.hprt-price-block {
+    font-size: 12px;
+    text-align: center;
+}
+.hprt-no-cc-needed {
+    border: 1px solid #0ab21b;
+    padding: 3px 5px;
+    color: #0ab21b;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    text-shadow: 1px 1px 1px #fff;
+}

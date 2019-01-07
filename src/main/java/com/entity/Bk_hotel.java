@@ -25,41 +25,46 @@ public class Bk_hotel {
 
     private Integer arid;
     
+
     private String pipicture;  //辅助字段，酒店图片
     
     private Integer hoids;    //辅助字段，图片表中的酒店id
     
     private Double sscore;     //辅助字段， 评分;
     
+    private Integer ciid;     //辅助字段，市id
+    
+    private String cname;     //辅助字段，市名称
+    
+    private String aname;     //辅助字段，区名称
+    
     
      
-    public Double getSscore() {
-		return sscore;
+    public Integer getCiid() {
+		return ciid;
 	}
 
-	public void setSscore(Double sscore) {
-		this.sscore = sscore;
+	public void setCiid(Integer ciid) {
+		this.ciid = ciid;
 	}
 
-	public String getPipicture() {
-		return pipicture;
+	public String getCname() {
+		return cname;
 	}
 
-	public void setPipicture(String pipicture) {
-		this.pipicture = pipicture;
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
 
-	public Integer getHoids() {
-		return hoids;
+	public String getAname() {
+		return aname;
 	}
 
-	public void setHoids(Integer hoids) {
-		this.hoids = hoids;
+	public void setAname(String aname) {
+		this.aname = aname;
 	}
 
-	
-
-    public Integer getHoid() {
+	public Integer getHoid() {
         return hoid;
     }
 
@@ -146,4 +151,28 @@ public class Bk_hotel {
     public void setArid(Integer arid) {
         this.arid = arid;
     }
+    
+    public String getPipicture() {
+		return pipicture;
+	}
+
+	public void setPipicture(String pipicture) {
+		this.pipicture = pipicture;
+	}
+
+	public Integer getHoids() {
+		return hoids;
+	}
+
+	public void setHoids(Integer hoids) {
+		this.hoids = hoids;
+	}
+
+	public Double getSscore() {
+		return sscore;
+	}
+
+	public void setSscore(Double sscore) {
+		this.sscore = sscore;
+	}
 }

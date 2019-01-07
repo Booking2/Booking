@@ -37,7 +37,9 @@
 			</ul>
 			<div style="clear: both;"></div>
 		</div>
-
+        <div class="close">
+           <a href="/bk_user/close">退出</a> 
+        </div>
 		<div class="col-md-2"></div>
 	</div>
 	<div style="margin-top: 500px;"><%@ include file="BK_Tail.jsp"%></div>

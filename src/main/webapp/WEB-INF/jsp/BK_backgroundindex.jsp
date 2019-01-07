@@ -236,8 +236,10 @@ table{
 								<div class="panel-default">
 									<p>手机号</p>
 									<input type="text" name="rephone" class="form-control">
+									<div class=""></div>
 									<p>密码</p>
 									<input type="text" name="repassword" class="form-control">
+									<div class=""></div>
 									<button type="submit" name="save" class="join-but">开始注册</button>
 								</div>
 							</form>

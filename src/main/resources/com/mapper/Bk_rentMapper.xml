@@ -32,7 +32,7 @@
       #{reemail,jdbcType=VARCHAR}, #{rerentname,jdbcType=VARCHAR}, #{rephone,jdbcType=INTEGER}, 
       #{readdress,jdbcType=VARCHAR}, #{recode,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.entity.Bk_rent">
+  <insert id="insertSelective" parameterType="com.entity.Bk_rent" useGeneratedKeys="true"  keyProperty="reid" >
     insert into Bk_rent
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="reid != null">

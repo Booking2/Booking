@@ -15,4 +15,7 @@ public interface Bk_hotelSerivce {
 	 List<Bk_hotel> getpipictureAndsscoreById(Integer hoid);
 	 
 	 List<Bk_hotel> gethonameByhoname(String honame);
+	 
+	//根据酒店id搜索联机
+	 List<Bk_hotel> gethotelAllByhoid(Integer hoid);
 }

@@ -3,9 +3,9 @@ package com.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
 import com.entity.Bk_hotel;
+
+import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface Bk_hotelMapper {
     int deleteByPrimaryKey(Integer hoid);
@@ -20,6 +20,7 @@ public interface Bk_hotelMapper {
 
     int updateByPrimaryKey(Bk_hotel record);
     
+
     //分页 酒店总数量
     int counthotleid(@Param("ciid") Integer ciid);
     
@@ -31,4 +32,10 @@ public interface Bk_hotelMapper {
     
     //搜索联想功能
     List<Bk_hotel> gethonameByhoname(@Param("honame") String honame);
+
+    ////首页单击市区显示酒店详情功能 
+    List<Bk_hotel> gethotelByArid(@Param("arid") Integer arid);
+    
+    //根据酒店id搜索联机
+    List<Bk_hotel> gethotelAllByhoid(@Param("hoid") Integer hoid);
 }

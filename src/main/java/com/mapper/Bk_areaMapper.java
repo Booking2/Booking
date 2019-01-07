@@ -1,8 +1,11 @@
 package com.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.entity.Bk_area;
+
 @Mapper
 public interface Bk_areaMapper {
     int deleteByPrimaryKey(Integer arid);
@@ -16,4 +19,6 @@ public interface Bk_areaMapper {
     int updateByPrimaryKeySelective(Bk_area record);
 
     int updateByPrimaryKey(Bk_area record);
+    
+    List<Bk_area> getAreaAll(Integer Ciid);
 }

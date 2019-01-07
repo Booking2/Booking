@@ -39,6 +39,12 @@ public class Bk_hotelSerivceImpl implements Bk_hotelSerivce {
 		// TODO Auto-generated method stub
 		return bk_hotelMapper.gethonameByhoname(honame);
 	}
+
+	@Override
+	public List<Bk_hotel> gethotelAllByhoid(Integer hoid) {
+		// TODO Auto-generated method stub
+		return bk_hotelMapper.gethotelAllByhoid(hoid);
+	}
  
 
 }
