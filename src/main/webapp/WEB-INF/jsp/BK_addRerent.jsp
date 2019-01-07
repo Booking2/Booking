@@ -13,7 +13,21 @@
 
 <script src="../js/jquery-3.3.1.js"></script>
 <script src="../js/addRerent.js"></script>
+<script src="../js/RerentForm.js"></script>
+<script src="../js/Hotel.js"></script>
 <script src="../js/bootstrap.min (2).js"></script>
+<style type="text/css">
+#menu3 img{
+	width: 300px;
+	height: 500px;
+	left: 600px;
+	margin-left: 500px;
+	margin-bottom: 10px;
+}
+#menu3 a{
+	margin-left: 100px;
+}
+</style>
 </head>
 <body>
 	<div class="account row">
@@ -46,7 +60,6 @@
 				<div id="emnugrxi" class="container tab-pane active">
 					<div>
 						<div class="alignment">
-							<h1>资林键</h1>
 							<span>请输入贵住宿名称、联系方式和地址。</span>
 						</div>
 					</div>
@@ -65,8 +78,8 @@
 				
 				<!-- 付款 -->
 				<div id="menu3" class="container tab-pane fade">
-					<input type="submit" name="proceed" value="完成"
-						class="btn btn-block btn-primary btn-lg save_and_proceed">
+					<img alt="" src="../../img/1544524076473.jpg">
+					<a href="/bk_city/getlistbk_city" class="btn btn-block btn-primary btn-lg save_and_proceed">完成</a>
 				</div>
 			</div>
 		</div>

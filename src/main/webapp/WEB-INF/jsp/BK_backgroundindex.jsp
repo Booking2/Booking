@@ -10,9 +10,12 @@
 <link rel="icon" href="${pageContext.request.contextPath}/img/捕获.PNG"
 	type="image/x-icon">
 <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+
 <script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="../js/background.js"></script>
 <style type="text/css">
 .join-section--header-blue {
 	background: #001b42;
@@ -56,6 +59,11 @@
 	margin-top: 35px;
 	float: left;
 	width: 416px;
+}
+.join-hero-container__form2{
+	position: absolute;
+	margin-left: 687px;
+	margin-top: 35px;
 }
 
 .new-from {
@@ -210,6 +218,15 @@ tr:last-child {
 table{
 	border-collapse: collapse;
 }
+.bdyz{
+	margin-top:3px;
+	margin-bottom:3px;
+	background-color: #f08080;
+	color: #fff;
+	border-radius: 4px;
+	padding: 4px;
+}
+
 </style>
 </head>
 <body>
@@ -229,23 +246,52 @@ table{
 						</div>
 						<h3>注册只需15分钟-快来注册吧</h3>
 					</div>
-					<div class="join-hero-container__form">
+					<div id="show" class="join-hero-container__form">
 						<div class="new-from">
 							<form class="from-add" action="tz" method="post">
 								<h4>注册新账号</h4>
 								<div class="panel-default">
 									<p>手机号</p>
-									<input type="text" name="rephone" class="form-control">
+									<input type="text" id="rephone" name="rephone" class="form-control">
+									<div class="bdyz" id="bdyz">
+										<p></p>
+									</div>
 									<div class=""></div>
 									<p>密码</p>
-									<input type="text" name="repassword" class="form-control">
-									<div class=""></div>
-									<button type="submit" name="save" class="join-but">开始注册</button>
+									<input type="text" id="repassword" name="repassword" class="form-control">
+									<div class="bdyz" id="bdyz2">
+										<p></p>
+									</div>
+									<button type="submit" name="save" id="reg" class="join-but">开始注册</button>
 								</div>
 							</form>
 						</div>
 						<div class="form-tabs-inline">
-							<a href="#">已有账号？立即登录</a>
+							<a id="login" href="javascript:void(0);">已有账号？立即登录</a>
+						</div>
+					</div>
+					<div id="hide" class="join-hero-container__form2">
+						<div class="new-from">
+							<form class="from-add" action="login" method="post">
+								<h4>登录账号</h4>
+								<div class="panel-default">
+									<p>手机号</p>
+									<input type="text" id="rephone" name="rephone" class="form-control">
+									<div class="bdyz" id="bdyz">
+										<p></p>
+									</div>
+									<div class=""></div>
+									<p>密码</p>
+									<input type="text" id="repassword" name="repassword" class="form-control">
+									<div class="bdyz" id="bdyz2">
+										<p></p>
+									</div>
+									<button type="submit" name="save" class="join-but">登录</button>
+								</div>
+							</form>
+						</div>
+						<div class="form-tabs-inline">
+							<a id="registered" href="javascript:void(0);">没有账号？立即注册</a>
 						</div>
 					</div>
 				</div>
@@ -331,6 +377,18 @@ table{
 		</div>
 	</div>
 </body>
+<script >
+	$(function(){
+		document.getElementById("hide").style.display="none";
+		$("#login").click(function(){
+			document.getElementById("hide").style.display="";
+			
+		})
+		$("#registered").click(function(){
+			document.getElementById("hide").style.display="none";
+		})
+	})
+</script>
 <script>
     // 创建 Vue 实例，得到 ViewModel
     var vm = new Vue({

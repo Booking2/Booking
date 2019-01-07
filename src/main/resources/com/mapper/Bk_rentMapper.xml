@@ -20,6 +20,16 @@
     from Bk_rent
     where Reid = #{reid,jdbcType=INTEGER}
   </select>
+  <select id="selectLogin" parameterType="com.entity.Bk_rent" resultType="INTEGER">
+  	select count(*)
+  	from Bk_rent
+  	where Rephone = #{rephone,jdbcType=INTEGER} AND Repassword = #{repassword,jdbcType=VARCHAR}
+  </select>
+  <select id="selectPhone" parameterType="java.lang.String" resultType="INTEGER">
+  	select count(*)
+  	from Bk_rent
+  	where Rephone = #{rephone,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from Bk_rent
     where Reid = #{reid,jdbcType=INTEGER}

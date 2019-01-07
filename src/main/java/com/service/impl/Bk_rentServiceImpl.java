@@ -19,4 +19,16 @@ public class Bk_rentServiceImpl implements Bk_rentService {
 		return bk_rentMapper.insertSelective(record);
 	}
 
+	@Override
+	public int selectLogin(Bk_rent record) {
+		// TODO Auto-generated method stub
+		return bk_rentMapper.selectLogin(record);
+	}
+
+	@Override
+	public int selectPhone(String phone) {
+		// TODO Auto-generated method stub
+		return bk_rentMapper.selectPhone(phone);
+	}
+
 }

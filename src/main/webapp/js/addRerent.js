@@ -61,15 +61,7 @@ $(function(){
 $(function(){
 	var session_value2 = $("#hidden2").val();
 	var session_value3 = $("#hidden3").val();
-	var session_value4 = $("#hidden4").val();
-	if(session_value4 == 4){
-		document.getElementById("aid3").click();//标签点击事件
-		document.getElementById("jd").classList.add("acti");//改变导航栏样式	 
-		document.getElementById("fjzp").classList.add("acti");//改变导航栏样式
-		document.getElementById("sk").classList.add("acti");//改变导航栏样式
-		var session_value4 = $("#hidden4").val("");
-	}
-	else if(session_value3 == 3){
+	if(session_value3 == 3){
 		document.getElementById("aid2").click();//标签点击事件
 		document.getElementById("jd").classList.add("acti");//改变导航栏样式	 
 		document.getElementById("fjzp").classList.add("acti");//改变导航栏样式
@@ -106,34 +98,6 @@ $(function(){
 	})
 })
 
-
-/*function update(obj) {
-	alert("进入");
-    var $file = $(obj)[0]; 
-    var i=0
-    while($file.files[i] != undefined){
-    	var objUrl = $file.files[i];
-        //获得一个http格式的url路径:mozilla(firefox)||webkit or chrome  
-        var windowURL = window.URL || window.webkitURL;
-        //createObjectURL创建一个指向该参数对象(图片)的URL  
-        var dataURL = windowURL.createObjectURL(objUrl);
-        var img =$(".imgs").append("<img src='"+dataURL+"'>");
-        $(img).attr("src", dataURL);
-        i++;
-    }
-}*/
-/*$(document).ready(function() {
-    if(location.hash) {
-        $('a[href=' + location.hash + ']').tab('show');
-    }
-    $(document.body).on("click", "a[data-toggle]", function(event) {
-        location.hash = this.getAttribute("href");
-    });
-});
-$(window).on('popstate', function() {
-    var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
-    $('a[href=' + anchor + ']').tab('show');
-});*/
 
 
  

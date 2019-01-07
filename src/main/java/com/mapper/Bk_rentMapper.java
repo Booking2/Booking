@@ -13,6 +13,10 @@ public interface Bk_rentMapper {
     int insertSelective(Bk_rent record);
 
     Bk_rent selectByPrimaryKey(Integer reid);
+    
+    int selectLogin(Bk_rent record);
+    
+    int selectPhone(String phone);
 
     int updateByPrimaryKeySelective(Bk_rent record);
 
