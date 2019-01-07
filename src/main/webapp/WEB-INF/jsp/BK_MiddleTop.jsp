@@ -60,7 +60,96 @@
 	  margin-left:480px;
 	  z-index:999;
  }
+ .J_Counts{
+      height: 58px;
+      width: 20%;
+      float: right;
+      position: absolute;
+      right: 420px;
+      top:270px;
+ }
+ .J_Counts button{
+      width: 100%;
+      height: 56px;
+      background-color: #fff; 
+      opacity: 0.1;
+  }
+ .calendarios{
+    top:-500px;
+ }
+ .confirm-btn{
+    text-align: center;
+ }
+ .cancel-btn{
+    text-align: center;
+ }
 </style>
+<script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<script>
+var config = {
+	modules: {
+		'price-calendar': {
+			fullpath: '../js/price-calendar.js',
+			type    : 'js',
+			requires: ['price-calendar-css']
+		},
+		'price-calendar-css': {
+			fullpath: '../css/price-calendar.css',
+			type    : 'css'
+		}
+	}
+};
+YUI(config).use('price-calendar', 'jsonp', function(Y) {
+	 $("#Middle_top_time").val();
+    var sub  = Y.Lang.sub;
+    var url = 'http://fgm.cc/learn/calendar/price-calendar/getData.asp?minDate={mindate}&maxDate={maxdate}&callback={callback}';
+    
+    //价格日历实例    
+    var oCal = new Y.PriceCalendar();
+    
+        //点击确定按钮
+        oCal.on('confirm', function() { 
+            $("#Middle_top_time").val(this.get('depDate') + "  ——   " + this.get('endDate'));
+            $(".price-calendar-bounding-box").css("display","none");
+        });
+        
+        //点击取消按钮
+        oCal.on('cancel', function() {
+            this.set('depDate', '').set('endDate', '').render();
+        });
+    
+    Y.one('#J_Example').delegate('click', function(e) { 
+    	$(".price-calendar-bounding-box").css("display","block");
+        var that    = this,
+            oTarget = e.currentTarget;
+        switch(true) {
+            //设置日历显示个数
+            case oTarget.hasClass('J_Count'):
+                this.set('count', oTarget.getAttribute('data-value')).render(); 
+            //时间范围限定
+            case oTarget.hasClass('J_Limit'):
+                this.set('data', null)
+                    .set('depDate', '')
+                    .set('endDate', '')
+                    .set('minDate', '')
+                    .set('afterDays', oTarget.getAttribute('data-limit'));
+                if(!oTarget.hasAttribute('data-date')) {
+                    this.set('date', new Date())
+                }
+                else {
+                    var oDate = oTarget.getAttribute('data-date');
+                    this.set('minDate', oDate);
+                    this.set('date', oDate);
+                }
+                oTarget.ancestor().one('.J_RoomStatus') ?
+                    oTarget.ancestor().one('.J_RoomStatus').setContent('\u663e\u793a\u623f\u6001').removeClass('J_Show') :
+                    oTarget.ancestor().append('<button class="J_RoomStatus">\u663e\u793a\u623f\u6001</button>');
+                break; 
+        }
+    }, 'button', oCal);
+});
+</script> 
+
 <title>Booking.com缤客:提供湖南省酒店网上预定，现在就查询预定酒店</title>
 <link rel="icon" href="${pageContext.request.contextPath}/img/捕获.PNG"
 	type="image/x-icon">
@@ -81,10 +170,22 @@
 			<input type="text"  
 				style="background:url('${pageContext.request.contextPath}/img/双人床.png')no-repeat scroll 16px center transparent;background-size:35px; background-color:#fff"
 				name="ss" id="Middle_top_destination" autocomplete="off" placeholder="目的地？" value="">
-			 <input
-				style="background:url('${pageContext.request.contextPath}/img/日历 (2).png')no-repeat scroll 16px  center transparent;background-size:35px; background-color:#fff"
-				disabled="disabled" name="time" id="Middle_top_time"
-				placeholder="入住   -  退房" value="">
+			<div id="J_Example" class="example"> 
+ 
+			
+				 <input
+					style="background:url('${pageContext.request.contextPath}/img/日历 (2).png')no-repeat scroll 16px  center transparent;background-size:35px; background-color:#fff"
+					disabled="disabled" name="time" id="Middle_top_time"
+					placeholder="入住   -  退房" value="" />
+			  <div class="J_Counts"> 
+				  <button class="J_Count J_Limit" data-value="1" data-limit="90">
+				 </button>
+			 </div>
+			 <!-- 日历控件 -->
+			 <div class="calendarios">
+			    <%@ include file="calendario.jsp"%>
+			 </div>
+			  </div>
 			 <div class="Middle_top_ss">搜索</div>
 			 <div id="bot_box">
 					<ul id="oul" style="overflow:auto; height: 143px;"></ul>
@@ -130,10 +231,8 @@
 
 		<div style="bottom: 0px; width: 100%; margin-top: 1850px;">
 			<%@ include file="BK_Tail.jsp"%>
-		</div>
-		
-		<div class="col-sm-2"></div>
-         
+		</div> 
+		<div class="col-sm-2"></div> 
 	</div>
 </body>
 <script type="text/javascript"

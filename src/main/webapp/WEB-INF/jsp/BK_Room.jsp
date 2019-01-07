@@ -31,7 +31,8 @@
 </head>
 <body>
 <!-- 代码begin -->
-<div>
+<div> 
+ 
   <%@ include file="BK_Head.jsp"%>
    <div class="col-md-2"></div>
    <div class="col-md-8">
@@ -151,7 +152,7 @@
 				   
 				<!-- 右側预订 -->
 				<form action="" method="post" id="top-book" class="wrap-hotelpage-top__book top-book-form form_wl_fix">
-				   <a style="color: #fff"  href="#rooms_table">
+				   <a style="color: #fff; font-size: 0;"  href="#rooms_table">
 					<button type="button" class="b-button b-buttons b-button_primary book_now_button_handler" style="text-shadow: black 5px 3px 3px;">
 						<span class="b-button__text">
 					     	现在就预订
@@ -193,7 +194,7 @@
 				<div class="next1" id="next1"><img src="../images/index_tab_r.png" width="28" height="51"  alt=""/></div>
 				<ul>
 				   <c:forEach items="${getpictures}" var="pictures">
-				      <li><a href="javascript:;"><img src="../img/${pictures.pipicture}" width="500px" height="500px" alt=""/></a></li> 
+				      <li><a href="javascript:;"><img src="../upload/${pictures.pipicture}" width="500px" height="500px" alt=""/></a></li> 
 				   </c:forEach> 
 				</ul>
 			</div>
@@ -202,7 +203,7 @@
 				<div class="num clearfix" id="ban_num1">
 					<ul>
 					    <c:forEach items="${getpictures}" var="pictures">
-					      <li><a href="javascript:;"><img src="../img/${pictures.pipicture}" width="80" height="80" alt=""/></a></li> 
+					      <li><a href="javascript:;"><img src="../upload/${pictures.pipicture}" width="80" height="80" alt=""/></a></li> 
 					    </c:forEach> 
 					</ul>
 				</div>
@@ -217,7 +218,7 @@
 				<div class="next1" id="next2"><img src="../images/index_tab_r.png" width="28" height="51"  alt=""/></div>
 				<ul>
 					<c:forEach items="${getpictures}" var="pictures">
-				      <li><a href="javascript:;"><img src="../img/${pictures.pipicture}" width="500" height="500" alt=""/></a></li> 
+				      <li><a href="javascript:;"><img src="../upload/${pictures.pipicture}" width="500" height="500" alt=""/></a></li> 
 				   </c:forEach> 
 				</ul>
 			</div>
@@ -676,6 +677,7 @@
    <div style="bottom: 0; width: 100%;  margin-top: 3460px;">
 			<%@ include file="BK_Tail.jsp"%>
    </div>
+    
    <div class="col-md-2"></div>
 </div>
   

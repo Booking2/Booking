@@ -191,7 +191,7 @@ public class Bk_cityController {
 	 ///酒店id查找酒店图片，评分
 	 @RequestMapping("/getpipictureAndsscoreById")
 	 @ResponseBody
-	 public List<Bk_hotel> getpipictureAndsscoreById(Integer hoid,HttpServletRequest request,HttpServletResponse response){
+	 public List<Bk_hotel> getpipictureAndsscoreById(Integer hoid){
 		   List<Bk_hotel>  pipictureAndsscore  = bk_hotelSerivce.getpipictureAndsscoreById(hoid);
 		 return pipictureAndsscore;
 	 }
@@ -199,7 +199,7 @@ public class Bk_cityController {
 	 //搜索联想功能
 	 @RequestMapping("/gethoname")
 	 @ResponseBody
-	 public List<Bk_hotel> gethoname(String honame,HttpServletRequest request,HttpServletResponse response){
+	 public List<Bk_hotel> gethoname(String honame){
 		 List<Bk_hotel> gethonameByhoname = bk_hotelSerivce.gethonameByhoname(honame);
 		 return gethonameByhoname;
 	 }

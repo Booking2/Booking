@@ -9,7 +9,7 @@ $(function(){
 		 success: function (data){
 			 console.log(data);  
 			 var cityhtml = "";
-			 for(i=0;i<data.length;i++){    
+			 for(i=0;i<data.length;i++){   
 			 	 $.ajax({ 
 			 		    async:false,
 						url: "/bk_city/getpipictureAndsscoreById?hoid="+data[i].hoid,
@@ -22,8 +22,8 @@ $(function(){
 								 cityhtml += "<!-- 酒店图片 -->";
 								 cityhtml += "<div class='sr_item_photo' id='hotel_55070'>";
 							     cityhtml += "<a class='sr_item_photo_link sr_hotel_preview_track' target='_blank' rel='noopener'";
-							     if(datas[i] != undefined){
-							    	 cityhtml += "href='/bk_pictures/getpicturesByHoid?hoid="+data[i].hoid+"'> <img class='hotel_image' src='../img/"+datas[i].pipicture+"'";
+							     if(datas[k] != undefined){
+							    	 cityhtml += "href='/bk_pictures/getpicturesByHoid?hoid="+data[i].hoid+"'> <img class='hotel_image' src='../upload/"+datas[k].pipicture+"'";
 							     }else{
 							    	 cityhtml += "href='#'> <img class='hotel_image' src='../img/酒店.png'";
 							     } 
@@ -82,17 +82,17 @@ $(function(){
 								 cityhtml += "<div class='reviewFloater reviewFloaterBadge__container'>";
 								 cityhtml += "<div class='sr-review-score review-breakdown-tooltip-link'>";
 								 cityhtml += "<div class='bui-review-score c-score bui-review-score--end'>";
-								 if(datas[i] != undefined ){
-							    	 if(datas[i].sscore <= 10 && datas[i].sscore >= 6){
-							    		 cityhtml += "<div class='bui-review-score__badge'>"+datas[i].sscore+"</div>";
+								 if(datas[k] != undefined && datas[k].sscore != null){
+							    	 if(datas[k].sscore <= 10 && datas[k].sscore >= 7){
+							    		 cityhtml += "<div class='bui-review-score__badge'>"+datas[k].sscore+"</div>";
 									     cityhtml += "<div class='bui-review-score__content'>";
 									     cityhtml += "<div class='bui-review-score__title' aria-label='' >非常好</div>";
-							    	 }else if(datas[i].sscore <= 6 && datas[i].sscore >= 2){
-							    		 cityhtml += "<div class='bui-review-score__badge'>"+datas[i].sscore+"</div>";
+							    	 }else if(datas[k].sscore <= 7 && datas[k].sscore >= 3){
+							    		 cityhtml += "<div class='bui-review-score__badge'>"+datas[k].sscore+"</div>";
 									     cityhtml += "<div class='bui-review-score__content'>";
 									     cityhtml += "<div class='bui-review-score__title' aria-label='' >好</div>";
-							    	 }else{
-							    		 cityhtml += "<div class='bui-review-score__badge'>"+datas[i].sscore+"</div>";
+							    	 }else{ 
+							    		 cityhtml += "<div class='bui-review-score__badge'>"+datas[k].sscore+"</div>";
 									     cityhtml += "<div class='bui-review-score__content'>";
 									     cityhtml += "<div class='bui-review-score__title' aria-label='' >一般</div>";
 							    	 }

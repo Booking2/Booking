@@ -1,6 +1,6 @@
 /*===================Middle_top_ss==================*/
 $(function() {
-
+ 
 	$(".Middle_top_ss").mouseenter(function() {
 		$(".Middle_top_ss").css("background-color", "#27408B");
 	});
