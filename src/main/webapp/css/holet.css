@@ -228,3 +228,27 @@ input, button, select, textarea {
    padding-left:40px;
    cursor: pointer;
  }
+  .J_Limits{
+      height: 38px;
+      width: 20%;
+      float: right;
+      position: absolute;
+      right: 752px;
+      top:270px;
+      overflow: hidden;
+ }
+ .J_Limits button{
+      width: 100%;
+      height: 38px;
+      background-color: #fff; 
+      opacity: 0.1;
+  }
+ .calendarios{
+    top:-500px;
+ }
+ .confirm-btn{
+    text-align: center;
+ }
+ .cancel-btn{
+    text-align: center;
+ }

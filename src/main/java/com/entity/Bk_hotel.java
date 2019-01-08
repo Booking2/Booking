@@ -25,7 +25,8 @@ public class Bk_hotel {
 
     private Integer arid;
     
-
+    private Integer rtid;
+    
     private String pipicture;  //辅助字段，酒店图片
     
     private Integer hoids;    //辅助字段，图片表中的酒店id
@@ -40,7 +41,15 @@ public class Bk_hotel {
     
     
      
-    public Integer getCiid() {
+    public Integer getRtid() {
+		return rtid;
+	}
+
+	public void setRtid(Integer rtid) {
+		this.rtid = rtid;
+	}
+
+	public Integer getCiid() {
 		return ciid;
 	}
 

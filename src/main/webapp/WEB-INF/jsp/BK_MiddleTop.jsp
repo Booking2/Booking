@@ -116,6 +116,7 @@ YUI(config).use('price-calendar', 'jsonp', function(Y) {
         //点击取消按钮
         oCal.on('cancel', function() {
             this.set('depDate', '').set('endDate', '').render();
+            $(".price-calendar-bounding-box").css("display","none");
         });
     
     Y.one('#J_Example').delegate('click', function(e) { 
@@ -170,21 +171,19 @@ YUI(config).use('price-calendar', 'jsonp', function(Y) {
 			<input type="text"  
 				style="background:url('${pageContext.request.contextPath}/img/双人床.png')no-repeat scroll 16px center transparent;background-size:35px; background-color:#fff"
 				name="ss" id="Middle_top_destination" autocomplete="off" placeholder="目的地？" value="">
-			<div id="J_Example" class="example"> 
- 
-			
-				 <input
+				<div id="J_Example" class="example"> 
+                    <input
 					style="background:url('${pageContext.request.contextPath}/img/日历 (2).png')no-repeat scroll 16px  center transparent;background-size:35px; background-color:#fff"
 					disabled="disabled" name="time" id="Middle_top_time"
 					placeholder="入住   -  退房" value="" />
-			  <div class="J_Counts"> 
-				  <button class="J_Count J_Limit" data-value="1" data-limit="90">
-				 </button>
-			 </div>
-			 <!-- 日历控件 -->
-			 <div class="calendarios">
-			    <%@ include file="calendario.jsp"%>
-			 </div>
+				  <div class="J_Counts"> 
+					  <button class="J_Count J_Limit" data-value="1" data-limit="90">
+					 </button>
+				 </div>
+				 <!-- 日历控件 -->
+				 <div class="calendarios">
+				    <%@ include file="calendario.jsp"%>
+				 </div>
 			  </div>
 			 <div class="Middle_top_ss">搜索</div>
 			 <div id="bot_box">

@@ -13,6 +13,7 @@
     <result column="Hocheckdate" jdbcType="TIMESTAMP" property="hocheckdate" />
     <result column="Reid" jdbcType="INTEGER" property="reid" />
     <result column="Arid" jdbcType="INTEGER" property="arid" />
+    <result column="Rtid" jdbcType="INTEGER" property="rtid" />
     <result column="Pipicture" jdbcType="VARCHAR" property="pipicture" />
     <result column="Hoids" jdbcType="INTEGER" property="hoids" />
     <result column="Sscore" jdbcType="FLOAT" property="sscore" />
@@ -30,7 +31,7 @@
 	  FROM bk_hotel AS ho INNER JOIN bk_area AS a ON ho.Arid = a.Arid  
 	  INNER JOIN bk_city AS c
 	  ON c.Ciid = a.Ciid
-	  WHERE c.Ciid = #{ciid};
+	  WHERE c.Ciid = #{ciid} AND ho.Hostate = 1;
   </select>
   
   <!-- 分页查询酒店信息  -->
@@ -45,7 +46,7 @@
 		LEFT JOIN bk_area AS a 
 		ON ho.Arid = a.Arid 
 		LEFT JOIN bk_city AS c           <!-- arid = ciid -->
-		ON a.Ciid = c.Ciid WHERE c.Ciid = #{arid} LIMIT #{stratIndex},#{pageSize};
+		ON a.Ciid = c.Ciid WHERE c.Ciid = #{arid} AND ho.Hostate = 1  LIMIT #{stratIndex},#{pageSize};
   </select>
   
    <!--  查询酒店图片及评分  -->
@@ -58,7 +59,7 @@
       WHERE ho.Hoid  = #{hoid};
   </select>
   
-   <!-- 分页查询酒店信息  -->
+   <!-- 模糊查询酒店  -->
    <select id="gethonameByhoname"  parameterType="java.lang.String"  resultMap="BaseResultMap">
       SELECT Honame  FROM bk_hotel WHERE Honame LIKE concat("%",#{honame},"%");
    </select>
