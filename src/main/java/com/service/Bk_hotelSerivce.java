@@ -14,6 +14,7 @@ public interface Bk_hotelSerivce {
 	//酒店id查找酒店图片，评分
 	 List<Bk_hotel> getpipictureAndsscoreById(Integer hoid);
 	 
+	 //模糊查询酒店
 	 List<Bk_hotel> gethonameByhoname(String honame);
 	 
 	//根据酒店id搜索联机

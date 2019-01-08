@@ -191,7 +191,7 @@ $(function() {
 					var obj = eval(data); // 将json转换为对象的方法
 					var oul = "";
 					for (var i = 0; i < obj.length; i++) {
-						oul += "<a href='#'><li style='list-style:none'>"+obj[i].honame+"</li></a>"
+						oul += "<a target='_blank' rel='noopener' href='/bk_pictures/getpicturesByHoid?hoid="+obj[i].hoid+"'><li style='list-style:none'>"+obj[i].honame+"</li></a>"
 					}
 					ouls.html(oul);
 				}
