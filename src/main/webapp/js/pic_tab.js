@@ -252,6 +252,9 @@ $(function(){
  
  /*收藏随着鼠标移动*/
  $(function(){
+	 /*获取页面的总长度*/
+	 var length = document.body.scrollHeight; //网页正文全文高
+	  $(".BK_Tail").css("margin-top",(length-100)+"px");
  	$(".collection").mouseenter(function(){
  		$("#collection1").css("visibility","visible");
  		//获取box1

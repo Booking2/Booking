@@ -16,7 +16,7 @@
 					<div id="footertopnav-partners" role="navigation">
 						<p class="footer-top-partner-text footer-top-partner-buttons"
 							data-et-view="HCZVfDaQJIbeVDEZRELCBRe:1">
-							<a ref="nofollow" href="/bk_city/getlistbk_city" target="_blank" class="footer-top-button"> 上线我的住宿 </a>
+							<a ref="nofollow" href="/bk_rent/getlist" target="_blank" class="footer-top-button"> 上线我的住宿 </a>
 						</p>
 					</div>
 				</div>
@@ -102,7 +102,7 @@
 			class="local_info_bot footerconstraint-inner">
 			<div class="local_info_bot_inner">
 				<div class="extranet_link_container">
-					<a class="extranet_link" href="/bk_city/getlistbk_city"> 登录后台 </a>
+					<a class="extranet_link" href="/bk_rent/getlist"> 登录后台 </a>
 				</div>
 				<div class="footercopyright frontpage ">
 					<div class="whitebar">

@@ -314,8 +314,8 @@
 		</div>
 		<hr/>
 		<!-- 设施与服务 -->
-		<h3>设施与服务</h3>
-		  <div class="facilitiesChecklist" id="hp_facilities_box" name="hp_facilities_box">
+		<h3 id="hp_facilities_box" name="hp_facilities_box">设施与服务</h3>
+		  <div class="facilitiesChecklist" >
 			<div class="facilitiesChecklistSection" data-section-id="5">
 			<h5 data-et-view="">
 			<span class="facilityGroupIcon">
@@ -576,14 +576,14 @@
 		 <hr/>
 		 
 		 <!-- 条款规定 -->
-		 <h3>条款规定</h3>
+		 <h3 name="hotelPoliciesInc" id="hotelPoliciesInc">条款规定</h3>
 		 
 		 <div  class="
 		descriptionsContainer
 		clearfix
 		hp-section
 		hp-policies-block
-		" style="font-size:14px; margin-top:10px; padding-top:0; padding-bottom:1.2em;" name="hotelPoliciesInc" id="hotelPoliciesInc">
+		" style="font-size:14px; margin-top:10px; padding-top:0; padding-bottom:1.2em;" >
 		<div class="description description_children-policy" id="children_policy">
 		<p class="policy_name">
 		<span class="policy_name_icon">
@@ -631,11 +631,11 @@
 		</div>
 		<hr/>
 		<!-- 须知 -->
-		<h3>预订须知</h3>
-			<div class="hp-section-container" id="hp_small_print" name="hp_small_print">  
+		<h3 id="hp_small_print" name="hp_small_print">预订须知</h3>
+			<div class="hp-section-container" >  
 				<div class="descriptions">
-				请注意，根据当地经营许可规定，骏怡城际酒店连锁湖南娄底扶青路店仅接待中国大陆居民。客人须在入住时出示有效的中华人民共和国身份证。酒店对此造成的不便深表歉意。
-				<p>若在入住日的18:00后仍未到店，住宿有权取消预留客房。预计于该时间点后到店的客人，请提前直接与住宿联系，联系方式请参见订单确认信。</p>
+				请注意，根据当地经营许可规定。客人须在入住时出示有效的中华人民共和国身份证。酒店对此造成的不便深表歉意。
+				<p>住宿有权取消预留客房。预计于该时间点后到店的客人，请提前直接与住宿联系，联系方式请参见订单确认信。</p>
 				</div> 
 			</div> 
        </div>
@@ -674,7 +674,7 @@
 		  </div>
        </div>
    </div>
-   <div style="bottom: 0; width: 100%;  margin-top: 3460px;">
+   <div class="BK_Tail" style="bottom: 0; width: 100%; ">
 			<%@ include file="BK_Tail.jsp"%>
    </div>
     

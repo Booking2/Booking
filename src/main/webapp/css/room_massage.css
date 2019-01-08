@@ -164,3 +164,15 @@ td.hprt-table-cell.-last.droom_seperator, td.hprt-table-cell.-first.hprt-table-c
     margin-bottom: 6px;
     text-shadow: 1px 1px 1px #fff;
 }
+.room_sum{
+	 border: 1px solid #ff0000;
+	 background-color: #ff0000;
+	 font-size: 92%;
+	 color: #fff;
+	 margin-top:120px;
+	 padding: 5px;
+}
+.bicon img{
+	width: 17px;
+	height: 20px;
+}
