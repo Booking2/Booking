@@ -20,10 +20,12 @@ import com.entity.Bk_area;
 import com.entity.Bk_city;
 import com.entity.Bk_hotel;
 import com.entity.Hotel_type;
+import com.entity.Rooms_type;
 import com.service.Bk_areaService;
 import com.entity.Bk_user;
 import com.service.Bk_cityService;
 import com.service.Hotel_typeService;
+import com.service.Rooms_typeService;
 import com.service.Bk_hotelSerivce;
 
 import com.service.Bk_userService;
@@ -59,6 +61,9 @@ public class Bk_cityController {
 	 
 	 @Autowired
 	 private Hotel_typeService hotel_typeService;
+	 
+	 @Autowired
+	 private Rooms_typeService rooms_typeService;
 	 
 	//酒店业务逻辑层
 	 @Autowired
@@ -139,6 +144,14 @@ public class Bk_cityController {
 	public List<Hotel_type> getHoteltypeAll(HttpServletRequest request,HttpServletResponse response){
 		List<Hotel_type> hotelTypeAll = hotel_typeService.getHotelTypeAll();
 		return hotelTypeAll;
+	}
+	
+	//查询酒店类型Rooms_type
+	@RequestMapping("/getRoomstypeAll")
+	@ResponseBody
+	public List<Rooms_type> getRoomstypeAll(HttpServletRequest request,HttpServletResponse response){
+		List<Rooms_type> RoomstypeAll = rooms_typeService.getlistRooms_type2();
+		return RoomstypeAll;
 	}
 
 	 //首页单击市区显示酒店功能

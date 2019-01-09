@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,4 +83,11 @@ public class Bk_rentController {
 		return i;
 	}
 	
+	//查询个人信息
+	@RequestMapping("/rentAll")
+	@ResponseBody
+	public List<Bk_rent> rentAll() {
+		List<Bk_rent> selectAll = bk_rentService.selectAll();
+		return selectAll;
+	}
 }

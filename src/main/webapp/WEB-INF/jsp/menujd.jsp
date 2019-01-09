@@ -61,7 +61,7 @@
 						<div class="jdform" id="jdform1">
 							<p></p>
 						</div>
-						<br><br>
+						<br>
 						<label for="address">地址栏</label>
 						<input type="text" id="Hoaddress" name="hoaddress" value="" class="form-control"
 							placeholder="详细地址" data-hj-masked=""> 
@@ -99,11 +99,18 @@
 		<div class="row">
 			<div class="col-md-6 form-group">
 				<input type="text" name="hid" id="hoteltypeid" hidden>
+				<input type="text" name="rtid" id="Roomstypeid" hidden>
 				<label for="location_contact_name">类型选择</label>
 				<select id="hoteltype" onchange="hotelType()">
 					<option>--请选择--</option>
 				</select>
+				<select id="Roomstype" onchange="roomstype()">
+					<option>--请选择--</option>
+				</select>
 				<div class="jdform" id="jdform3">
+					<p></p>
+				</div>
+				<div class="jdform" id="jdform4">
 					<p></p>
 				</div>
 				<br><br>

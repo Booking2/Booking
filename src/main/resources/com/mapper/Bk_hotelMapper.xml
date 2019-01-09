@@ -23,7 +23,7 @@
   </resultMap>
   <sql id="Base_Column_List">
     Hoid, Hid, Honame, Hodescribe, Hosentiment, Hoaddress, Hostate, Hostaydate, Hocheckdate, 
-    Reid, Arid
+    Reid, Arid, Rtid
   </sql>
   <!-- 分页总数  -->
   <select id="counthotleid" parameterType="java.lang.Integer" resultType="int">
@@ -130,6 +130,9 @@
       <if test="arid != null">
         Arid,
       </if>
+      <if test="rtid != null">
+        Rtid,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="hoid != null">
@@ -164,6 +167,9 @@
       </if>
       <if test="arid != null">
         #{arid,jdbcType=INTEGER},
+      </if>
+      <if test="rtid != null">
+        #{rtid,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
