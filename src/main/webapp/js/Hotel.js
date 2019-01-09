@@ -3,6 +3,7 @@
 var Hotel1 = false;
 var Hotel2 = false;
 var Hotel3 = false;
+var Hotel4 = false;
 
 function Hprompt(content,blur,cls){
 	$("#"+cls+" p").text(content);
@@ -10,7 +11,7 @@ function Hprompt(content,blur,cls){
 	if(blur){
 		$("#"+cls+"").hide();
 	}
-	if(Hotel1 && Hotel2 && Hotel3){
+	if(Hotel1 && Hotel2 && Hotel3 && Hotel4){
 		$("#emnu2").val("继续注册")
 		$("#emnu2").removeAttr("disabled");
 	}
@@ -83,19 +84,28 @@ $(function(){
 	//初始化判断是否选择酒店类型
 	var options3 = $("#hoteltype option:selected");//获取当前选择项的索引.
 	var val3 = options3.val();//获取当前选择项的值.
-	if(isNaN(val3)){
+	var options4 = $("#Roomstype option:selected");//获取当前选择项的索引.
+	var val4 = options3.val();//获取当前选择项的值.
+	if(isNaN(val3)&&isNaN(val4)){
 		blur = false;
-		content = "请选择城市";
+		content = "请选择酒店类型";
 		cls = "jdform3";
+		Hotel3 = false;
+		Hprompt(content,blur,cls);
+	}
+	if(isNaN(val4)){
+		blur = false;
+		content = "请选择酒店具体类型";
+		cls = "jdform4";
 		Hotel3 = false;
 		Hprompt(content,blur,cls);
 	}
 	
 	//酒店类型验证
 	$("#hoteltype").change(function(){
-		var options4=$("#hoteltype option:selected");//获取当前选择项的索引.
-		var val4 = options4.val();//获取当前选择项的值.
-		if(isNaN(val4)){
+		var options5=$("#hoteltype option:selected");//获取当前选择项的索引.
+		var val5 = options5.val();//获取当前选择项的值.
+		if(isNaN(val5)){
 			blur = false;
 			content = "请选择酒店类型";
 			cls = "jdform3";
@@ -109,5 +119,25 @@ $(function(){
 			Hprompt(content,blur,cls);
 		}
 		return Hotel3;
+	})
+	
+	//酒店类型验证2
+	$("#Roomstype").change(function(){
+		var options6 = $("#Roomstype option:selected");//获取当前选择项的索引.
+		var val6 = options6.val();//获取当前选择项的值.
+		if(isNaN(val6)){
+			blur = false;
+			content = "请选择酒店具体类型";
+			cls = "jdform4";
+			Hotel4 = false;
+			Hprompt(content,blur,cls);
+		}else{
+			content = "";
+			blur = true;
+			cls = "jdform4";
+			Hotel4 = true;
+			Hprompt(content,blur,cls);
+		}
+		return Hotel4;
 	})
 })

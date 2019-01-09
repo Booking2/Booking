@@ -1,5 +1,7 @@
 package com.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,12 @@ public class Bk_rentServiceImpl implements Bk_rentService {
 	public int selectPhone(String phone) {
 		// TODO Auto-generated method stub
 		return bk_rentMapper.selectPhone(phone);
+	}
+
+	@Override
+	public List<Bk_rent> selectAll() {
+		// TODO Auto-generated method stub
+		return bk_rentMapper.selectAll();
 	}
 
 }

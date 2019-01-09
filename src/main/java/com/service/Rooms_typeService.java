@@ -8,4 +8,6 @@ public interface Rooms_typeService {
 	List<Rooms_type> getlistRooms_type();
 	/*查询后四条*/
 	List<Rooms_type> getlistRooms_type1();
+	/*查询所有的酒店类型*/
+	 List<Rooms_type> getlistRooms_type2();
 }

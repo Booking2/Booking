@@ -27,4 +27,10 @@ public class Rooms_typeServiceImpl implements Rooms_typeService {
 		return rooms_typeMapper.getlistRooms_type1();
 	}
 
+	@Override
+	public List<Rooms_type> getlistRooms_type2() {
+		// TODO Auto-generated method stub
+		return rooms_typeMapper.getlistRooms_type2();
+	}
+
 }

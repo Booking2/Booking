@@ -55,6 +55,21 @@ $(function(){
 			
 		}
 	})
+	
+	$.ajax({
+		type:"post",
+		url: "/bk_city/getRoomstypeAll",
+		data:{},
+		success:function(data){
+			console.log(data);
+			for ( var op in data) {
+				$("#Roomstype").append("<option value=" + data[op].rtid + ">" + data[op].rttypename + "</option>");
+			}
+			
+		},dataType:"json",error:function(){
+			
+		}
+	})
 })
 
 /*加载事件*/
@@ -84,19 +99,16 @@ function func(){
 //获取酒店类型下拉框的值
 function hotelType(){
 	var options=$("#hoteltype option:selected");//获取当前选择项的索引.
-	var val = options.val();//获取当前选择项的值.
+	var val = options.val();//获取当前选择项的值
 	$("#hoteltypeid").val(val);
 }
 
-
-$(function(){
-	$("#emnu2").click(function(){
-		
-	})
-	$("#emnu3").click(function(){
-		document.getElementById("sk").classList.add("acti");
-	})
-})
+//酒店类型下拉框
+function roomstype(){
+	var options=$("#Roomstype option:selected");//获取当前选择项的索引.
+	var val = options.val();//获取当前选择项的值.
+	$("#Roomstypeid").val(val);
+}
 
 
 

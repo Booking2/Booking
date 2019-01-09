@@ -13,7 +13,7 @@ function prompt(content,blur,cls){
 	if(blur){
 		$("#"+cls+"").hide();
 	}
-	if(panduan1 && panduan1){
+	if(panduan1 && panduan2){
 		$("#reg").text("注册")
 		$("#reg").removeAttr("disabled");
 	}
@@ -51,8 +51,6 @@ $(function(){
 			url:"/bk_rent/Phone",
 			data:{Phone:rephone},
 			success:function(data){
-				console.log(rephone);
-				console.log(data);
 				if(data>0){
 					content = "手机号码已被注册";
 					blur = false;

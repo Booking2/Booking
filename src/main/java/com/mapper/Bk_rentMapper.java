@@ -1,5 +1,7 @@
 package com.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.entity.Bk_rent;
@@ -14,9 +16,14 @@ public interface Bk_rentMapper {
 
     Bk_rent selectByPrimaryKey(Integer reid);
     
+    //登录
     int selectLogin(Bk_rent record);
     
+    //验证账号的唯一性
     int selectPhone(String phone);
+    
+    //查询个人信息
+    List<Bk_rent> selectAll();
 
     int updateByPrimaryKeySelective(Bk_rent record);
 

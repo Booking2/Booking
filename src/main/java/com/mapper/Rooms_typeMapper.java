@@ -27,4 +27,7 @@ public interface Rooms_typeMapper {
     
     @Select("SELECT * FROM rooms_type LIMIT 4,8")
     List<Rooms_type> getlistRooms_type1();
+    
+    @Select("SELECT Rtid,Rttypename FROM rooms_type")
+    List<Rooms_type> getlistRooms_type2();
 }

@@ -1,0 +1,12 @@
+$(function(){
+	$("#updatex").click(function(){
+		$.ajax({
+			type:"post",
+			url:"/bk_rent/rentAll",
+			data:{},
+			success:function(data){
+				console.log(data);
+			}
+		})
+	})
+})
