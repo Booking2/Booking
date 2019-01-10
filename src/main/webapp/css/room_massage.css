@@ -134,6 +134,7 @@ td.hprt-table-cell.-last.droom_seperator, td.hprt-table-cell.-first.hprt-table-c
 .hprt-table-cell.-last .hp_rt_input {
     width: 100%;
     min-width: 110px;
+    text-align: center;
 }
 .hprt-price-price-standard {
     font-weight: bold;
@@ -171,8 +172,20 @@ td.hprt-table-cell.-last.droom_seperator, td.hprt-table-cell.-first.hprt-table-c
 	 color: #fff;
 	 margin-top:120px;
 	 padding: 5px;
+	 width: 120.2px;
 }
 .bicon img{
-	width: 17px;
-	height: 20px;
+	width: 10px;
+    height: 13px; 
+	margin: 0px;
+}
+.hptr-taxinfo-label{
+	font-size: 13px;
+}
+.only_x_left{
+	color: red;
+	font-weight: bold;
+}
+.hptr-taxinfo-title{
+	font-size: 13px;
 }

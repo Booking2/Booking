@@ -6,7 +6,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/holet.css"
 	type="text/css">
-<script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+
 <script>
 var config = {
 	modules: {
@@ -21,9 +21,9 @@ var config = {
 		}
 	}
 };
-YUI(config).use('price-calendar', 'jsonp', function(Y) {
-	 $("#time").val();
-    var sub  = Y.Lang.sub;
+YUI(config).use('price-calendar', 'jsonp', function(Y) { 
+	
+	var sub  = Y.Lang.sub;
     var url = 'http://fgm.cc/learn/calendar/price-calendar/getData.asp?minDate={mindate}&maxDate={maxdate}&callback={callback}';
     
     //价格日历实例    
@@ -31,7 +31,7 @@ YUI(config).use('price-calendar', 'jsonp', function(Y) {
     
         //点击确定按钮
         oCal.on('confirm', function() { 
-            $("#time").val(this.get('depDate') + "  ——   " + this.get('endDate'));
+            $("#time").val(sessionStorage.getItem('time'));
             $(".price-calendar-bounding-box").css("display","none");
         });
         
@@ -71,6 +71,10 @@ YUI(config).use('price-calendar', 'jsonp', function(Y) {
         }
     }, 'button', oCal);
 });
+$(function(){
+	alert(window.name);
+	$("#time").val(window.name); 
+})
 </script> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 

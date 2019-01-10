@@ -12,12 +12,13 @@
     <result column="Rstaydate" jdbcType="TIMESTAMP" property="rstaydate" />
     <result column="Rcheckdate" jdbcType="TIMESTAMP" property="rcheckdate" />
     <result column="Hoid" jdbcType="INTEGER" property="hoid" />
-    <result column="Bid" jdbcType="INTEGER" property="bid" />
-    <result column="Sum" jdbcType="INTEGER" property="sum" />
+    <result column="Rbedtype" jdbcType="VARCHAR" property="rbedtype" />
+     <result column="Sum" jdbcType="INTEGER" property="sum" />
+    <result column="Rcheckin" jdbcType="INTEGER" property="rcheckin" />
   </resultMap>
   <sql id="Base_Column_List">
     Rid, Rname, Rdescribe, Rinstructions, Rprice, Rnumber, Rstay, Rstaydate, Rcheckdate, 
-    Hoid, Bid
+    Hoid, Rbedtype
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -28,7 +29,7 @@
   
   <!--查询所有房间 -->
   <select id="getAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-       SELECT bk_rooms.*,COUNT(Rname) as Sum  FROM bk_rooms  WHERE hoid = #{hoid} AND Rstay = 2 GROUP BY Rname;
+       SELECT bk_rooms.*,COUNT(Rbedtype) as Sum FROM bk_rooms  WHERE hoid = #{hoid} AND Rstay = 2  GROUP BY Rbedtype;
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -39,11 +40,11 @@
     insert into bk_rooms (Rid, Rname, Rdescribe, 
       Rinstructions, Rprice, Rnumber, 
       Rstay, Rstaydate, Rcheckdate, 
-      Hoid, Bid)
+      Hoid, Rbedtype)
     values (#{rid,jdbcType=INTEGER}, #{rname,jdbcType=VARCHAR}, #{rdescribe,jdbcType=VARCHAR}, 
       #{rinstructions,jdbcType=VARCHAR}, #{rprice,jdbcType=DECIMAL}, #{rnumber,jdbcType=INTEGER}, 
       #{rstay,jdbcType=CHAR}, #{rstaydate,jdbcType=TIMESTAMP}, #{rcheckdate,jdbcType=TIMESTAMP}, 
-      #{hoid,jdbcType=INTEGER}, #{bid,jdbcType=INTEGER})
+      #{hoid,jdbcType=INTEGER}, #{rbedtype,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.entity.Bk_rooms">
     insert into bk_rooms
@@ -78,8 +79,8 @@
       <if test="hoid != null">
         Hoid,
       </if>
-      <if test="bid != null">
-        Bid,
+      <if test="rbedtype != null">
+        Rbedtype,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -113,8 +114,8 @@
       <if test="hoid != null">
         #{hoid,jdbcType=INTEGER},
       </if>
-      <if test="bid != null">
-        #{bid,jdbcType=INTEGER},
+      <if test="rbedtype != null">
+        #{rbedtype,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -148,8 +149,8 @@
       <if test="hoid != null">
         Hoid = #{hoid,jdbcType=INTEGER},
       </if>
-      <if test="bid != null">
-        Bid = #{bid,jdbcType=INTEGER},
+      <if test="rbedtype != null">
+        Rbedtype = #{rbedtype,jdbcType=VARCHAR},
       </if>
     </set>
     where Rid = #{rid,jdbcType=INTEGER}
@@ -165,7 +166,7 @@
       Rstaydate = #{rstaydate,jdbcType=TIMESTAMP},
       Rcheckdate = #{rcheckdate,jdbcType=TIMESTAMP},
       Hoid = #{hoid,jdbcType=INTEGER},
-      Bid = #{bid,jdbcType=INTEGER}
+      Rbedtype = #{rbedtype,jdbcType=VARCHAR}
     where Rid = #{rid,jdbcType=INTEGER}
   </update>
 </mapper>

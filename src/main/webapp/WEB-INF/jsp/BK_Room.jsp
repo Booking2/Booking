@@ -24,6 +24,7 @@
 	src="${pageContext.request.contextPath}/js/toastr.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/iepng.js"></script>
+
 <link rel="icon" href="${pageContext.request.contextPath}/img/捕获.PNG"
 	type="image/x-icon">
  
@@ -37,7 +38,7 @@
    <div class="col-md-2"></div>
    <div class="col-md-8">
    <c:forEach items="${gethotelAll}" var="alls">
-     <div style="margin-top: 5px"><a href="/bk_city/getlistbk_city">首页</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;<a href="/bk_city/getlistbk_city">湖南省</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;<a href="/bk_city/citybycityid?ciid=${alls.ciid}">${alls.cname}</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;<a href="#">${alls.aname}</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;${alls.honame}</div>
+     <div style="margin-top: 5px"><a href="/bk_city/getlistbk_city">首页</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;<a href="/bk_city/getlistbk_city">湖南省</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;<a href="/bk_city/citybycityid?ciid=${alls.ciid}">${alls.cname}市</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;<a href="#">${alls.aname}</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;${alls.honame}</div>
    </c:forEach>
        <div class="room_2">
            <!-- 须知 -->
@@ -266,15 +267,24 @@
 				<label class="sb-searchbox__label -main" for="ss" > 入住日期： </label>
 				<input type="text" name="ss" id="time" class="c-autocomplete__input sb-searchbox__input sb-destination__input" style="background:url('${pageContext.request.contextPath}/img/日历 (2).png')no-repeat scroll 0px  center transparent;background-size:35px; background-color:#fff"
 				disabled="disabled" cursor="pointer" placeholder="入住日期  -  退房日期"  value="">
+	
 		  <!-- 搜索  --> 
 	             <button type="submit" class="sb-searchbox__button  ">
 					<span style="color: #fff">查看空房情况</span> 
 				</button>
+					        <!-- 日历控件 -->
+				<div class="calendarios">
+				    <%@ include file="calendario.jsp"%>
+				</div>
 			</div>
+				 <div class="J_Limitss"> 
+					  <button class="J_Count J_Limit" data-value="1" data-limit="90">
+					 </button>
+                 </div>
 		</div>
 		
 		<!-- 房间信息 -->
-	    <%@ include file="Room.Massage.jsp"%> 
+	    <%@ include file="Room_Massage.jsp"%> 
 	    
 	    <!-- 3大理由 -->
 	    <div id="usp-hotelpage-main-col" class="var-2 usp-hotelpage--chains ">
@@ -685,7 +695,7 @@
 
 
 
-
+<script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/pic_tab.js"></script>
 <script type="text/javascript">
@@ -713,6 +723,9 @@ jq('#demo1').banqh({
 	min_picnum:5,//小图显示数量
 	pop_up:true//大图是否有弹出框
 })
+
+
+
 </script>
 <!-- 代码end -->
 </body>

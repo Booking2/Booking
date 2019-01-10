@@ -24,18 +24,28 @@ public class Bk_rooms {
 
     private Integer hoid;
 
-    private Integer bid;
+    private String rbedtype;
     
-    private Integer sum;     //分组之后的总数
+    private Integer rcheckin;
+
+    private Integer sum;     //空房间的总数 
     
-    
-    public Integer getSum() {
+    public Integer getRcheckin() {
+		return rcheckin;
+	}
+
+	public void setRcheckin(Integer rcheckin) {
+		this.rcheckin = rcheckin;
+	}
+
+	public Integer getSum() {
 		return sum;
 	}
 
 	public void setSum(Integer sum) {
 		this.sum = sum;
 	}
+    
     public Integer getRid() {
         return rid;
     }
@@ -116,11 +126,11 @@ public class Bk_rooms {
         this.hoid = hoid;
     }
 
-    public Integer getBid() {
-        return bid;
+    public String getRbedtype() {
+        return rbedtype;
     }
 
-    public void setBid(Integer bid) {
-        this.bid = bid;
+    public void setRbedtype(String rbedtype) {
+        this.rbedtype = rbedtype == null ? null : rbedtype.trim();
     }
 }

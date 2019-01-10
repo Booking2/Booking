@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,6 +11,7 @@
 	href="${pageContext.request.contextPath}/css/room_massage.css"
 	type="text/css">
 <script type="text/javascript" src="../js/massage.js"></script>
+
 </head>
 <body>
   
@@ -30,10 +32,10 @@
 								</caption>
 								<thead style="width: 813px; top: 0px; z-index: auto;" class="">
 									<tr class="hprt-table-header">
-										<th class="hprt-table-header-cell -first" style="width: 400.2px;">
+										<th class="hprt-table-header-cell -first" style="width: 380.2px;">
 										客房类型
 										</th>
-										<th class="hprt-table-header-cell" style="width: 50.2px;">可住</th>
+										<th class="hprt-table-header-cell" style="width:60.2px;">可住</th>
 										<th class="hprt-table-header-cell hprt-table-header-price" style="width:130.2px;">
 										今日价格
 										</th>
@@ -51,6 +53,7 @@
 								</thead>
 			                <c:forEach items="${getroomall}" var="room" varStatus="status">
 								<tbody>
+								 <input  type="hidden" value="${room.rid}"/>
 								  <tr data-block-id="264702701_110159171_0_0_0" class="hprt-table-cheapest-block hprt-table-cheapest-block-fix js-hprt-table-cheapest-block hprt-table-last-row" data-et-view="">
 									<td class="hprt-table-cell hprt-table-cell-roomtype droom_seperator">
 									<div class="hprt-block" data-et-view="">
@@ -59,19 +62,11 @@
 									  ${room.rname}
 									</span> 
 									</div> 
-										<span>
-										<c:if test="${room.bid == 1}">
-										${room.rnumber}张单人床
-										</c:if>
-										<c:if test="${room.bid == 2}">
-										${room.rnumber}张双人床
-										</c:if>
-										<c:if test="${room.bid == 3}">
-										${room.rnumber}张超大号单人床
-										</c:if>
-										<c:if test="${room.bid == 4}">
-										${room.rnumber}张超大号双人床
-										</c:if>
+										<span> 
+										<c:set value="${fn:split(room.rbedtype, ',')}" var="rbedtype"></c:set>  <!--jsp分割字符串 -->
+										<c:forEach items="${rbedtype}" var="rb">
+										   <p style="color:red; font-size: 13px; margin-left:10px; margin-bottom: 5px;">${room.rnumber}张${rb}  </p>
+										</c:forEach>
 										<i class="bicon bicon-singles"></i>
 										</span> 
 									<div class="hprt-roomtype-block">
@@ -136,8 +131,7 @@
 									${room.rdescribe}
 									</div>
 									<div class="hptr-taxinfo-details">
-									<span class="hptr-taxinfo-label">房价包括:</span>
-									15%住宿方服务费
+									<span class="hptr-taxinfo-label">房价包括:15%住宿方服务费</span> 
 									</div>
 									</div>
 									</div>
@@ -145,15 +139,11 @@
 									</td>
 									<td class="hprt-table-cell hprt-table-cell-occupancy">
 									<div class="hprt-block">
-									<div class="hprt-occupancy-occupancy-info jq_tooltip 
-									" data-et-mouseenter=" goal:hp_rt_hovering_occupancy " data-title="
-									最多人数: 3
-									" id="b_tt_holder_2">
-									<i class="bicon bicon-occupancy"><img src="../img/rw2.png"></i><i class="bicon bicon-occupancy"><img src="../img/rw2.png"></i><i class="bicon bicon-occupancy"><img src="../img/rw2.png"></i>
+									<div class="hprt-occupancy-occupancy-info jq_tooltip"  id="b_tt_holder_2">
+									 <c:forEach var="x" begin="1" end="${room.rcheckin}">
+									   <i class="bicon bicon-occupancy"><img src="../img/rw2.png"></i>
+									 </c:forEach>
 									</div>
-									<span class="invisible_spoken">
-									最多人数: 3
-									</span>
 									</div>
 									</td>
 									<td class="hprt-table-cell hprt-table-cell-price">
@@ -180,33 +170,32 @@
 									<td class="hprt-table-cell hprt-table-room-select  ">
 									<div class="hprt-block">
 									<label> <span class="invisible_spoken">选择客房</span>
-									<select class="hprt-nos-select" name="nr_rooms_264702701_110159171_0_0_0" data-component="hotel/new-rooms-table/select-rooms" data-room-id="264702701" data-block-id="264702701_110159171_0_0_0" data-is-fflex-selected="0">
+									<select id="hprt-nos-select" class="hprt-nos-select" name="nr_rooms_264702701_110159171_0_0_0" data-component="hotel/new-rooms-table/select-rooms" data-room-id="264702701" data-block-id="264702701_110159171_0_0_0" data-is-fflex-selected="0">
 									<option value="0">
 									0 
 									</option>
 										<c:forEach var="x" begin="1" end="${room.sum}"> 
-											 <option value="${x}">
+											 <option value="${x}" id="${room.rid}">
 											${x}
 											&nbsp;&nbsp;&nbsp;
-											  <c:set var="sum" value="${x * room.rprice}"></c:set>${sum} 元
+											  <c:set var="sum" value="${x * room.rprice}"></c:set>(${sum} 元)
 											</option> 
 											
 										</c:forEach>  
 									</select>
 									<c:if test="${room.sum <= 3}">
-									  <div class="room_sum">只剩下${room.sum}个房间了</div>
+									  <div class="room_sum">只剩下${room.sum}间客房了</div>
 									</c:if>
 									</label>
 									</div>
 									</td> 
 									<c:if test="${status.index == 0}">
-										<td class="hprt-table-cell -last droom_seperator" rowspan="400" data-component="hotel/new-rooms-table/summary/fade">
+										<td class="hprt-table-cell -last droom_seperator" rowspan="400" >
 										<div class="hprt-block reserve-block-js" style="width: 169px; top: 30px; z-index: auto;">
 										<div class="hprt-reservation-cta" >
-										<button class="b-button b-button_primary 
-										hp_rt_input">
+										<div class="b-button b-button_primary hp_rt_input">
 										<span class="b-button__text">现在就预订</span>
-										</button>
+										</div>
 										</div>
 											<div class="hprt-no-cc-needed">
 											<strong>无需信用卡！</strong>

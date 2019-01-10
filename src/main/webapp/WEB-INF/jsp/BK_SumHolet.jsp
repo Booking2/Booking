@@ -28,7 +28,7 @@
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 		    <input type="hidden" class="param" value="${param.currentPageNo}"/>
-		    <div style="margin-top: 5px"><a href="/bk_city/getlistbk_city">首页</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;<a href="/bk_city/getlistbk_city">湖南省</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;${listcity[0].ciname}</div>
+		    <div style="margin-top: 5px"><a href="/bk_city/getlistbk_city">首页</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;<a href="/bk_city/getlistbk_city">湖南省</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;${listcity[0].ciname}市</div>
 			<div class="holet_cityname">
 			    <span ><img style="width: 140px " height="70px" src="../img/${listcity[0].ciictures}"></span>
 				<h1>${listcity[0].ciname}</h1>

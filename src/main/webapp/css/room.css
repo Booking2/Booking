@@ -926,3 +926,28 @@ div.facilitiesChecklist .facilitiesChecklistSection ul li, .family-facilities-li
 	background-color: #e9f0fa;
 	padding: 10px;
 }
+
+.J_Limitss{
+      height: 35px;
+      width:80%;
+      float: right;
+      position: relative;
+      right: 138px;
+      top:-57px; 
+      overflow: hidden;
+ }
+ .calendarios{
+    top:-500px;
+ }
+ .J_Limitss button{
+      width: 100%;
+      height: 35px;
+      background-color: #fff; 
+      opacity: 0.1; 
+  } 
+ .confirm-btn{
+    text-align: center;
+ }
+ .cancel-btn{
+    text-align: center;
+ }
