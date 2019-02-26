@@ -3,6 +3,7 @@ package com.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.entity.Bk_rooms;
 
@@ -20,6 +21,9 @@ public interface Bk_roomsMapper {
 
     int updateByPrimaryKey(Bk_rooms record);
     
-    //查询所有房间
+    //根据酒店id查询所有空房间
     List<Bk_rooms> getAll(Integer hoid);
+    
+    //根据时间查询所有空房间
+    List<Bk_rooms> getAllbytime(@Param("Rstaydate") String Rstaydate,@Param("hoid") Integer hoid);
 }

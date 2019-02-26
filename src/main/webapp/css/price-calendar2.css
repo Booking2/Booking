@@ -6,7 +6,7 @@
  */
 .date-box{ width: 469px;}
 .bottom{width: 465px; height: 50px;}
-.price-calendar-bounding-box{display:none; position:relative; top:-1775px; left:506px; font:12px/1.5 Arial;}
+.price-calendar-bounding-box{display:none; position:relative; left:506px; font:12px/1.5 Arial;}
 .price-calendar-bounding-box .disabled{cursor:not-allowed;}
 .price-calendar-bounding-box .hidden{display:none;}
 .price-calendar-bounding-box .blue{background-color:#03F;}

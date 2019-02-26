@@ -48,21 +48,21 @@
         <div class="cont_img_back_"> <img src="po.jpg" alt="" /> </div>
         <div class="cont_form_login" > <a href="#" onClick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
 	          <h2 class = "dlzc">登陆</h2>
-	          <input type="text" name="uphone" id = "lguphone"placeholder="Uphone"/><br>
+	          <input type="text" name="uphone" id = "lguphone"placeholder="电话号码"/><br>
 	          <span class = "lguphone"></span>
-	          <input type="password" name="password"  name="upassword" id ="lgpassword" placeholder="Password"/><br>
+	          <input type="password" name="password"  name="upassword" id ="lgpassword" placeholder="密码"/><br>
 	          <span class = "lgpassword"><font color="red" id = "lgpassword2"></font></span>
 	          <button class="btn_login" id = "btn_login" onClick="cambiar_login()">登陆</button>
         </div>
         <div class="cont_form_sign_up"> <a href="#" onClick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
 	          <h2>注册</h2>
-	          <input type="text" name="uname" id = "uname" placeholder="Name"/><br>
+	          <input type="text" name="uname" id = "uname" placeholder="名称"/><br>
 	          <span class ="zcuname"></span>
-	          <input type="text" name="uphone" id = "zcuphone" placeholder="Uphone"/><br>
+	          <input type="text" name="uphone" id = "zcuphone" placeholder="电话号码"/><br>
 	          <span class ="zcuphone"></span><span class="zcuphone2"></span>
-	          <input type="password" name="upassword" id ="zcpassword" placeholder="Password"/><br>
+	          <input type="password" name="upassword" id ="zcpassword" placeholder="密码"/><br>
 	          <span class ="zcpassword"></span>
-	          <input type="password" name = "password2" id ="zcpassword2" placeholder="Repeatpassword"/><br>
+	          <input type="password" name = "password2" id ="zcpassword2" placeholder="确认密码"/><br>
 	          <span class ="zcpassword2"></span>
 	          <button class="btn_sign_up" id="btn_sign_up_id" onclick="cont_form_sign_up()" >注册</button>
         </div>

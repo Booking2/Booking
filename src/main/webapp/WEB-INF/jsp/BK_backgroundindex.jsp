@@ -282,7 +282,7 @@ table{
 									</div>
 									<div class=""></div>
 									<p>密码</p>
-									<input type="text" id="repassword" name="repassword" class="form-control">
+									<input type="password" id="repassword" name="repassword"  class="form-control">
 									<div class="bdyz" id="bdyz2">
 										<p></p>
 									</div>
@@ -382,7 +382,7 @@ table{
 		document.getElementById("hide").style.display="none";
 		$("#login").click(function(){
 			document.getElementById("hide").style.display="";
-			
+			$(".bdyz").hide();
 		})
 		$("#registered").click(function(){
 			document.getElementById("hide").style.display="none";

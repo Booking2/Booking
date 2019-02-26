@@ -84,8 +84,11 @@
     text-align: center;
  }
 </style>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
 <script>
+/*日历控件*/
 var config = {
 	modules: {
 		'price-calendar': {
@@ -100,16 +103,30 @@ var config = {
 	}
 };
 YUI(config).use('price-calendar', 'jsonp', function(Y) {
-	 $("#Middle_top_time").val();
+	var time = '<%=session.getAttribute("timesession")%>';
+    if(time != "null"){
+    	$("#Middle_top_time").val(time);
+    }
     var sub  = Y.Lang.sub;
     var url = 'http://fgm.cc/learn/calendar/price-calendar/getData.asp?minDate={mindate}&maxDate={maxdate}&callback={callback}';
     
     //价格日历实例    
     var oCal = new Y.PriceCalendar();
-    
+        
         //点击确定按钮
         oCal.on('confirm', function() { 
-            $("#Middle_top_time").val(this.get('depDate') + "  ——   " + this.get('endDate'));
+           var rstaydate = this.get('depDate');
+           var rcheckdate = this.get('endDate');
+        	$.ajax({
+        		 url: "/getcookie?rstaydate="+rstaydate+"&rcheckdate="+rcheckdate,
+					type:"POST",
+					data:{},  
+					 success: function (data){   
+						 var time = '<%=session.getAttribute("timesession")%>';
+			              $("#Middle_top_time").val(data);
+					 } 
+        	}) 
+        	
             $(".price-calendar-bounding-box").css("display","none");
         });
         
@@ -149,6 +166,16 @@ YUI(config).use('price-calendar', 'jsonp', function(Y) {
         }
     }, 'button', oCal);
 });
+
+/*通过session实现多页面共享数据[酒店名称]*/
+ $(function(){ 
+	var name = '<%=session.getAttribute("namesession")%>'; 
+    if(name != "null"){
+    	 $("#Middle_top_destination").val(name);
+    } 
+})
+
+
 </script> 
 
 <title>Booking.com缤客:提供湖南省酒店网上预定，现在就查询预定酒店</title>

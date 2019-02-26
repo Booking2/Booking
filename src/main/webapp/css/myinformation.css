@@ -1,0 +1,374 @@
+.progress_bar_area--bui-nav-progress.progress_bar_area.progress_bar_margin {
+    margin-bottom: 10px;
+}
+.progress_bar_area--bui-nav-progress.progress_bar_area {
+    margin-top: 20px;
+    margin-bottom: 2.4em;
+}
+body.ja *, body.ko *, body.zh *, body.ja em, body.zh em, body.ko em, body.ja i, body.zh i, body.ko i {
+    font-style: normal !important;
+}
+.progress_bar_margin {
+    margin-bottom: 10px;
+}
+#bookTmpl.bp-full-width {
+    font-size: 13px;
+}
+body {
+    color: #383838;
+    font-size: small;
+    line-height: 1.2;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+.bui-nav-progress {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+[class^="bui-"], [class^="bui-"]::before, [class^="bui-"]::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.bui-nav-progress__item {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4285714286em;
+    color: #707070;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.bui-nav-progress__indicator {
+    border-radius: 50%;
+    background: #07c;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    line-height: 1;
+    margin-right: 8px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-negative: 0;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    width: 24px;
+    height: 24px;
+}
+.bui-nav-progress__icon {
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+}
+.bui-f-fill-white, .bui_fill_white {
+    background-color: #fff !important;
+    fill: #fff !important;
+    border-color: #383838 !important;
+    color: #383838 !important;
+}
+.bui-nav-progress__step {
+    display: none;
+}
+.bui-nav-progress__title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4285714286em;
+}
+.bui-nav-progress__divider {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    height: 1px;
+    background: #bdbdbd;
+    margin: 0 8px;
+    min-width: 16px;
+}
+.bui-nav-progress__item--active {
+    color: #383838;
+}
+.bui-nav-progress__item {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4285714286em;
+    color: #707070;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.bui-nav-progress__indicator {
+    border-radius: 50%;
+    background: #07c;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    line-height: 1;
+    margin-right: 8px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-negative: 0;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    width: 24px;
+    height: 24px;
+}
+.invisible_spoken {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    white-space: normal;
+    overflow: hidden;
+}
+.invisible_spoken {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    white-space: normal;
+    overflow: hidden;
+    color: #07c;
+    right: 0;
+}
+.bui-nav-progress__item--disabled .bui-nav-progress__indicator {
+    background: #b3b3b3;
+}
+.bp_mirror .bp_pricedetails_holder {
+    float: left;
+} 
+.bp_pricedetails_holder {
+    width: 100%;
+    float: right;
+    margin-top: 20px;
+}
+#bookTmpl.bp-full-width {
+    font-size: 13px;
+}
+.bp_sidebar_content_block {
+    border: 1px solid #cce1ff;
+    border-radius: 3px;
+    margin: 0 0 15px;
+    padding: 10px;
+    overflow: hidden;
+}
+.bp_sidebar_content_block__header {
+    background-color: #e9f0fa;
+    border-bottom: 1px solid #cce1ff;
+    margin: -10px -10px -11px;
+    padding: 10px 10px 8px;
+}
+.bp_sidebar_content_block__header_title {
+    font-weight: bold;
+}
+.bp_sidebar_content_block__section {
+    padding: 10px 10px 0;
+    margin: 10px -10px 0;
+    border-top: 1px solid #cce1ff;
+}
+.bp_sidebar_content_block__ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.bp_sidebar_content_block__li {
+    padding: 0 0 12px;
+}
+.bp_sidebar_content_block__li_title {
+    display: block;
+    font-weight: bold;
+    padding: 0 0 4px;
+}
+.bp_sidebar_content_block__li_content {
+    position: relative;
+    margin-top: -5px;
+    margin-bottom: 10px
+}
+strong {
+    font-weight: bold;
+}
+.bp_sidebar_content_block__li--last, .bp_sidebar_content_block__li:last-child {
+    padding-bottom: 0;
+}
+.bp_sidebar_content_block__li {
+    padding: 0 0 12px;
+    padding-bottom: 12px;
+}
+.bp_pricedetails_total_value {
+    text-align: right;
+    white-space: nowrap;
+}
+.bp_pricedetails_total_value {
+    float: right;
+    text-align: right;
+    white-space: nowrap;
+}
+.bp_pricedetails_box {
+    border: 1px solid #cce1ff;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.bp_pricedetails_legibility .bp_pricedetails_total {
+    border-radius: 0;
+    border: 0;
+    border-top-color: currentcolor;
+    border-top-style: none;
+    border-top-width: 0px;
+    border-top: 1px solid #cce1ff;
+    background-color: #e9f0fa;
+    padding: 10px;
+}
+ 
+.bp_pricedetails_total {
+    font-size: 1.4em;
+    overflow: hidden;
+    color: #383838;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border: 1px solid #cce1ff;
+    border-radius: 6px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.bp_pricedetails_legibility .topDisplayedCurrency, .bp_pricedetails_legibility .bp_pricedetails_total_pricing_clarify {
+    padding: 0;
+}
+.topDisplayedCurrency {
+    width: 100%;
+    padding: 0 10px;
+}
+form, table {
+    margin: 0;
+}
+table {
+    border-spacing: 0;
+    border: 0;
+}
+.bp_pricedetails_total_pricing_clarify {
+    color: #838383;
+    font-size: .85em;
+    clear: both;
+    display: inline-block;
+    padding: 0 10px;
+}
+.pricing_clarify_total {
+    color: #838383;
+    font-size: .85em;
+    clear: both;
+    margin: 0;
+}
+ins {
+    text-decoration: none;
+}
+.prd-taxes-and-fees-under-price.bp-special-wrapper .bp_pricedetails_excluded_fees_legibility {
+    margin: 0;
+    border: 0;
+    border-top-color: currentcolor;
+    border-top-style: none;
+    border-top-width: 0px;
+    border-top: 1px solid #cce1ff;
+}
+.prd-taxes-and-fees-under-price.bp-special-wrapper .bp_pricedetails_excluded_fees_legibility {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #cce1ff;
+}
+.prd-taxes-and-fees-under-price.bp-special-wrapper .pricedetails_box_title {
+    font-weight: 400;
+    border-bottom: 0;
+    background-color: transparent;
+}
+.bp_pricedetails_holder {
+    font-size: 13px;
+}
+.prd-taxes-and-fees-under-price, .roomPrice .prd-taxes-and-fees-under-price, .hprt-price-price div.prd-taxes-and-fees-under-price {
+    position: relative;
+    color: #707070;
+    font-weight: 400;
+}
+.prd-taxes-and-fees-under-price.bp-special-wrapper .pricedetails_box_title {
+    font-weight: 400;
+    border-bottom: 0;
+    background-color: transparent;
+} 
+.bp_pricedetails_excluded_fees_legibility ul {
+    width: 100%;
+    display: table;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} 
+.prd-taxes-and-fees-under-price.bp-special-wrapper .bp_pricedetails_excluded_fees_legibility li {
+    color: #383838;
+}
+.bp_pricedetails_excluded_fees_legibility li {
+    width: auto;
+    clear: both;
+    line-height: 2em;
+    display: table-row;
+}
+.bp_pricedetails_excluded_fees_legibility li span {
+    display: table-cell;
+    line-height: 1.2;
+    padding-bottom: 8px;
+    vertical-align: top;
+    float: none;
+}  
+.bp_pricedetails_excluded_fees_legibility {
+    border: 1px solid #cce1ff;
+    border-radius: 3px;
+    margin: 15px 0;
+    padding: 10px;
+}
+.excluded_fees_price {
+    text-align: right;
+    white-space: nowrap;
+}

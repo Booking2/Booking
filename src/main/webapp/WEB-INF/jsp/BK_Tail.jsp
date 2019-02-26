@@ -95,7 +95,7 @@
 		<div class="footer-offices footerconstraint-inner">
 			<div class="footer-offices-copy">
 				不管你是谁，想要住哪种类型的住宿，我们都能满足你的需求。我们网站上共有2,904个房源， 包括580家度假屋、公寓和其他独特的住宿，
-				遍布湖南省地区 14个目的地。 Booking.comB.V.总部位于杀马特家族，由位于中国<a href="#" rel="nofollow">14个地区的 120个办公室</a>提供支持。
+				遍布湖南省地区 14个目的地。 Booking.comB.V.总部位于杀马特家族，由位于中国湖南省<a href="#" rel="nofollow">14个地区的 120个办公室</a>提供支持。
 			</div>
 		</div>
 		<div role="region" 

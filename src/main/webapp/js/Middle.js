@@ -64,10 +64,7 @@ $(function() {
 });
 
 /* ===================单击前面两个市区跳转======================= */
-$(".promotion-postcard__large")
-		.on(
-				'click',
-				function(event) {
+$(".promotion-postcard__large").on('click',function(event) {
 					event.preventDefault();
 					var ciid = $(this).children().children(".cid").val();
 

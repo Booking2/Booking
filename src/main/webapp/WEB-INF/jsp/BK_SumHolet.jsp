@@ -89,7 +89,7 @@
 		 <div style="margin-top: 10px;margin-bottom: 10px" ></div>
 		 <%@ include file="BK_Narrow.jsp"%>
 		</div>
-		<div style="bottom: 0px; width: 100%; margin-top: 1510px;">
+		<div style="bottom: 0px; width: 100%; margin-top: 1550px;">
 			<%@ include file="BK_Tail.jsp"%>
 		</div>
 		<div class="col-md-2"></div>

@@ -1,7 +1,6 @@
 package com.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 import com.entity.Bk_collection;
 

@@ -27,10 +27,30 @@ public class Bk_rooms {
     private String rbedtype;
     
     private Integer rcheckin;
-
+    
+    private Integer rrnumber;
+    
     private Integer sum;     //空房间的总数 
     
-    public Integer getRcheckin() {
+    private Integer rroomnumber;  //房间号
+    
+    public Integer getRroomnumber() {
+		return rroomnumber;
+	}
+
+	public void setRroomnumber(Integer rroomnumber) {
+		this.rroomnumber = rroomnumber;
+	}
+
+	public Integer getRrnumber() {
+		return rrnumber;
+	}
+
+	public void setRrnumber(Integer rrnumber) {
+		this.rrnumber = rrnumber;
+	}
+
+	public Integer getRcheckin() {
 		return rcheckin;
 	}
 

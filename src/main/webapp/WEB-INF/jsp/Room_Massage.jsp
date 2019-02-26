@@ -52,6 +52,7 @@
 									</tr>
 								</thead>
 			                <c:forEach items="${getroomall}" var="room" varStatus="status">
+								<div class="sa">
 								<tbody>
 								 <input  type="hidden" value="${room.rid}"/>
 								  <tr data-block-id="264702701_110159171_0_0_0" class="hprt-table-cheapest-block hprt-table-cheapest-block-fix js-hprt-table-cheapest-block hprt-table-last-row" data-et-view="">
@@ -142,6 +143,7 @@
 									<div class="hprt-occupancy-occupancy-info jq_tooltip"  id="b_tt_holder_2">
 									 <c:forEach var="x" begin="1" end="${room.rcheckin}">
 									   <i class="bicon bicon-occupancy"><img src="../img/rw2.png"></i>
+									   
 									 </c:forEach>
 									</div>
 									</div>
@@ -158,23 +160,23 @@
 									<div class="prd-taxes-and-fees-under-price on-hpage blockuid-264702701_110159171_0_0_0" data-cur-stage="1"> 含税费及其他费用 </div> 
 									</div>
 									</td>
-									<td class="hprt-table-cell hprt-table-cell-conditions   
-									hprt-block-reposition-tooltip--container
-									">
+									<td class="hprt-table-cell hprt-table-cell-conditions hprt-block-reposition-tooltip--container">
 										<div class="only_x_left_redesign">
 											<span class="only_x_left urgency_message_red">
-											     ${room.rinstructions}！
+											     ${room.rinstructions}！ 
 											</span>
 										</div>
 									</td>
 									<td class="hprt-table-cell hprt-table-room-select  ">
 									<div class="hprt-block">
 									<label> <span class="invisible_spoken">选择客房</span>
+									<input type='hidden' value="${room.rcheckin}" id='rcheckin'/>
 									<select id="hprt-nos-select" class="hprt-nos-select" name="nr_rooms_264702701_110159171_0_0_0" data-component="hotel/new-rooms-table/select-rooms" data-room-id="264702701" data-block-id="264702701_110159171_0_0_0" data-is-fflex-selected="0">
 									<option value="0">
 									0 
-									</option>
-										<c:forEach var="x" begin="1" end="${room.sum}"> 
+									</option> 
+										<c:forEach var="x" begin="1" end="${room.rrnumber}"> 
+										
 											 <option value="${x}" id="${room.rid}">
 											${x}
 											&nbsp;&nbsp;&nbsp;
@@ -183,8 +185,8 @@
 											
 										</c:forEach>  
 									</select>
-									<c:if test="${room.sum <= 3}">
-									  <div class="room_sum">只剩下${room.sum}间客房了</div>
+									<c:if test="${room.rrnumber <= 3}">
+									  <div class="room_sum">只剩下${room.rrnumber}间客房了</div>
 									</c:if>
 									</label>
 									</div>
@@ -209,6 +211,7 @@
 									   </c:if>
 									</tr>
 								</tbody>
+							</div>
 						</c:forEach>
 						 </table>
 					</form>

@@ -21,5 +21,13 @@ public class Bk_roomsServiceImpl implements Bk_roomsService {
 		// TODO Auto-generated method stub
 		return bk_roomsMapper.getAll(hoid);
 	}
+	
+	//根据时间查询所有空房间
+	@Override
+	public List<Bk_rooms> getAllbytime(String Rstaydate, Integer hoid) {
+		// TODO Auto-generated method stub
+		System.out.println(Rstaydate); 
+		return bk_roomsMapper.getAllbytime(Rstaydate, hoid);
+	}
 
 }

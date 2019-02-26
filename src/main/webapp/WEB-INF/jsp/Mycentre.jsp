@@ -5,7 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>个人中心</title>
-
+<link rel="icon" href="${pageContext.request.contextPath}/img/捕获.PNG"
+	type="image/x-icon">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/Mycentre.css"
 	type="text/css">

@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-  
+<title>测试Hightchars甘特图</title> 
+
 </head>
 <body>
-
+ 
 </body>
 </html>

@@ -15,6 +15,8 @@
     <result column="Rbedtype" jdbcType="VARCHAR" property="rbedtype" />
      <result column="Sum" jdbcType="INTEGER" property="sum" />
     <result column="Rcheckin" jdbcType="INTEGER" property="rcheckin" />
+    <result column="Rrnumber" jdbcType="INTEGER" property="rrnumber" />
+    <result column="Rroomnumber" jdbcType="INTEGER" property="rroomnumber" />
   </resultMap>
   <sql id="Base_Column_List">
     Rid, Rname, Rdescribe, Rinstructions, Rprice, Rnumber, Rstay, Rstaydate, Rcheckdate, 
@@ -29,7 +31,11 @@
   
   <!--查询所有房间 -->
   <select id="getAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-       SELECT bk_rooms.*,COUNT(Rbedtype) as Sum FROM bk_rooms  WHERE hoid = #{hoid} AND Rstay = 2  GROUP BY Rbedtype;
+       SELECT bk_rooms.* FROM bk_rooms  WHERE hoid = #{hoid} AND Rstay = 2 ;
+  </select>
+  
+  <select id="getAllbytime" parameterType="com.entity.Bk_rooms" resultMap="BaseResultMap">
+      SELECT bk_rooms.* FROM bk_rooms  WHERE hoid = #{hoid} AND Rstaydate = #{Rstaydate}  AND Rstay = 2;  
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
